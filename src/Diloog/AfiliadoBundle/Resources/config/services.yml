@@ -1,0 +1,7 @@
+parameters:
+#    afiliado.example.class: Diloog\AfiliadoBundle\Example
+
+services:
+#    afiliado.example:
+#        class: %afiliado.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

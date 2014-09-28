@@ -1,0 +1,8 @@
+backend:
+    resource: "@BackendBundle/Resources/config/routing.yml"
+    prefix:   /
+
+afiliado:
+    resource: "@AfiliadoBundle/Resources/config/routing.yml"
+    prefix:   /
+
