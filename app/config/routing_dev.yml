@@ -19,5 +19,5 @@ pagina_ayuda:
     defaults: {_controller: AfiliadoBundle:Default:ayuda}
 
 pagina_principal:
-    path:    /
+    path:    /{name}
     defaults:  {_controller: AfiliadoBundle:Default:index}
