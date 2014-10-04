@@ -1,0 +1,3 @@
+pago_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: PagoBundle:Default:index }
