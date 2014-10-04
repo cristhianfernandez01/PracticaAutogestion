@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Diloog\AfiliadoBundle\AfiliadoBundle(),
             new Diloog\BackendBundle\BackendBundle(),
+            new Diloog\PagoBundle\PagoBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
