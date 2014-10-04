@@ -61,11 +61,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pago.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Pago.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/Pago.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="51" selection-start="722" selection-end="722" vertical-scroll-proportion="0.61513156" vertical-offset="510" max-vertical-offset="2227">
+            <state line="41" column="51" selection-start="722" selection-end="722" vertical-scroll-proportion="-7.48" vertical-offset="510" max-vertical-offset="2227">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Afiliado.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Afiliado.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="327" column="0" selection-start="5260" selection-end="5260" vertical-scroll-proportion="0.8881579" vertical-offset="5289" max-vertical-offset="5661">
+              <folding>
+                <element signature="e#48#115#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -132,6 +143,7 @@
         <option value="$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/SubdetalleDeuda.php" />
         <option value="$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/EstadoDeDeuda.php" />
         <option value="$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/Pago.php" />
+        <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Afiliado.php" />
       </list>
     </option>
   </component>
@@ -239,14 +251,6 @@
               <option name="myItemId" value="Diloog" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PagoBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -263,6 +267,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Diloog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AfiliadoBundle" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -285,6 +293,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="AfiliadoBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -374,7 +386,11 @@
       <created>1412436440587</created>
       <updated>1412436440587</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Version 3">
+      <created>1412444913125</created>
+      <updated>1412444913125</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -399,11 +415,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1358" height="726" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924694" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924694" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34150612" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34150612" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924694" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24922839" sideWeight="0.67075306" order="1" side_tool="false" content_ui="tabs" />
@@ -516,13 +532,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Afiliado.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="7" selection-start="1184" selection-end="1184" vertical-scroll-proportion="0.8881579" vertical-offset="903" max-vertical-offset="5270">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/EstadoDeDeuda.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="115" column="5" selection-start="1961" selection-end="1961" vertical-scroll-proportion="-4.76" vertical-offset="1836" max-vertical-offset="2686">
@@ -546,8 +555,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/Pago.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="51" selection-start="722" selection-end="722" vertical-scroll-proportion="0.61513156" vertical-offset="510" max-vertical-offset="2227">
+        <state line="41" column="51" selection-start="722" selection-end="722" vertical-scroll-proportion="-7.48" vertical-offset="510" max-vertical-offset="2227">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Afiliado.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="327" column="0" selection-start="5260" selection-end="5260" vertical-scroll-proportion="0.8881579" vertical-offset="5289" max-vertical-offset="5661">
+          <folding>
+            <element signature="e#48#115#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
