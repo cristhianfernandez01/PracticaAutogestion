@@ -38,7 +38,7 @@ class Pago
     /**
      * @var string
      *
-     * @ORM\ManyToOne(targetEntity="Diloog\PagoBundle\Entity\EstadoDeDeuda")
+     * @ORM\OneToOne(targetEntity="Diloog\PagoBundle\Entity\EstadoDeDeuda")
      * @ORM\JoinColumn(name="estado_deuda_id", referencedColumnName="id")
      */
     private $estadoDeuda;
