@@ -53,7 +53,7 @@ class EstadoDeDeuda
 
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="\Diloog\PagoBundle\Entity\DetalleDeuda")
+     * @ORM\OneToMany(targetEntity="\Diloog\PagoBundle\Entity\DetalleDeuda", mappedBy="estadodedeuda")
      */
     private $detallesdeuda;
 

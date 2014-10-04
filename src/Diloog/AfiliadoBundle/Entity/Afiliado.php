@@ -88,7 +88,7 @@ class Afiliado
 
     /**
      * @var ArrayCollection
-     * 	@ORM\OneToMany(targetEntity=”Diloog\AfiliadoBundle\Entity\Tarjeta”, mappedBy=”afiliado”)
+     * @ORM\OneToMany(targetEntity="\Diloog\AfiliadoBundle\Entity\Tarjeta", mappedBy="afiliado")
      */
 
     private $tarjetas;
@@ -96,7 +96,7 @@ class Afiliado
 
     /**
      * @var ArrayCollection
-     * ORM\OneToMany(targetEntity="Diloog\PagoBundle\Entity\EstadoDeuda", mappedBy="afiliado")
+     * @ORM\OneToMany(targetEntity="\Diloog\PagoBundle\Entity\EstadoDeDeuda", mappedBy="afiliado")
      */
    private $estadosdedeuda;
 
