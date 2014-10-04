@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd01f530-643e-4f15-a5e7-b360c10478a9" name="Default" comment="Version 1">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
+    <list default="true" id="dd01f530-643e-4f15-a5e7-b360c10478a9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PracticaSupervisada.iws" />
@@ -27,15 +25,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="routing.yml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="306">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="routing_dev.yml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/config/routing_dev.yml">
           <provider selected="true" editor-type-id="text-editor">
@@ -45,28 +34,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Afiliado.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Afiliado.php">
+      <file leaf-file-name="Tarjeta.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Tarjeta.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5270">
+            <state line="135" column="70" selection-start="2380" selection-end="2418" vertical-scroll-proportion="-6.8" vertical-offset="2125" max-vertical-offset="2686">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AfiliadoBundle.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/AfiliadoBundle.php">
+      <file leaf-file-name="EstadoDeDeuda.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/EstadoDeDeuda.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+            <state line="115" column="5" selection-start="1961" selection-end="1961" vertical-scroll-proportion="-4.76" vertical-offset="1836" max-vertical-offset="2686">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DefaultController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Controller/DefaultController.php">
+      <file leaf-file-name="DetalleDeuda.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/DetalleDeuda.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="5" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="408">
+            <state line="47" column="73" selection-start="702" selection-end="847" vertical-scroll-proportion="-7.48" vertical-offset="612" max-vertical-offset="2720">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pago.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/Pago.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="51" selection-start="722" selection-end="722" vertical-scroll-proportion="0.61513156" vertical-offset="510" max-vertical-offset="2227">
               <folding />
             </state>
           </provider>
@@ -129,6 +127,11 @@
         <option value="$PROJECT_DIR$/app/config/routing_dev.yml" />
         <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Tarjeta.php" />
+        <option value="$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/DetalleDeuda.php" />
+        <option value="$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/SubdetalleDeuda.php" />
+        <option value="$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/EstadoDeDeuda.php" />
+        <option value="$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/Pago.php" />
       </list>
     </option>
   </component>
@@ -214,26 +217,8 @@
               <option name="myItemId" value="Diloog" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PracticaSupervisada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PracticaSupervisada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Diloog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AfiliadoBundle" />
+              <option name="myItemId" value="PagoBundle" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -255,11 +240,51 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AfiliadoBundle" />
+              <option name="myItemId" value="PagoBundle" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaSupervisada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaSupervisada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diloog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaSupervisada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaSupervisada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diloog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AfiliadoBundle" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -345,7 +370,11 @@
       <created>1411682082350</created>
       <updated>1411682082350</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Version 3">
+      <created>1412436440587</created>
+      <updated>1412436440587</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -370,14 +399,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1358" height="726" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924694" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924694" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34150612" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34150612" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924694" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24922839" sideWeight="0.67075306" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Symfony2" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294753" sideWeight="0.6695958" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21527778" sideWeight="0.6584939" order="0" side_tool="false" content_ui="combo" />
@@ -390,7 +420,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924694" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -407,77 +436,13 @@
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
     <option name="USE_COMMIT_MESSAGE_MARGIN" value="true" />
     <MESSAGE value="Version 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 1" />
+    <MESSAGE value="Version 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/config/routing_dev.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="411" selection-end="411" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="374">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="0" selection-start="1178" selection-end="1178" vertical-scroll-proportion="0.0" vertical-offset="134" max-vertical-offset="765" />
-      </provider>
-    </entry>
-    <entry file="uml://PHP/\Symfony\Component\HttpKernel\HttpKernel">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>PHP</ID>
-          <OriginalElement>\Symfony\Component\HttpKernel\HttpKernel</OriginalElement>
-          <nodes>
-            <node x="" y="">\Symfony\Component\HttpKernel\TerminableInterface</node>
-            <node x="" y="">\Symfony\Component\HttpKernel\HttpKernelInterface</node>
-            <node x="" y="">\Symfony\Component\HttpKernel\HttpKernel</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="392.0" y="120.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Constructors</Category>
-            <Category>Fields</Category>
-            <Category>Methods</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://PHP/\Symfony\Component\HttpKernel\HttpKernel">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>PHP</ID>
-          <OriginalElement>\Symfony\Component\HttpKernel\HttpKernel</OriginalElement>
-          <nodes>
-            <node x="" y="">\Symfony\Component\HttpKernel\TerminableInterface</node>
-            <node x="" y="">\Symfony\Component\HttpKernel\HttpKernelInterface</node>
-            <node x="" y="">\Symfony\Component\HttpKernel\HttpKernel</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="392.0" y="120.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Constructors</Category>
-            <Category>Fields</Category>
-            <Category>Methods</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="0" selection-start="1178" selection-end="1178" vertical-scroll-proportion="0.9396092" vertical-offset="134" max-vertical-offset="765" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config_dev.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629" />
@@ -490,7 +455,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="70" selection-start="1167" selection-end="1167" vertical-scroll-proportion="0.055555556" vertical-offset="391" max-vertical-offset="697" />
+        <state line="25" column="70" selection-start="1167" selection-end="1167" vertical-scroll-proportion="0.055555556" vertical-offset="391" max-vertical-offset="697">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
@@ -535,6 +502,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Tarjeta.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="135" column="70" selection-start="2380" selection-end="2418" vertical-scroll-proportion="-6.8" vertical-offset="2125" max-vertical-offset="2686">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/routing_dev.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="19" selection-start="542" selection-end="542" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
@@ -544,7 +518,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Afiliado.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5270">
+        <state line="69" column="7" selection-start="1184" selection-end="1184" vertical-scroll-proportion="0.8881579" vertical-offset="903" max-vertical-offset="5270">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/EstadoDeDeuda.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="5" selection-start="1961" selection-end="1961" vertical-scroll-proportion="-4.76" vertical-offset="1836" max-vertical-offset="2686">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/SubdetalleDeuda.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="142" column="21" selection-start="2523" selection-end="2523" vertical-scroll-proportion="7.9407897" vertical-offset="0" max-vertical-offset="2737">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/DetalleDeuda.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="73" selection-start="702" selection-end="847" vertical-scroll-proportion="-7.48" vertical-offset="612" max-vertical-offset="2720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/Pago.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="51" selection-start="722" selection-end="722" vertical-scroll-proportion="0.61513156" vertical-offset="510" max-vertical-offset="2227">
           <folding />
         </state>
       </provider>
