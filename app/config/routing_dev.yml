@@ -14,10 +14,7 @@ _main:
     resource: routing.yml
 
 # AcmeDemoBundle routes (to be removed)
-pagina_ayuda:
-    path:     /ayuda
-    defaults: {_controller: AfiliadoBundle:Default:ayuda}
 
-pagina_principal:
-    path:    /{name}
-    defaults:  {_controller: AfiliadoBundle:Default:index}
+AfiliadoBundle:
+    resource: "@AfiliadoBundle/Resources/config/routing.yml"
+    prefix: /afiliado

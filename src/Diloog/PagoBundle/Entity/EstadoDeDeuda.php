@@ -45,7 +45,7 @@ class EstadoDeDeuda
 
     /**
      *
-     * @ORM\ManyToOne(targetEntity="\Diloog\AfiliadoBundle\Entity\Afiliado")
+     * @ORM\ManyToOne(targetEntity="\Diloog\AfiliadoBundle\Entity\Afiliado", inversedBy="estadosdedeuda")
      * @ORM\JoinColumn(name="afiliado_id", referencedColumnName="id")
      */
     private $afiliado;
@@ -53,7 +53,7 @@ class EstadoDeDeuda
 
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="\Diloog\PagoBundle\Entity\DetalleDeuda", mappedBy="estadodedeuda")
+     * @ORM\OneToMany(targetEntity="\Diloog\PagoBundle\Entity\DetalleDeuda", mappedBy="estadoDeuda")
      */
     private $detallesdeuda;
 

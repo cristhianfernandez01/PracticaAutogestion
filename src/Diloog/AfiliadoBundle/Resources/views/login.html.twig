@@ -1,0 +1,56 @@
+{%   extends '::base.html.twig' %}
+
+{% block title %}Formulario de acceso{% endblock %}
+
+{% block estilos %}
+    <link href="{{ asset('bundles/afiliado/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{asset('bundles/afiliado/css/sb-admin.css')  }}" rel="stylesheet">
+    <link href="{{ asset('bundles/afiliado/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+
+{% endblock %}
+
+
+{% block body %}
+
+    {% if error %}
+        <div>{{ error.message }}</div>
+    {% endif %}
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Por favor inicie sesion</h3>
+                </div>
+                <div class="panel-body">
+                    <form method="post" role="form" action="{{ path('afiliado_login_check') }}">
+                        <fieldset>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Usuario" name="_username" type="text" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Password" name="_password" type="password" value="">
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="_remember_me" type="checkbox" value="Remember Me">Recuerdame
+                                </label>
+                            </div>
+                            <!-- Change this to a button or input when using this as a form -->
+
+                            <button type="submit" class="btn btn-default">Entrar</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <!-- jQuery Version 1.11.0 -->
+    <script src="{{ asset('bundles/afiliado/js/jquery-1.11.0.js') }}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ asset('bundles/afiliado/js/bootstrap.min.js') }}"></script>
+{% endblock %}

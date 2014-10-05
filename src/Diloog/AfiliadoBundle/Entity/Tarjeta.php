@@ -43,7 +43,7 @@ class Tarjeta
     private $vencimiento;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Diloog\AfiliadoBundle\Entity\Afiliado")
+     * @ORM\ManyToOne(targetEntity="Diloog\AfiliadoBundle\Entity\Afiliado",inversedBy="tarjetas")
      * @ORM\JoinColumn(name="afiliado_id", referencedColumnName="id")
      */
     private $afiliado;
