@@ -1,3 +1,26 @@
-afiliado_homepage:
-    path:     /hello/{name}
+afiliado_principal:
+    path:     /principal
     defaults: { _controller: AfiliadoBundle:Default:index }
+
+
+pagina_ayuda:
+    path:     /ayuda
+    defaults: {_controller: AfiliadoBundle:Default:ayuda}
+
+prueba_pago:
+    path:    /pagoprueba
+    defaults: {_controller: AfiliadoBundle:Default:pagoprueba}
+
+estado_deuda:
+    path:   /misdeudas
+    defaults: {_controller: AfiliadoBundle:Default:estadoDeudaMostrar}
+
+afiliado_login_check:
+    path: /login_check
+
+afiliado_logout:
+    path: /logout
+
+afiliado_login:
+    path: /login
+    defaults: { _controller: AfiliadoBundle:Default:login }
