@@ -17,6 +17,23 @@ class DefaultController extends Controller
         return new Response('Ayuda');
     }
 
+
+    public function estadoDeudaMostrarAction(){
+        $em = $this->getDoctrine()->getManager();
+        $estadodeuda=$em->getRepository('PagoBundle:EstadoDeDeuda')->find(1);
+        return $this->render('@Afiliado/Default/estadodeuda.html.twig',array('deuda'=>$estadodeuda));
+
+    }
+
+    public function pagopruebaAction(){
+        $clienteid=7912305901278826;
+        $clientesecret= "6mDS3QEWFQmmr7qAW6GaWnq5BNHNVobg";
+       $MP = new \mercadopago($clienteid, $clientesecret);
+
+        return $this->render('AfiliadoBundle:Default:index.html.twig', array());
+
+    }
+
     public function loginAction(){
         $peticion = $this->getRequest();
         $sesion = $peticion->getSession();

@@ -1,0 +1,56 @@
+{% extends '@Afiliado/layout.html.twig' %}
+
+{% block contenido %}
+    <h1 class="page-header">
+    Mis Deudas
+    </h1>
+    <div class="well">
+        <p>
+            Sus deudas a la fecha 06/10/2014
+        </p>
+    </div>
+
+    <table class="table">
+        <thead>
+          <th>
+              Codigo
+          </th>
+          <th>
+              Concepto
+          </th>
+          <th>
+              Fecha vencimiento
+          </th>
+
+        <th>
+            Importe
+        </th>
+        <th>
+            Subtotal
+        </th>
+        </thead>
+
+        <tbody>
+         {% for detalle in deuda.detallesdeuda %}
+        <tr>
+             <td>{{ detalle.codigo }}</td>
+             <td>{{ detalle.concepto }}</td>
+             <td></td>
+             <td></td>
+             <td>{{ detalle.subtotal }}</td>
+        <tr>
+            {% for subdetalle in detalle.subdetallesdeuda %}
+                <tr>
+                    <td></td>
+                    <td>{{ subdetalle.subconcepto }}</td>
+                    <td></td>
+                    <td>{{ subdetalle.importe }}</td>
+                    <td></td>
+                <tr>
+             {% endfor %}
+         {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}
