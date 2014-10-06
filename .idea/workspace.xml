@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd01f530-643e-4f15-a5e7-b360c10478a9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Afiliado.php" afterPath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Afiliado.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/DetalleDeuda.php" afterPath="$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/DetalleDeuda.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/EstadoDeDeuda.php" afterPath="$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/EstadoDeDeuda.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PracticaSupervisada.iws" />
