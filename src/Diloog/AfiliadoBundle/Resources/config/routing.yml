@@ -15,6 +15,10 @@ estado_deuda:
     path:   /misdeudas
     defaults: {_controller: AfiliadoBundle:Default:estadoDeudaMostrar}
 
+deuda_prueba_imprimir:
+    path: /deudaimprimir
+    defaults: {_controller: AfiliadoBundle:Default:pruebaImprimir}
+
 afiliado_login_check:
     path: /login_check
 
