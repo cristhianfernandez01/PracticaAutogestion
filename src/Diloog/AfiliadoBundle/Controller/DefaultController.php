@@ -34,6 +34,22 @@ class DefaultController extends Controller
 
     }
 
+
+    public function pruebaImprimirAction(){
+        $em = $this->getDoctrine()->getManager();
+        $estadodeuda=$em->getRepository('PagoBundle:EstadoDeDeuda')->find(1);
+        $this->get('knp_snappy.pdf')->generateFromHtml(
+            $this->renderView(
+                'AfiliadoBundle:Default:comprobantedeuda.html.twig',
+                array(
+                    'deuda'=>$estadodeuda
+                )
+            ),
+            'C:\Proyectos\Symfony2\PracticaSupervisada\web\pdf\archivo.pdf'
+        );
+        return $this->render('@Afiliado/Default/comprobantedeuda.html.twig',array('deuda'=>$estadodeuda));
+    }
+
     public function loginAction(){
         $peticion = $this->getRequest();
         $sesion = $peticion->getSession();
