@@ -11,6 +11,10 @@ prueba_pago:
     path:    /pagoprueba
     defaults: {_controller: AfiliadoBundle:Default:pagoprueba}
 
+procesar_pago:
+   path:   /procesopago/{referencia}
+   defaults: {_controller: AfiliadoBundle:Default:procesamientoPago}
+
 estado_deuda:
     path:   /misdeudas
     defaults: {_controller: AfiliadoBundle:Default:estadoDeudaMostrar}

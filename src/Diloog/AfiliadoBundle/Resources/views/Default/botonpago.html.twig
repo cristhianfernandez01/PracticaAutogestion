@@ -1,0 +1,16 @@
+{% extends '@Afiliado/layout.html.twig' %}
+
+{% block contenido %}
+    <h1 class="page-header">
+    Realizar pago de deuda
+    </h1>
+    <div class="well">
+        <p>
+            Desde aqui sera redirigido a un sitio externo de pagos de Mercado Pago
+        </p>
+    </div>
+
+    <a href="{{ preferencias['response']['sandbox_init_point'] }}">Pagar</a>
+
+
+{% endblock %}
