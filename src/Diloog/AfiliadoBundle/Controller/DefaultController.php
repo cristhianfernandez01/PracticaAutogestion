@@ -5,6 +5,7 @@ namespace Diloog\AfiliadoBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\SecurityContext;
+use Symfony\Component\HttpFoundation\File\File;
 
 class DefaultController extends Controller
 {
@@ -25,11 +26,11 @@ class DefaultController extends Controller
 
     }
 
-    public function procesamientoPagoAction(){
+    public function procesamientoPagoAction($referencia){
         $clienteid='7912305901278826';
         $clientesecret= '6mDS3QEWFQmmr7qAW6GaWnq5BNHNVobg';
         $MP = new \mercadopago($clienteid, $clientesecret);
-
+        return new Response("<html><head><title>Numero referencia</title></head><body><p>$referencia</p></body></html>");
     }
 
     public function pagopruebaAction(){
@@ -81,15 +82,24 @@ class DefaultController extends Controller
             $directorio.$nombrearchivo
         );
 
-        if (!file_exists($directorio.$nombrearchivo)) {
-            throw $this->createNotFoundException();
-        }
-        $response = new Response();
-        $response->headers->set('Content-type', 'application/pdf');
-        $response->headers->set('Content-Disposition', sprintf('attachment; filename="%s"', $nombrearchivo));
-        $response->headers->set('Content-Length', filesize($directorio.$nombrearchivo));
+        $rutaarchivo = $directorio.$nombrearchivo;
+        $basepath=$this->getRequest()->server->get('DOCUMENT_ROOT');
+        $rutadescarga=$basepath."/pdf/".$nombrearchivo;
+        $archivo = new File($directorio.$nombrearchivo);
+        $response = new Response(file_get_contents($rutadescarga));
+       //readfile($directorio.$nombrearchivo);
+        $disposicion = $response->headers->makeDisposition("attachment",$nombrearchivo);
+        $tamaño = $archivo->getSize();
+
+        //$mime= $archivo->getMimeType();
+        $response->headers->set("Content-type", "application/force-download");
+        $response->headers->set("Content-Disposition", $disposicion);
+        $tamaño = filesize($archivo);
+        $response->headers->set("Content-Length", $tamaño);
+      //  readfile($rutadescarga);
+
+      //  readfile($rutaarchivo);
         return $response;
-        //return $this->render('@Afiliado/Default/comprobantedeuda.html.twig',array('deuda'=>$estadodeuda));
     }
 
     public function loginAction(){
@@ -104,5 +114,13 @@ class DefaultController extends Controller
             'error' => $error
         ));
 
+    }
+
+    public function obtenerUsuarioPrueba(){
+        $clienteid='7912305901278826';
+        $clientesecret= '6mDS3QEWFQmmr7qAW6GaWnq5BNHNVobg';
+        $MP = new \mercadopago($clienteid, $clientesecret);
+       $token = $MP->get_access_token();
+        curl_init();
     }
 }
