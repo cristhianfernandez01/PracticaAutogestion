@@ -19,7 +19,11 @@
         "sensio/framework-extra-bundle": "2.3.*",
         "sensio/generator-bundle": "2.3.*",
         "incenteev/composer-parameter-handler": "~2.0",
-		"knplabs/knp-snappy-bundle": "dev-master"
+		"knplabs/knp-snappy-bundle": "dev-master",
+		"raulfraile/ladybug-bundle": "~1.0",
+		"knplabs/gaufrette":"0.2.*@dev",
+		"knplabs/knp-gaufrette-bundle": "dev-master",
+		"herzult/php-ssh": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [

@@ -20,6 +20,8 @@ class AppKernel extends Kernel
             new Diloog\BackendBundle\BackendBundle(),
             new Diloog\PagoBundle\PagoBundle(),
 			new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
+			new RaulFraile\Bundle\LadybugBundle\RaulFraileLadybugBundle(),
+			new Knp\Bundle\GaufretteBundle\KnpGaufretteBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -1,0 +1,13 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+   <p>Token: {{ token }}</p>
+
+    <p>Id: {{ resultado["id"] }}</p>
+    <p>Nickname: {{ resultado["nickname"] }}</p>
+    <p>Password: {{ resultado["password"] }}</p>
+    <p>Site_status: {{ resultado["site_status"] }}</p>
+    <p>Email: {{ resultado["email"] }}</p>
+
+{% endblock %}

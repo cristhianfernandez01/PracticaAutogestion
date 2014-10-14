@@ -23,6 +23,10 @@ deuda_prueba_imprimir:
     path: /deudaimprimir
     defaults: {_controller: AfiliadoBundle:Default:pruebaImprimir}
 
+crear_usuario_prueba:
+    path: /crearusuario
+    defaults: {_controller: AfiliadoBundle:Default:obtenerUsuarioPrueba}
+
 afiliado_login_check:
     path: /login_check
 

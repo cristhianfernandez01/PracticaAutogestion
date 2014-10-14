@@ -1,7 +1,24 @@
 parameters:
-#    backend.example.class: Diloog\BackendBundle\Example
+    diloog_backend.ssh.host: localhost
+    diloog_backend.ssh.port: 22
+    diloog_backend.ssh.username: cristhianfernandez01
+    diloog_backend.ssh.password: 123sistemas$%&
 
 services:
-#    backend.example:
-#        class: %backend.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    diloog_backend.ssh.configuration: 
+        class: Ssh\Configuration
+        arguments: [%diloog_backend.ssh.host%, %diloog_backend.ssh.port%]
+
+    diloog_backend.ssh.authentication:
+        class: Ssh\Authentication\Password
+        arguments: [%diloog_backend.ssh.username%, %diloog_backend.ssh.password%]
+
+    diloog_backend.ssh.session:
+        class: Ssh\Session
+        arguments: [@diloog_backend.ssh.configuration, @diloog_backend.ssh.authentication]
+
+    diloog_backend.sftp:
+        class: Ssh\Sftp
+        arguments: [@diloog_backend.ssh.session]
+
+
