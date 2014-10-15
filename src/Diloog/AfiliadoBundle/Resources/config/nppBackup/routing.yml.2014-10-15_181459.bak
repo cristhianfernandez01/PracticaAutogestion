@@ -1,4 +1,4 @@
-AfiliadoBundle_tarjeta:
+ AfiliadoBundle_tarjeta:
     resource: "@AfiliadoBundle/Resources/config/routing/tarjeta.yml"
     prefix:   /tarjeta
 

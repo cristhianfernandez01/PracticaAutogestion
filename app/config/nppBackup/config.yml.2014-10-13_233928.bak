@@ -83,10 +83,10 @@ raul_fraile_ladybug:
     silenced: false # true to ignore all ladybug calls
 
 #KNP GAUFRETTE BUNDLE
-#knp_gaufrette:
-#    adapters:
-#        foo:
-#            sftp:
-#                sftp_id: diloog_backend.sftp
-#                directory: /pagos/
-#                create: true
+knp_gaufrette:
+    adapters:
+        foo:
+            sftp:
+                sftp_id: diloog_backend.sftp
+                directory: /pagos/
+                create: true

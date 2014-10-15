@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "51463223527e5e20190ffcea3a7722db",
+    "hash": "da3809cffb6af937a201e260267fa271",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -830,7 +830,7 @@
                     "Gaufrette": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -889,7 +889,7 @@
                     "Knp\\Bundle\\GaufretteBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2192,9 +2192,11 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "symfony/assetic-bundle": 0,
         "knplabs/knp-snappy-bundle": 20,
         "knplabs/gaufrette": 20,
         "knplabs/knp-gaufrette-bundle": 20,
+        "kriswallsmith/assetic": 0,
         "herzult/php-ssh": 20
     },
     "prefer-stable": false,

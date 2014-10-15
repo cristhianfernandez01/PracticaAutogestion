@@ -1,0 +1,30 @@
+tarjeta:
+    path:     /
+    defaults: { _controller: "AfiliadoBundle:Tarjeta:index" }
+
+tarjeta_show:
+    path:     /{id}/show
+    defaults: { _controller: "AfiliadoBundle:Tarjeta:show" }
+
+tarjeta_new:
+    path:     /new
+    defaults: { _controller: "AfiliadoBundle:Tarjeta:new" }
+
+tarjeta_create:
+    path:     /create
+    defaults: { _controller: "AfiliadoBundle:Tarjeta:create" }
+    requirements: { _method: post }
+
+tarjeta_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AfiliadoBundle:Tarjeta:edit" }
+
+tarjeta_update:
+    path:     /{id}/update
+    defaults: { _controller: "AfiliadoBundle:Tarjeta:update" }
+    requirements: { _method: post|put }
+
+tarjeta_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AfiliadoBundle:Tarjeta:delete" }
+    requirements: { _method: post|delete }

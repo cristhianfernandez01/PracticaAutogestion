@@ -1,7 +1,3 @@
-AfiliadoBundle_tarjeta:
-    resource: "@AfiliadoBundle/Resources/config/routing/tarjeta.yml"
-    prefix:   /tarjeta
-
 afiliado_principal:
     path:     /principal
     defaults: { _controller: AfiliadoBundle:Default:index }
