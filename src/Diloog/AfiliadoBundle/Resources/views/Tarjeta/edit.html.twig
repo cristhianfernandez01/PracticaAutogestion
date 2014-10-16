@@ -1,16 +1,18 @@
-{% extends '::base.html.twig' %}
+{% extends '@Afiliado/layout.html.twig' %}
 
-{% block body -%}
-    <h1>Tarjeta edit</h1>
+{% block contenido %}
+    <h1>Editar datos de Tarjeta</h1>
 
     {{ form(edit_form) }}
 
-        <ul class="record_actions">
+        <ul class="list-group list-unstyled list-inline">
     <li>
         <a href="{{ path('tarjeta') }}">
-            Back to the list
+            Volver al listado
         </a>
     </li>
-    <li>{{ form(delete_form) }}</li>
+    <li>
+        {{ form(delete_form) }}
+    </li>
 </ul>
 {% endblock %}

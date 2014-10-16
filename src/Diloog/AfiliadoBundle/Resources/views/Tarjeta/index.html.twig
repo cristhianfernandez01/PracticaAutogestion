@@ -1,16 +1,16 @@
-{% extends '::base.html.twig' %}
+{% extends '@Afiliado/layout.html.twig' %}
 
-{% block body -%}
-    <h1>Tarjeta list</h1>
+{% block contenido %}
+    <h1 class="page-header">Lista de Tarjetas registradas </h1>
 
-    <table class="records_list">
+    <table class="table table-bordered table-hover">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Numerotarjeta</th>
-                <th>Descripciontarjeta</th>
+                <th>Numero de Tarjeta</th>
+                <th>Tipo de Tarjeta</th>
                 <th>Vencimiento</th>
-                <th>Actions</th>
+                <th>Accciones</th>
             </tr>
         </thead>
         <tbody>
@@ -23,10 +23,10 @@
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('tarjeta_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('tarjeta_show', { 'id': entity.id }) }}">Detalles</a>
                     </li>
                     <li>
-                        <a href="{{ path('tarjeta_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('tarjeta_edit', { 'id': entity.id }) }}">Editar</a>
                     </li>
                 </ul>
                 </td>
@@ -38,7 +38,7 @@
         <ul>
         <li>
             <a href="{{ path('tarjeta_new') }}">
-                Create a new entry
+                Dar de alta otra tarjeta
             </a>
         </li>
     </ul>

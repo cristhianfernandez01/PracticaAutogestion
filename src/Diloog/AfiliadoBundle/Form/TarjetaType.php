@@ -18,7 +18,6 @@ class TarjetaType extends AbstractType
             ->add('numeroTarjeta')
             ->add('descripcionTarjeta')
             ->add('vencimiento')
-            ->add('afiliado')
         ;
     }
     

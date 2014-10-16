@@ -36,6 +36,7 @@ class TarjetaController extends Controller
     public function createAction(Request $request)
     {
         $entity = new Tarjeta();
+        $entity->setAfiliado($this->getUser());
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -147,7 +148,7 @@ class TarjetaController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Modificar datos', 'attr' => array('class' => 'btn btn-sm btn-default')));
 
         return $form;
     }
@@ -217,8 +218,9 @@ class TarjetaController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('tarjeta_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Borrar tarjeta', 'attr' => array('class' => 'btn btn-sm btn-default')))
             ->getForm()
+
         ;
     }
 }

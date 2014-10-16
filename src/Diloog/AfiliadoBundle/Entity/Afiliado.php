@@ -355,6 +355,10 @@ class Afiliado implements UserInterface
         return $this->estadosdedeuda;
     }
 
+    public function __toString(){
+        return $this->getApellido().", ".$this->getNombre();
+    }
+
 
     /**
      * Returns the roles granted to the user.
