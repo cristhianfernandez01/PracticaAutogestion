@@ -27,4 +27,3 @@ tarjeta_update:
 tarjeta_delete:
     path:     /{id}/delete
     defaults: { _controller: "AfiliadoBundle:Tarjeta:delete" }
-    requirements: { _method: post|delete }

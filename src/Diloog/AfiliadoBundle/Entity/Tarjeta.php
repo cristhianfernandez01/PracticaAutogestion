@@ -24,14 +24,14 @@ class Tarjeta
     /**
      * @var integer
      *
-     * @ORM\Column(name="numero_tarjeta", type="integer")
+     * @ORM\Column(name="numero_tarjeta", type="string", length=20)
      */
     private $numeroTarjeta;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="descripcion_tarjeta", type="string", length=50)
+     * @ORM\Column(name="descripcion_tarjeta", type="string", length=25)
      */
     private $descripcionTarjeta;
 

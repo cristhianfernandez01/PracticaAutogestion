@@ -1,21 +1,30 @@
 {% extends '@Afiliado/layout.html.twig' %}
 
+{%  block estilos %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" media="screen, projection" href="{{ asset("bundles/afiliado/css/demo.css") }}" />
+
+{% endblock %}
+
 {% block contenido %}
     <h1>Tarjeta</h1>
+
+    <div class="alert alert-success">
+        <p>
+            Los datos concernientes a su tarjeta de credito solo son accesibles y visibles por usted para su mayor seguridad.
+            Nunca debe informar a ningun otro medio sus datos de tarjeta. Nosotros solo lo utilizamos como medio de control
+        </p>
+    </div>
 
     <table class="table table-bordered table-striped">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ entity.id }}</td>
+                <th>Tipo de tarjeta</th>
+                <td>{{ entity.descripcionTarjeta }}</td>
             </tr>
             <tr>
                 <th>Numero de tarjeta</th>
                 <td>{{ entity.numeroTarjeta }}</td>
-            </tr>
-            <tr>
-                <th>Tipo de tarjeta</th>
-                <td>{{ entity.descripcionTarjeta }}</td>
             </tr>
             <tr>
                 <th>Vencimiento</th>
@@ -31,10 +40,44 @@
         </a>
     </li>
     <li>
-        <a href="{{ path('tarjeta_edit', { 'id': entity.id }) }}">
+        <a href="{{ path('tarjeta_edit', { 'id': entity.id }) }}" class="btn btn-default">
+            <i class="fa fa-fw fa-edit"></i>
             Editar
         </a>
     </li>
-    <li>{{ form(delete_form) }}</li>
+    <li>
+        <a href="{{ path('tarjeta_delete', { 'id': entity.id }) }}" class="btn btn-danger ask-custom">
+            <i class="fa fa-fw fa-trash-o"></i>
+            Borrar tarjeta
+        </a>
+    </li>
 </ul>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset("bundles/afiliado/js/jconfirmaction.jquery.js") }}"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+
+
+            $('.ask-plain').click(function(e) {
+
+                e.preventDefault();
+                thisHref	= $(this).attr('href');
+
+                if(confirm('Are you sure')) {
+                    window.location = thisHref;
+                }
+
+            });
+
+            $('.ask-custom').jConfirmAction({question : "¿Esta seguro de eliminar?", yesAnswer : "Si", cancelAnswer : "Cancelar"});
+            $('.ask').jConfirmAction();
+        });
+
+    </script>
+
+
 {% endblock %}

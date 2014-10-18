@@ -45,7 +45,7 @@ class TarjetaController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('tarjeta_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('tarjeta'));
         }
 
         return $this->render('AfiliadoBundle:Tarjeta:new.html.twig', array(
@@ -102,11 +102,9 @@ class TarjetaController extends Controller
             throw $this->createNotFoundException('Unable to find Tarjeta entity.');
         }
 
-        $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('AfiliadoBundle:Tarjeta:show.html.twig', array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
+            'entity'      => $entity
         ));
     }
 
@@ -173,7 +171,7 @@ class TarjetaController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('tarjeta_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('tarjeta'));
         }
 
         return $this->render('AfiliadoBundle:Tarjeta:edit.html.twig', array(
@@ -188,10 +186,6 @@ class TarjetaController extends Controller
      */
     public function deleteAction(Request $request, $id)
     {
-        $form = $this->createDeleteForm($id);
-        $form->handleRequest($request);
-
-        if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $entity = $em->getRepository('AfiliadoBundle:Tarjeta')->find($id);
 
@@ -201,7 +195,6 @@ class TarjetaController extends Controller
 
             $em->remove($entity);
             $em->flush();
-        }
 
         return $this->redirect($this->generateUrl('tarjeta'));
     }

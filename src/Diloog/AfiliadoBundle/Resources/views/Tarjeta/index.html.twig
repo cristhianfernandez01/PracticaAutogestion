@@ -1,14 +1,19 @@
 {% extends '@Afiliado/layout.html.twig' %}
 
+{%  block estilos %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" media="screen, projection" href="{{ asset("bundles/afiliado/css/demo.css") }}" />
+
+{% endblock %}
+
 {% block contenido %}
     <h1 class="page-header">Lista de Tarjetas registradas </h1>
 
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Numero de Tarjeta</th>
                 <th>Tipo de Tarjeta</th>
+                <th>N&uacute;mero de Tarjeta</th>
                 <th>Vencimiento</th>
                 <th>Accciones</th>
             </tr>
@@ -16,17 +21,19 @@
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('tarjeta_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.numeroTarjeta }}</td>
                 <td>{{ entity.descripcionTarjeta }}</td>
+                <td>{{ entity.numeroTarjeta }}</td>
                 <td>{{ entity.vencimiento }}</td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('tarjeta_show', { 'id': entity.id }) }}">Detalles</a>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="{{ path('tarjeta_show', { 'id': entity.id }) }}"> <i class="fa fa-fw fa-eye"></i> Detalles</a>
                     </li>
-                    <li>
-                        <a href="{{ path('tarjeta_edit', { 'id': entity.id }) }}">Editar</a>
+                    <li class="list-group-item">
+                        <a href="{{ path('tarjeta_edit', { 'id': entity.id }) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="{{ path('tarjeta_delete', { 'id': entity.id }) }}" class="ask-custom"><i class="fa fa-fw fa-trash-o"></i> Eliminar</a>
                     </li>
                 </ul>
                 </td>
@@ -35,11 +42,36 @@
         </tbody>
     </table>
 
-        <ul>
-        <li>
-            <a href="{{ path('tarjeta_new') }}">
-                Dar de alta otra tarjeta
+            <a href="{{ path('tarjeta_new') }}" class="btn btn-success">
+                <strong>+</strong>  A&ntilde;adir tarjeta
             </a>
-        </li>
-    </ul>
     {% endblock %}
+
+
+   {% block javascripts %}
+       {{ parent() }}
+       <script type="text/javascript" src="{{ asset("bundles/afiliado/js/jconfirmaction.jquery.js") }}"></script>
+       <script type="text/javascript">
+
+           $(document).ready(function() {
+
+
+               $('.ask-plain').click(function(e) {
+
+                   e.preventDefault();
+                   thisHref	= $(this).attr('href');
+
+                   if(confirm('Are you sure')) {
+                       window.location = thisHref;
+                   }
+
+               });
+
+               $('.ask-custom').jConfirmAction({question : "¿Esta seguro de eliminar?", yesAnswer : "Si", cancelAnswer : "Cancelar"});
+               $('.ask').jConfirmAction();
+           });
+
+       </script>
+
+
+   {% endblock %}

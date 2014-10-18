@@ -3,16 +3,45 @@
 {% block contenido %}
     <h1>Editar datos de Tarjeta</h1>
 
-    {{ form(edit_form) }}
+    <div class="col-lg-6">
+        {{ form_start(edit_form) }}
+        {{ form_errors(edit_form) }}
 
-        <ul class="list-group list-unstyled list-inline">
-    <li>
-        <a href="{{ path('tarjeta') }}">
-            Volver al listado
-        </a>
-    </li>
-    <li>
-        {{ form(delete_form) }}
-    </li>
-</ul>
+        <div class="form-group">
+            {{ form_label(edit_form.numeroTarjeta, 'Número de tarjeta:') }}
+            {{ form_errors(edit_form.numeroTarjeta) }}
+            {{ form_widget(edit_form.numeroTarjeta, {'attr': {'class': 'form-control'} }) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(edit_form.descripcionTarjeta, 'Tipo de tarjeta') }}
+            {{ form_errors(edit_form.descripcionTarjeta) }}
+            {{ form_widget(edit_form.descripcionTarjeta, {'attr': {'class': 'form-control'} }) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(edit_form.vencimiento, 'Vencimiento (mm/aa)') }}
+            {{ form_errors(edit_form.vencimiento) }}
+            {{ form_widget(edit_form.vencimiento, {'attr': {'class': 'form-control'} }) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_widget(edit_form.submit, {'attr': {'class': 'btn btn-default'} } ) }}
+
+            <a href="{{ path('tarjeta') }}">
+                Volver al listado
+            </a>
+
+
+
+        </div>
+        {{ form_rest(edit_form) }}
+        {{ form_end(edit_form) }}
+
+
+    </div>
+
+
+
+
 {% endblock %}

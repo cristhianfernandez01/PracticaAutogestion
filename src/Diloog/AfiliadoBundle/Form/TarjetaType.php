@@ -16,7 +16,7 @@ class TarjetaType extends AbstractType
     {
         $builder
             ->add('numeroTarjeta')
-            ->add('descripcionTarjeta')
+            ->add('descripcionTarjeta','choice', array('choices'   => array('VISA' => 'VISA', 'MasterCard' => 'MasterCard', 'AmericanExpress' => 'AmericanExpress')))
             ->add('vencimiento')
         ;
     }
