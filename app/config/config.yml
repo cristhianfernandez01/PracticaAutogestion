@@ -20,6 +20,7 @@ framework:
     session:         ~
     fragments:       ~
     http_method_override: true
+    translator:    { fallback: %locale% } 
 
 # Twig Configuration
 twig:

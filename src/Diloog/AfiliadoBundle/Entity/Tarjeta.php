@@ -158,7 +158,7 @@ class Tarjeta
         $vencimiento = $this->getVencimiento();
 // Comprobar que el formato sea correcto
         if (0 === preg_match('/^\d{2}\/\d{2}$/', $vencimiento)) {
-            $context->addViolationAt('dni', 'El Vencimiento introducido no tiene el
+            $context->addViolationAt('vencimiento', 'El Vencimiento introducido no tiene el
 formato correcto ( formato mm/aa)', array(), null);
             return;
         }

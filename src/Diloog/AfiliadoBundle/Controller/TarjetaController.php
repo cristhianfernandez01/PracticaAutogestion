@@ -44,7 +44,10 @@ class TarjetaController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
-
+            $this->get('session')->getFlashBag()->add(
+                'notice',
+                'Se han guardado los datos de la tarjeta.'
+            );
             return $this->redirect($this->generateUrl('tarjeta'));
         }
 
@@ -170,7 +173,10 @@ class TarjetaController extends Controller
 
         if ($editForm->isValid()) {
             $em->flush();
-
+            $this->get('session')->getFlashBag()->add(
+                'notice',
+                'Se han guardado los cambios exitosamente.'
+            );
             return $this->redirect($this->generateUrl('tarjeta'));
         }
 
@@ -195,7 +201,10 @@ class TarjetaController extends Controller
 
             $em->remove($entity);
             $em->flush();
-
+        $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Se han eliminado exitosamente los datos de la tarjeta seleccionada.'
+        );
         return $this->redirect($this->generateUrl('tarjeta'));
     }
 

@@ -45,3 +45,7 @@ datos_afiliado:
     path: /datos
     defaults: {_controller: AfiliadoBundle:Datos:index}
 
+cambio_password:
+    path: /cambiopassword
+    defaults: {_controller: AfiliadoBundle:Datos:cambioPassword}
+

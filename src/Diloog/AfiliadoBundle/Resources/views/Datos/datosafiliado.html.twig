@@ -1,6 +1,15 @@
 {% extends '@Afiliado/layout.html.twig' %}
 
 {% block contenido %}
+
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+        <div class="alert alert-success alert-dismissable">
+            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+
     <h1 class="page-header">
     Datos personales
     </h1>
@@ -10,10 +19,66 @@
         </p>
     </div>
 
-    
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Datos registrados del afiliado <strong>{{ afiliado }}</strong> a la fecha {{ "now" | date("d/m/Y") }}</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-lg-6">
+                <div class="list-group">
+                    <li class="list-group-item">
+                        <h4 class="list-group-item-heading">Nombre</h4>
+                        <p class="list-group-item-text">{{ afiliado.nombre }}</p>
+                    </li>
+
+                    <li class="list-group-item">
+                        <h4 class="list-group-item-heading">Apellido</h4>
+                        <p class="list-group-item-text">{{ afiliado.apellido }} </p>
+                    </li>
+
+                    <li class="list-group-item">
+                        <h4 class="list-group-item-heading">N&uacute;mero de afiliado</h4>
+                        <p class="list-group-item-text"> {{ afiliado.numeroAfiliado }} </p>
+                    </li>
+
+                    <li class="list-group-item">
+                        <h4 class="list-group-item-heading">DNI</h4>
+                        <p class="list-group-item-text"> {{ afiliado.dni }} </p>
+                    </li>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="list-group">
+                    <li class="list-group-item">
+                        <h4 class="list-group-item-heading">Domicilio</h4>
+                        <p class="list-group-item-text">{{ afiliado.domicilio }} </p>
+                    </li>
+
+                    <li class="list-group-item">
+                        <h4 class="list-group-item-heading">Nombre de usuario</h4>
+                        <p class="list-group-item-text"> {{ afiliado.alias }} </p>
+                    </li>
+
+                    <li class="list-group-item">
+                        <h4 class="list-group-item-heading">Correo electr&oacute;nico</h4>
+                        <p class="list-group-item-text"> {{ afiliado.email }} </p>
+                    </li>
+
+                    <li class="list-group-item">
+                        <h4 class="list-group-item-heading">Estado</h4>
+                        <p class="list-group-item-text"> {{ afiliado.estado }} </p>
+                    </li>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 
-
+    <a href="{{ path('cambio_password') }}" class="btn btn-default">
+      <i class="fa fa-key"></i>
+      <strong>Cambiar contrase&ntilde;a</strong>
+    </a>
 
 
 {% endblock %}

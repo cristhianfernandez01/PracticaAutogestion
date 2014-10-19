@@ -47,6 +47,15 @@ class Afiliado implements UserInterface
     private $apellido;
 
     /**
+     * @var integer
+     * @Assert\NotBlank()
+     * @ORM\Column(name="dni", type="integer")
+     */
+    private $dni;
+
+
+
+    /**
      * @var string
      * @Assert\NotBlank()
      * @ORM\Column(name="domicilio", type="string", length=255)
@@ -188,6 +197,22 @@ class Afiliado implements UserInterface
     public function getApellido()
     {
         return $this->apellido;
+    }
+
+    /**
+     * @param int $dni
+     */
+    public function setDni($dni)
+    {
+        $this->dni = $dni;
+    }
+
+    /**
+     * @return int
+     */
+    public function getDni()
+    {
+        return $this->dni;
     }
 
     /**
