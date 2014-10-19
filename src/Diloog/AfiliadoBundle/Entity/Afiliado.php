@@ -6,6 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection as ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\Role\Role;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Afiliado
@@ -26,37 +27,39 @@ class Afiliado implements UserInterface
 
     /**
      * @var integer
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="numero_afiliado", type="integer")
      */
     private $numeroAfiliado;
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="nombre", type="string", length=45)
      */
     private $nombre;
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="apellido", type="string", length=45)
      */
     private $apellido;
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="domicilio", type="string", length=255)
      */
     private $domicilio;
 
     /**
-     * @var string
+     * @var Estado
      *
-     * @ORM\Column(name="estado", type="string", length=45)
+     * @ORM\OneToOne(targetEntity="Diloog\AfiliadoBundle\Entity\Estado")
+     * @ORM\JoinColumn(name="estado_id", referencedColumnName="id")
      */
+
     private $estado;
 
     /**
@@ -68,7 +71,7 @@ class Afiliado implements UserInterface
 
     /**
      * @var string
-     *
+     * @Assert\Length(min = 6, max = 32)
      * @ORM\Column(name="password", type="string", length=255)
      */
     private $password;
@@ -82,7 +85,7 @@ class Afiliado implements UserInterface
 
     /**
      * @var string
-     *
+     * @Assert\Email(checkMX=true)
      * @ORM\Column(name="email", type="string", length=255)
      */
     private $email;

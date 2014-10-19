@@ -40,3 +40,8 @@ afiliado_logout:
 afiliado_login:
     path: /login
     defaults: { _controller: AfiliadoBundle:Default:login }
+
+datos_afiliado:
+    path: /datos
+    defaults: {_controller: AfiliadoBundle:Datos:index}
+

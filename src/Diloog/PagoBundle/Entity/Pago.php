@@ -36,7 +36,15 @@ class Pago
     private $cantidadCuotas;
 
     /**
-     * @var string
+     * @var integer
+     *
+     * @ORM\Column(name="numero_seguimiento", type="integer")
+     */
+    private $numeroSeguimiento;
+
+
+    /**
+     * @var EstadoDeDeuda
      *
      * @ORM\OneToOne(targetEntity="Diloog\PagoBundle\Entity\EstadoDeDeuda")
      * @ORM\JoinColumn(name="estado_deuda_id", referencedColumnName="id")
@@ -106,6 +114,24 @@ class Pago
      * @param string $estadoDeuda
      * @return Pago
      */
+
+    /**
+     * @param int $numeroSeguimiento
+     */
+    public function setNumeroSeguimiento($numeroSeguimiento)
+    {
+        $this->numeroSeguimiento = $numeroSeguimiento;
+    }
+
+    /**
+     * @return int
+     */
+    public function getNumeroSeguimiento()
+    {
+        return $this->numeroSeguimiento;
+    }
+
+
     public function setEstadoDeuda($estadoDeuda)
     {
         $this->estadoDeuda = $estadoDeuda;

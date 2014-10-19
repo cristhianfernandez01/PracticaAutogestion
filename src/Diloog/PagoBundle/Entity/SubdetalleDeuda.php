@@ -45,7 +45,7 @@ class SubdetalleDeuda
     /**
      * @var
      *
-     * @ORM\ManyToOne(targetEntity="Diloog\PagoBundle\Entity\DetalleDeuda")
+     * @ORM\ManyToOne(targetEntity="Diloog\PagoBundle\Entity\DetalleDeuda", inversedBy="subdetallesdeuda")
      * @ORM\JoinColumn(name="detalle_deuda_id", referencedColumnName="id")
      */
     private $detalleDeuda;

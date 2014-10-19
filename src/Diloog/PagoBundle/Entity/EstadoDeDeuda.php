@@ -43,6 +43,16 @@ class EstadoDeDeuda
      */
     private $pagada;
 
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="activa", type="boolean")
+     */
+    private $activa;
+
+
+
     /**
      *
      * @ORM\ManyToOne(targetEntity="\Diloog\AfiliadoBundle\Entity\Afiliado", inversedBy="estadosdedeuda")
@@ -141,6 +151,23 @@ class EstadoDeDeuda
     public function isPagada()
     {
         return $this->pagada;
+    }
+
+
+    /**
+     * @param boolean $activa
+     */
+    public function setActiva($activa)
+    {
+        $this->activa = $activa;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isActiva()
+    {
+        return $this->activa;
     }
 
     /**

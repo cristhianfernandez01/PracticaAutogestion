@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7275681-d7e3-4f1b-802e-ef3d01bb45c1" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Controller/DatosController.php" />
+      <change type="MOVED" beforePath="C:\Proyectos\Symfony2\PracticaSupervisada\src\Diloog\AfiliadoBundle\Resources\views\Default\datosafiliado.html.twig" afterPath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Datos/datosafiliado.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Afiliado.php" afterPath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Afiliado.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/EstadoDeDeuda.php" afterPath="$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/EstadoDeDeuda.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/BackendBundle/Entity/Operacion.php" afterPath="$PROJECT_DIR$/src/Diloog/BackendBundle/Entity/Operacion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/Pago.php" afterPath="$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/Pago.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/SubdetalleDeuda.php" afterPath="$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/SubdetalleDeuda.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Tarjeta.php" afterPath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Tarjeta.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Controller/TarjetaController.php" afterPath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Controller/TarjetaController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Form/TarjetaType.php" afterPath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Form/TarjetaType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Tarjeta/edit.html.twig" afterPath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Tarjeta/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Tarjeta/index.html.twig" afterPath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Tarjeta/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/estadodeuda.html.twig" afterPath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/estadodeuda.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/layout.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Tarjeta/new.html.twig" afterPath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Tarjeta/new.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Tarjeta/show.html.twig" afterPath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Tarjeta/show.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/config/routing/tarjeta.yml" afterPath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/config/routing/tarjeta.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/config/routing.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PracticaSupervisada.iws" />
@@ -34,108 +38,103 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Tarjeta.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Tarjeta.php">
+      <file leaf-file-name="DatosController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Controller/DatosController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="0" selection-start="605" selection-end="605" vertical-scroll-proportion="-23.538462" vertical-offset="0" max-vertical-offset="2686">
+            <state line="12" column="5" selection-start="347" selection-end="347" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="340">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TarjetaController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Controller/TarjetaController.php">
+      <file leaf-file-name="datosafiliado.html.twig" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Datos/datosafiliado.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="199" column="5" selection-start="5474" selection-end="5474" vertical-scroll-proportion="-15.307693" vertical-offset="2917" max-vertical-offset="3757">
-              <folding>
-                <element signature="e#1175#1184#1" expanded="true" />
-                <element signature="e#1719#1735#1" expanded="true" />
-                <element signature="e#3801#3817#0" expanded="true" />
-                <element signature="e#4695#4704#1" expanded="true" />
-                <element signature="e#5456#5465#1" expanded="true" />
-                <element signature="e#5787#5803#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Tarjeta/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="51" selection-start="2190" selection-end="2190" vertical-scroll-proportion="-25.5" vertical-offset="374" max-vertical-offset="1394">
-              <folding>
-                <element signature="e#12#38#0" expanded="false" />
-                <element signature="e#978#990#0" expanded="false" />
-                <element signature="e#1181#1193#0" expanded="false" />
-                <element signature="e#1382#1396#0" expanded="false" />
-                <element signature="e#1662#1673#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.html.twig" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Tarjeta/show.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="12" selection-start="1629" selection-end="1629" vertical-scroll-proportion="-33.346153" vertical-offset="0" max-vertical-offset="1496">
-              <folding>
-                <element signature="e#12#38#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.html.twig" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Tarjeta/edit.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="0" selection-start="1338" selection-end="1338" vertical-scroll-proportion="-23.538462" vertical-offset="51" max-vertical-offset="901">
-              <folding>
-                <element signature="e#12#38#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TarjetaType.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Form/TarjetaType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="30" selection-start="655" selection-end="666" vertical-scroll-proportion="-10.730769" vertical-offset="10" max-vertical-offset="765">
+            <state line="12" column="4" selection-start="263" selection-end="263" vertical-scroll-proportion="0.408" vertical-offset="0" max-vertical-offset="500">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.html.twig" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Administrador.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Diloog/BackendBundle/Entity/Administrador.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="19" selection-start="388" selection-end="388" vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="2975">
+              <folding>
+                <element signature="e#47#79#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routing.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/config/routing.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="54" selection-start="1150" selection-end="1150" vertical-scroll-proportion="0.0" vertical-offset="290" max-vertical-offset="901">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="comprobantedeuda.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/comprobantedeuda.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1088">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="estadodeuda.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/estadodeuda.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="54" selection-start="245" selection-end="245" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="1207">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Estado.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Estado.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="5" selection-start="572" selection-end="572" vertical-scroll-proportion="-25.5" vertical-offset="0" max-vertical-offset="1190">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pago.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/Pago.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="7" selection-start="703" selection-end="897" vertical-scroll-proportion="-12.038462" vertical-offset="537" max-vertical-offset="2669">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.html.twig" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="20" selection-start="2930" selection-end="2930" vertical-scroll-proportion="0.66324437" vertical-offset="697" max-vertical-offset="1904">
+            <state line="12" column="75" selection-start="655" selection-end="655" vertical-scroll-proportion="-2.6153846" vertical-offset="136" max-vertical-offset="1938">
               <folding>
                 <element signature="e#14#30#0" expanded="true" />
-                <element signature="e#1058#1076#0" expanded="true" />
-                <element signature="e#1869#1884#0" expanded="true" />
-                <element signature="e#2236#2243#0" expanded="true" />
-                <element signature="e#2380#2392#0" expanded="true" />
-                <element signature="e#2532#2539#0" expanded="true" />
-                <element signature="e#2679#2700#0" expanded="true" />
-                <element signature="e#2842#2853#0" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#nav#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#1088#1106#0" expanded="true" />
+                <element signature="e#1899#1914#0" expanded="true" />
+                <element signature="e#2266#2273#0" expanded="true" />
+                <element signature="e#2410#2422#0" expanded="true" />
+                <element signature="e#2562#2569#0" expanded="true" />
+                <element signature="e#2709#2730#0" expanded="true" />
+                <element signature="e#2872#2883#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tarjeta.yml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/config/routing/tarjeta.yml">
+      <file leaf-file-name="DetalleDeuda.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/DetalleDeuda.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="62" selection-start="773" selection-end="773" vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="595">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.yml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="47" selection-start="2323" selection-end="2323" vertical-scroll-proportion="0.0" vertical-offset="1096" max-vertical-offset="1666">
+            <state line="57" column="0" selection-start="1111" selection-end="1111" vertical-scroll-proportion="-11.115385" vertical-offset="663" max-vertical-offset="3264">
               <folding />
             </state>
           </provider>
@@ -159,7 +158,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/usuariopruebamp.html.twig" />
         <option value="$PROJECT_DIR$/src/Diloog/BackendBundle/Controller/DefaultController.php" />
@@ -167,17 +165,28 @@
         <option value="$PROJECT_DIR$/src/Diloog/BackendBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/Diloog/BackendBundle/Command/BackendEnvioArchivosCommand.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Afiliado.php" />
-        <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Tarjeta.php" />
         <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Form/TarjetaType.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Tarjeta/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Tarjeta/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Tarjeta/new.html.twig" />
         <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Tarjeta/show.html.twig" />
         <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/config/routing/tarjeta.yml" />
         <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Controller/TarjetaController.php" />
+        <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/estadodeuda.html.twig" />
+        <option value="$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/EstadoDeDeuda.php" />
+        <option value="$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/Pago.php" />
+        <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Estado.php" />
+        <option value="$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/SubdetalleDeuda.php" />
+        <option value="$PROJECT_DIR$/src/Diloog/BackendBundle/Entity/Operacion.php" />
+        <option value="$PROJECT_DIR$/src/Diloog/BackendBundle/Entity/Administrador.php" />
         <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Afiliado.php" />
+        <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Tarjeta/new.html.twig" />
+        <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Tarjeta.php" />
+        <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Controller/DatosController.php" />
+        <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Datos/datosafiliado.html.twig" />
       </list>
     </option>
   </component>
@@ -202,7 +211,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -213,7 +222,263 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaSupervisada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaSupervisada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaSupervisada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaSupervisada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaSupervisada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaSupervisada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaSupervisada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diloog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaSupervisada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaSupervisada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diloog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AfiliadoBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaSupervisada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaSupervisada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diloog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AfiliadoBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaSupervisada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaSupervisada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diloog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AfiliadoBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Default" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaSupervisada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaSupervisada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diloog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AfiliadoBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Datos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaSupervisada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaSupervisada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diloog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AfiliadoBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaSupervisada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaSupervisada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diloog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AfiliadoBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaSupervisada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaSupervisada" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diloog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AfiliadoBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -222,6 +487,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Proyectos\Symfony2\PracticaSupervisada\src\Diloog\AfiliadoBundle\Resources\views\Default" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Proyectos\Symfony2\PracticaSupervisada\src\Diloog\AfiliadoBundle\Resources\views\Datos" />
     </key>
   </component>
   <component name="RunManager">
@@ -259,8 +527,8 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Symfony2" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12520194" sideWeight="0.6963351" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12520194" sideWeight="0.6963351" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -316,13 +584,7 @@
     <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Tarjeta/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="88" selection-start="1069" selection-end="1069" vertical-scroll-proportion="0.0" vertical-offset="161" max-vertical-offset="867">
-          <folding>
-            <element signature="e#12#38#0" expanded="false" />
-            <element signature="e#978#990#0" expanded="false" />
-            <element signature="e#1181#1193#0" expanded="false" />
-            <element signature="e#1382#1396#0" expanded="false" />
-            <element signature="e#1662#1673#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -336,9 +598,7 @@
     <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Tarjeta/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="21" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="357">
-          <folding>
-            <element signature="e#1706#1713#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -389,7 +649,9 @@
     <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Tarjeta.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="89" column="7" selection-start="1587" selection-end="1587" vertical-scroll-proportion="0.0" vertical-offset="1202" max-vertical-offset="2686">
-          <folding />
+          <folding>
+            <element signature="e#48#80#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -408,13 +670,14 @@
         <state line="48" column="19" selection-start="2200" selection-end="2200" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1530">
           <folding>
             <element signature="e#14#30#0" expanded="true" />
-            <element signature="e#1058#1076#0" expanded="true" />
-            <element signature="e#1869#1884#0" expanded="true" />
-            <element signature="e#2236#2243#0" expanded="true" />
-            <element signature="e#2380#2392#0" expanded="true" />
-            <element signature="e#2532#2539#0" expanded="true" />
-            <element signature="e#2679#2700#0" expanded="true" />
-            <element signature="e#2842#2853#0" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#nav#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#1088#1106#0" expanded="true" />
+            <element signature="e#1899#1914#0" expanded="true" />
+            <element signature="e#2266#2273#0" expanded="true" />
+            <element signature="e#2410#2422#0" expanded="true" />
+            <element signature="e#2562#2569#0" expanded="true" />
+            <element signature="e#2709#2730#0" expanded="true" />
+            <element signature="e#2872#2883#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -431,13 +694,14 @@
         <state line="46" column="112" selection-start="2160" selection-end="2160" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1530">
           <folding>
             <element signature="e#14#30#0" expanded="true" />
-            <element signature="e#1058#1076#0" expanded="true" />
-            <element signature="e#1869#1884#0" expanded="true" />
-            <element signature="e#2236#2243#0" expanded="true" />
-            <element signature="e#2380#2392#0" expanded="true" />
-            <element signature="e#2532#2539#0" expanded="true" />
-            <element signature="e#2679#2700#0" expanded="true" />
-            <element signature="e#2842#2853#0" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#nav#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#1088#1106#0" expanded="true" />
+            <element signature="e#1899#1914#0" expanded="true" />
+            <element signature="e#2266#2273#0" expanded="true" />
+            <element signature="e#2410#2422#0" expanded="true" />
+            <element signature="e#2562#2569#0" expanded="true" />
+            <element signature="e#2709#2730#0" expanded="true" />
+            <element signature="e#2872#2883#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -450,23 +714,6 @@
     <entry file="file://$PROJECT_DIR$/app/config/config_dev.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="47" selection-start="2323" selection-end="2323" vertical-scroll-proportion="0.0" vertical-offset="1096" max-vertical-offset="1666">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="933" selection-end="933" vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="816" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/datosafiliado.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="259" selection-end="259" vertical-scroll-proportion="0.39458415" vertical-offset="0" max-vertical-offset="517" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/BackendBundle/Resources/config/routing.yml">
@@ -489,30 +736,9 @@
         <state line="79" column="23" selection-start="2012" selection-end="2012" vertical-scroll-proportion="0.0" vertical-offset="860" max-vertical-offset="5168" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Afiliado.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="20" selection-start="2071" selection-end="2071" vertical-scroll-proportion="3.378" vertical-offset="130" max-vertical-offset="6919">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="8" selection-start="74" selection-end="93" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="374">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="11" selection-start="645" selection-end="645" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="408">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Tarjeta.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="605" selection-end="605" vertical-scroll-proportion="-23.538462" vertical-offset="0" max-vertical-offset="2686">
           <folding />
         </state>
       </provider>
@@ -529,28 +755,6 @@
         <state line="39" column="0" selection-start="1338" selection-end="1338" vertical-scroll-proportion="-23.538462" vertical-offset="51" max-vertical-offset="901">
           <folding>
             <element signature="e#12#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Tarjeta/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="44" selection-end="44" vertical-scroll-proportion="0.069815196" vertical-offset="0" max-vertical-offset="986">
-          <folding>
-            <element signature="e#1706#1713#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Tarjeta/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="51" selection-start="2190" selection-end="2190" vertical-scroll-proportion="-25.5" vertical-offset="374" max-vertical-offset="1394">
-          <folding>
-            <element signature="e#12#38#0" expanded="false" />
-            <element signature="e#978#990#0" expanded="false" />
-            <element signature="e#1181#1193#0" expanded="false" />
-            <element signature="e#1382#1396#0" expanded="false" />
-            <element signature="e#1662#1673#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -585,19 +789,159 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Tarjeta/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="51" selection-start="2190" selection-end="2190" vertical-scroll-proportion="-39.884617" vertical-offset="0" max-vertical-offset="1394">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="10" selection-start="1909" selection-end="1909" vertical-scroll-proportion="-28.115385" vertical-offset="0" max-vertical-offset="1122">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="47" selection-start="2323" selection-end="2323" vertical-scroll-proportion="0.0" vertical-offset="1096" max-vertical-offset="1666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/comprobantedeuda.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/BackendBundle/Entity/Operacion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="29" selection-start="635" selection-end="635" vertical-scroll-proportion="0.476" vertical-offset="459" max-vertical-offset="2142">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/Pago.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="7" selection-start="703" selection-end="897" vertical-scroll-proportion="-12.038462" vertical-offset="537" max-vertical-offset="2669">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Security/Core/User/UserInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="20" selection-start="1511" selection-end="1511" vertical-scroll-proportion="1.19" vertical-offset="153" max-vertical-offset="1462">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="20" selection-start="2930" selection-end="2930" vertical-scroll-proportion="0.66324437" vertical-offset="697" max-vertical-offset="1904">
+        <state line="12" column="75" selection-start="655" selection-end="655" vertical-scroll-proportion="-2.6153846" vertical-offset="136" max-vertical-offset="1938">
           <folding>
             <element signature="e#14#30#0" expanded="true" />
-            <element signature="e#1058#1076#0" expanded="true" />
-            <element signature="e#1869#1884#0" expanded="true" />
-            <element signature="e#2236#2243#0" expanded="true" />
-            <element signature="e#2380#2392#0" expanded="true" />
-            <element signature="e#2532#2539#0" expanded="true" />
-            <element signature="e#2679#2700#0" expanded="true" />
-            <element signature="e#2842#2853#0" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#nav#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#1088#1106#0" expanded="true" />
+            <element signature="e#1899#1914#0" expanded="true" />
+            <element signature="e#2266#2273#0" expanded="true" />
+            <element signature="e#2410#2422#0" expanded="true" />
+            <element signature="e#2562#2569#0" expanded="true" />
+            <element signature="e#2709#2730#0" expanded="true" />
+            <element signature="e#2872#2883#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/EstadoDeDeuda.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="170" column="5" selection-start="2874" selection-end="2874" vertical-scroll-proportion="5.542" vertical-offset="102" max-vertical-offset="3757">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/estadodeuda.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="54" selection-start="245" selection-end="245" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="1207">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Estado.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="5" selection-start="572" selection-end="572" vertical-scroll-proportion="-25.5" vertical-offset="0" max-vertical-offset="1190">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/SubdetalleDeuda.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="26" selection-start="955" selection-end="955" vertical-scroll-proportion="0.986" vertical-offset="357" max-vertical-offset="2737">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/DetalleDeuda.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="0" selection-start="1111" selection-end="1111" vertical-scroll-proportion="-11.115385" vertical-offset="663" max-vertical-offset="3264">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Afiliado.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="19" selection-start="1922" selection-end="1922" vertical-scroll-proportion="-56.884617" vertical-offset="51" max-vertical-offset="7021">
+          <folding>
+            <element signature="e#48#115#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Tarjeta/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="0" selection-start="1593" selection-end="1593" vertical-scroll-proportion="-22.884615" vertical-offset="0" max-vertical-offset="986">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Tarjeta.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="7" selection-start="652" selection-end="652" vertical-scroll-proportion="-18.961538" vertical-offset="0" max-vertical-offset="2941">
+          <folding>
+            <element signature="e#48#80#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Controller/DatosController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="5" selection-start="347" selection-end="347" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="340">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/BackendBundle/Entity/Administrador.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="19" selection-start="388" selection-end="388" vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="2975">
+          <folding>
+            <element signature="e#47#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="54" selection-start="1150" selection-end="1150" vertical-scroll-proportion="0.0" vertical-offset="290" max-vertical-offset="901">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Datos/datosafiliado.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="4" selection-start="263" selection-end="263" vertical-scroll-proportion="0.408" vertical-offset="0" max-vertical-offset="500">
+          <folding />
         </state>
       </provider>
     </entry>

@@ -24,16 +24,10 @@ class Operacion
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fecha", type="date")
+     * @ORM\Column(name="fecha", type="datetime")
      */
     private $fecha;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="hora", type="time")
-     */
-    private $hora;
 
     /**
      * @var string
@@ -41,6 +35,13 @@ class Operacion
      * @ORM\Column(name="descripcion", type="string", length=255)
      */
     private $descripcion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tipo", type="string", length=40)
+     */
+    private $tipo;
 
 
     /**
@@ -76,28 +77,6 @@ class Operacion
         return $this->fecha;
     }
 
-    /**
-     * Set hora
-     *
-     * @param \DateTime $hora
-     * @return Operacion
-     */
-    public function setHora($hora)
-    {
-        $this->hora = $hora;
-
-        return $this;
-    }
-
-    /**
-     * Get hora
-     *
-     * @return \DateTime 
-     */
-    public function getHora()
-    {
-        return $this->hora;
-    }
 
     /**
      * Set descripcion
@@ -120,5 +99,22 @@ class Operacion
     public function getDescripcion()
     {
         return $this->descripcion;
+    }
+
+
+    /**
+     * @param string $tipo
+     */
+    public function setTipo($tipo)
+    {
+        $this->tipo = $tipo;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTipo()
+    {
+        return $this->tipo;
     }
 }
