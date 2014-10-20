@@ -1,11 +1,15 @@
 {% extends '::base.html.twig' %}
 
+
+
 {% block body %}
+<div style="border: 1px; border-collapse: collapse">
+   <div class="well">
 
-
-    <table class="table table-bordered">
+    <div>
+    <table class="table" border="1px">
        <thead>
-        <tr class="succes">
+        <tr >
           <th>
               Codigo
           </th>
@@ -27,7 +31,7 @@
 
         <tbody>
          {% for detalle in deuda.detallesdeuda %}
-        <tr class="active">
+        <tr>
              <td>{{ detalle.codigo }}</td>
              <td>{{ detalle.concepto }}</td>
              <td></td>
@@ -55,5 +59,7 @@
         </tbody>
     </table>
 
-
+<div>
 {% endblock %}
+
+

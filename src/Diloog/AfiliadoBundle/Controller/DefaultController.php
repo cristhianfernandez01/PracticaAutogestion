@@ -21,7 +21,8 @@ class DefaultController extends Controller
 
     public function estadoDeudaMostrarAction(){
         $em = $this->getDoctrine()->getManager();
-        $estadodeuda=$em->getRepository('PagoBundle:EstadoDeDeuda')->find(1);
+        $afiliado = $this->getUser();
+        $estadodeuda=$em->getRepository('PagoBundle:EstadoDeDeuda')->findUltimaDeudaActiva($afiliado);
         return $this->render('@Afiliado/Default/estadodeuda.html.twig',array('deuda'=>$estadodeuda));
 
     }
@@ -68,7 +69,8 @@ class DefaultController extends Controller
 
     public function pruebaImprimirAction(){
         $em = $this->getDoctrine()->getManager();
-        $estadodeuda=$em->getRepository('PagoBundle:EstadoDeDeuda')->find(1);
+        $afiliado = $this->getUser();
+        $estadodeuda=$em->getRepository('PagoBundle:EstadoDeDeuda')->findUltimaDeudaActiva($afiliado);
         $kernel = $this->get('kernel');
         $directorio = $kernel->getRootDir()."/../web/pdf/";
         $nombrearchivo="deuda".rand(1,24000).$this->getUser()->getNumeroAfiliado().".pdf";
@@ -76,7 +78,8 @@ class DefaultController extends Controller
             $this->renderView(
                 'AfiliadoBundle:Default:comprobantedeuda.html.twig',
                 array(
-                    'deuda'=>$estadodeuda
+                    'deuda'=>$estadodeuda,
+                    'afiliado' =>$afiliado
                 )
             ),
             $directorio.$nombrearchivo
@@ -159,4 +162,18 @@ class DefaultController extends Controller
         return $this->render("@Afiliado/Default/usuariopruebamp.html.twig", array( 'token' => $token, 'resultado' => $array_usuario));
 
     }
+
+    public function vistaPreviaAction(){
+        $em = $this->getDoctrine()->getManager();
+        $afiliado = $this->getUser();
+        $estadodeuda=$em->getRepository('PagoBundle:EstadoDeDeuda')->findUltimaDeudaActiva($afiliado);
+        return $this->render(
+            'AfiliadoBundle:Default:comprobantedeuda.html.twig',
+            array(
+                'deuda'=>$estadodeuda,
+                'afiliado' =>$afiliado
+            )
+        );
+    }
+
 }

@@ -27,6 +27,10 @@ deuda_prueba_imprimir:
     path: /deudaimprimir
     defaults: {_controller: AfiliadoBundle:Default:pruebaImprimir}
 
+vista_previa:
+    path: /vistaprevia
+    defaults: {_controller: AfiliadoBundle:Default:vistaPrevia}
+
 crear_usuario_prueba:
     path: /crearusuario
     defaults: {_controller: AfiliadoBundle:Default:obtenerUsuarioPrueba}

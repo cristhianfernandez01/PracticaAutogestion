@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  * EstadoDeDeuda
  *
  * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Diloog\PagoBundle\Entity\EstadoDeDeudaRepository")
  */
 class EstadoDeDeuda
 {
