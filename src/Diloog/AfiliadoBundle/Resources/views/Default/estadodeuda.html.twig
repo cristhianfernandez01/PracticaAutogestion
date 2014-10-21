@@ -9,7 +9,9 @@
             Sus deudas a la fecha {{ "now" | date("d/m/Y") }}
         </p>
     </div>
-
+    <div class="well">
+        <p><strong> Numero del Estado de Deuda: {{ deuda.numeroDeuda }}</strong></p>
+    </div>
     <table class="table table-bordered">
        <thead>
         <tr class="succes">
@@ -61,6 +63,27 @@
         </tr>
         </tbody>
     </table>
+
+    <ul class="list-group list-unstyled list-inline">
+        <li>
+            <a href="{{ path('deuda_imprimir') }}" class="btn btn-default">
+                <i class="fa fa-fw fa-file-pdf-o"></i>
+                Generar Comprobante de Deuda
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('cupon_pago_imprimir') }}" class="btn btn-default">
+                <i class="fa fa-fw fa-barcode"></i>
+                Generar Cup&oacute;n de Pago
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('prueba_pago') }}" class="btn btn-default">
+                <i class="fa fa-fw fa-credit-card"></i>
+                Realizar Pago
+            </a>
+        </li>
+    </ul>
 
 
 {% endblock %}

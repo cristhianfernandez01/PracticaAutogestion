@@ -23,6 +23,13 @@ class EstadoDeDeuda
     private $id;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="numero_deuda", type="integer")
+     */
+    private $numeroDeuda;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="fecha_emision", type="date")
@@ -83,6 +90,24 @@ class EstadoDeDeuda
     {
         return $this->id;
     }
+
+
+    /**
+     * @param int $numeroDeuda
+     */
+    public function setNumeroDeuda($numeroDeuda)
+    {
+        $this->numeroDeuda = $numeroDeuda;
+    }
+
+    /**
+     * @return int
+     */
+    public function getNumeroDeuda()
+    {
+        return $this->numeroDeuda;
+    }
+
 
     /**
      * Set fechaEmision

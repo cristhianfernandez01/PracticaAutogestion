@@ -67,7 +67,7 @@ class DefaultController extends Controller
     }
 
 
-    public function pruebaImprimirAction(){
+    public function comprobanteDeudaAction(){
         $em = $this->getDoctrine()->getManager();
         $afiliado = $this->getUser();
         $estadodeuda=$em->getRepository('PagoBundle:EstadoDeDeuda')->findUltimaDeudaActiva($afiliado);
@@ -104,6 +104,12 @@ class DefaultController extends Controller
       //  readfile($rutaarchivo);
         return $response;
     }
+
+
+    public function cuponPagoAction(){
+
+    }
+
 
     public function loginAction(){
         $peticion = $this->getRequest();
@@ -167,10 +173,14 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
         $afiliado = $this->getUser();
         $estadodeuda=$em->getRepository('PagoBundle:EstadoDeDeuda')->findUltimaDeudaActiva($afiliado);
+        $basepath=$this->getRequest()->server->get('DOCUMENT_ROOT');
+        $nombrearchivo = 'bootstrap.min.css';
+        $rutacss=$basepath."/bundles/afiliado/css/".$nombrearchivo;
         return $this->render(
             'AfiliadoBundle:Default:comprobantedeuda.html.twig',
             array(
-                'deuda'=>$estadodeuda,
+                'rutacss' => $rutacss,
+                'deuda' =>$estadodeuda,
                 'afiliado' =>$afiliado
             )
         );

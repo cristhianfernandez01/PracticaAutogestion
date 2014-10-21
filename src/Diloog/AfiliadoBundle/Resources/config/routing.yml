@@ -23,9 +23,13 @@ estado_deuda:
     path:   /misdeudas
     defaults: {_controller: AfiliadoBundle:Default:estadoDeudaMostrar}
 
-deuda_prueba_imprimir:
+deuda_imprimir:
     path: /deudaimprimir
-    defaults: {_controller: AfiliadoBundle:Default:pruebaImprimir}
+    defaults: {_controller: AfiliadoBundle:Default:comprobanteDeuda}
+
+cupon_pago_imprimir:
+    path: /cuponpago
+    defaults: {_controller: AfiliadoBundle:Default:cuponPago}
 
 vista_previa:
     path: /vistaprevia

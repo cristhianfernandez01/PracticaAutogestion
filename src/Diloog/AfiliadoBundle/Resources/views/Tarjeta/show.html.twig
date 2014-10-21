@@ -33,25 +33,25 @@
         </tbody>
     </table>
 
-        <ul class="list-group list-unstyled list-inline">
-    <li>
-        <a href="{{ path('tarjeta') }}">
-            Volver al Listado
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('tarjeta_edit', { 'id': entity.id }) }}" class="btn btn-default">
-            <i class="fa fa-fw fa-edit"></i>
-            Editar
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('tarjeta_delete', { 'id': entity.id }) }}" class="btn btn-danger ask-custom">
-            <i class="fa fa-fw fa-trash-o"></i>
-            Borrar tarjeta
-        </a>
-    </li>
-</ul>
+    <ul class="list-group list-unstyled list-inline">
+        <li>
+            <a href="{{ path('tarjeta') }}">
+                Volver al Listado
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('tarjeta_edit', { 'id': entity.id }) }}" class="btn btn-default">
+                <i class="fa fa-fw fa-edit"></i>
+                Editar
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('tarjeta_delete', { 'id': entity.id }) }}" class="btn btn-danger ask-custom">
+                <i class="fa fa-fw fa-trash-o"></i>
+                Borrar tarjeta
+            </a>
+        </li>
+    </ul>
 {% endblock %}
 
 {% block javascripts %}
