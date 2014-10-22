@@ -116,12 +116,14 @@ class DefaultController extends Controller
         $kernel = $this->get('kernel');
         $directorio = $kernel->getRootDir()."/../web/pdf/";
         $nombrearchivo="cuponpago".rand(1,24000).$this->getUser()->getNumeroAfiliado().".pdf";
+        $codigo = $afiliado->getNumeroAfiliado().$estadodeuda->getNumeroDeuda().rand(255,295);
         $this->get('knp_snappy.pdf')->generateFromHtml(
             $this->renderView(
                 'AfiliadoBundle:Default:cupondepago.html.twig',
                 array(
                     'deuda'=>$estadodeuda,
-                    'afiliado' =>$afiliado
+                    'afiliado' =>$afiliado,
+                    'codigo' => $codigo
                 )
             ),
             $directorio.$nombrearchivo
@@ -141,6 +143,9 @@ class DefaultController extends Controller
         return $response;
     }
 
+    public function elegirPagoAction(){
+        return $this->render('@Afiliado/Default/elegirpago.html.twig');
+    }
 
     public function loginAction(){
         $peticion = $this->getRequest();

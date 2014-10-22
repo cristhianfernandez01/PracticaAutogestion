@@ -1,0 +1,42 @@
+{% extends '@Afiliado/layout.html.twig' %}
+
+{% block contenido %}
+    <h1 class="page-header">
+    Elija el tipo de pago
+    </h1>
+    <div class="well">
+        <p>
+            Usted puede realizar el pago de toda su deuda con tarjeta presionando la opcion <strong>Pago de toda la deuda</strong> o
+            realizar el pago en hasta 4 cuotas presionando la opcion <strong>Financiacion de la deuda</strong>. En ambas debera elegir primero
+            que tarjeta registrada utilizara y luego ingresar los datos adicionales que se presenten.
+
+        </p>
+    </div>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Realizar pago unico.
+        </div>
+        <div class="panel-body">
+        <p>
+            Realice el pago unico de su deuda
+        </p>
+       </div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+          Realizar financiacion de deuda.
+        </div>
+        <div class="panel-body">
+        <p>
+            <i class="fa fa-lightbulb-o"></i>
+            Realizar financiacion de la deuda. Puede elegir hasta 4 cuotas.
+        </p>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

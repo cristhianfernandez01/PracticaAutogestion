@@ -31,6 +31,10 @@ cupon_pago_imprimir:
     path: /cuponpago
     defaults: {_controller: AfiliadoBundle:Default:cuponPago}
 
+elegirpago:
+    path: /elegirpago
+    defaults: {_controller: AfiliadoBundle:Default:elegirPago}
+
 prueba_barcode:
     path: /barcode
     defaults: {_controller: AfiliadoBundle:Default:pruebaBarcode}

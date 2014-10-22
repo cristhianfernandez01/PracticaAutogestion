@@ -4,7 +4,8 @@
     <h1 class="page-header" xmlns="http://www.w3.org/1999/html">
     Mis Deudas
     </h1>
-    <div class="well">
+    {% if deuda is not null %}
+     <div class="well">
         <p>
             Sus deudas a la fecha {{ "now" | date("d/m/Y") }}
         </p>
@@ -47,7 +48,7 @@
                 <tr>
                     <td></td>
                     <td>{{ subdetalle.subconcepto }}</td>
-                    <td></td>
+                    <td>{{ subdetalle.fechaVencimiento | date("d/m/Y") }}</td>
                     <td>$ {{ subdetalle.importe }}</td>
                     <td></td>
                 <tr>
@@ -58,7 +59,7 @@
              <td></td>
              <td></td>
              <td colspan="2">
-              <strong>Importe total de la deuda : $ {{ deuda.importeTotal }}</strong>
+              <h4>Importe total de la deuda : $ {{ deuda.importeTotal }}</h4>
              </td>
         </tr>
         </tbody>
@@ -78,12 +79,21 @@
             </a>
         </li>
         <li>
-            <a href="{{ path('prueba_pago') }}" class="btn btn-default">
-                <i class="fa fa-fw fa-credit-card"></i>
+            <a href="{{ path('elegirpago') }}" class="btn btn-default">
+                <i class="fa fa-fw fa-money"></i>
                 Realizar Pago
             </a>
         </li>
     </ul>
 
+
+    {% else %}
+        <div class="well">
+            <p>
+                Actualmente todas sus deudas estan pagas.
+            </p>
+        </div>
+
+    {% endif %}
 
 {% endblock %}

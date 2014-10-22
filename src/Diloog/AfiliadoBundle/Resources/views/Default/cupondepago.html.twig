@@ -1,26 +1,27 @@
 {% extends '::base.html.twig' %}
 
 {% block estilos %}
-   <link href="C:\Proyectos\Symfony2\PracticaSupervisada\web\bundles\afiliado\css\bootstrap.min.css" rel="stylesheet">
+   <link href="{{ app.request.getSchemeAndHttpHost() ~ asset('bundles/afiliado/css/bootstrap.min.css') }}" rel="stylesheet" />
 {% endblock %}
 
 {% block body %}
-    <div class="container" >
+    <div class="container">
         <div class="row">
             <table class="table table-responsive">
               <tr>
                  <td>
-                   <img src="C:\Proyectos\Symfony2\PracticaSupervisada\web\Logo-CGCET.jpg" />
+                   <img src="{{ app.request.getSchemeAndHttpHost() ~ asset('Logo-CGCET.jpg') }}" />
                    <p>Colegio de Graduados en Ciencias Economicas de Tucum&aacute;n </p>
                    <p>24 de Septiembre 776 - S.M. de Tucum&aacute;n</p>
                 </td>
                 <td>
-                    <h4>Comprobante de Estado de Deuda</h4>
-                    <p>"No utilizable como comprobante de pago"</p>
+                    <h4>Cup&oacute;n de Pago</h4>
                     <p><strong>Estado de deuda Nro.: {{ deuda.numeroDeuda }}</strong></p>
                     <p>Fecha de emision de deuda: {{ deuda.fechaEmision|date("d/m/Y") }}</p>
                     <p>Fecha de comprobante: {{ 'now'|date("d/m/Y") }}</p>
+                    <p><strong>Importe total a abonar: $ {{ deuda.importeTotal|number_format(2, '.', ',') }}</strong></p>
                 </td>
+                  <td></td>>
               </tr>
               <tr>
                   <td>
@@ -30,13 +31,13 @@
                   <td>
                       <p>Numero de afiliado: {{ afiliado.numeroAfiliado }}</p>
                   </td>
-              </tr>
-              <tr>
                   <td>
-                      <p><img src="{{ app.request.getSchemeAndHttpHost() ~ mopa_barcode_url('code128', '123456789',{'barcodeOptions':{'barHeight': 60}, 'rendererOptions': {'height':90, 'width':140} }) }}" /></p>
-
+                      <p><img src="{{ app.request.getSchemeAndHttpHost() ~ mopa_barcode_url('code128', codigo ,{'barcodeOptions':{'barHeight': 60}, 'rendererOptions': {'height':90, 'width':150} } ) }}" /></p>
                   </td>
+
               </tr>
+
+
           </table>
         </div>
     </div>
