@@ -25,10 +25,8 @@
 		"knplabs/gaufrette":"0.2.*@dev",
 		"knplabs/knp-gaufrette-bundle": "dev-master",
 		"kriswallsmith/assetic": "1.1.x@stable",
-		"herzult/php-ssh": "dev-master",
-		"mopa/barcode-bundle": "dev-master",
-        "avalanche123/imagine-bundle": "dev-master", 
-        "zendframework/zendframework": "2.1.3" 		
+		"herzult/php-ssh": "dev-master"
+		
     },
     "scripts": {
         "post-install-cmd": [

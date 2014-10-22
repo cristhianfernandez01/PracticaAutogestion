@@ -1,0 +1,11 @@
+{% extends '::base.html.twig' %}
+
+{% block estilos %}
+   <link href="C:\Proyectos\Symfony2\PracticaSupervisada\web\bundles\afiliado\css\bootstrap.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+           <p><img src="{{ mopa_barcode_url('code128', '123456789',{'barcodeOptions': {}, 'rendererOptions': {} }) }}" /></p>
+{% endblock %}
+
+

@@ -1,0 +1,11 @@
+{% extends '::base.html.twig' %}
+
+{% block estilos %}
+   <link href="{{ app.request.getSchemeAndHttpHost() ~ asset('bundles/afiliado/css/bootstrap.min.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+           <p><img src="{{ mopa_barcode_url('code128', '123456789',{'barcodeOptions':{'barHeight': 60}, 'rendererOptions': {'height':90, 'width':140} }) }}" /></p>
+{% endblock %}
+
+

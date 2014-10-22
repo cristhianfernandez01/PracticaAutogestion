@@ -105,9 +105,40 @@ class DefaultController extends Controller
         return $response;
     }
 
+    public function pruebaBarcodeAction(){
+        return $this->render('AfiliadoBundle:Default:barcode.html.twig');
 
+    }
     public function cuponPagoAction(){
+        $em = $this->getDoctrine()->getManager();
+        $afiliado = $this->getUser();
+        $estadodeuda=$em->getRepository('PagoBundle:EstadoDeDeuda')->findUltimaDeudaActiva($afiliado);
+        $kernel = $this->get('kernel');
+        $directorio = $kernel->getRootDir()."/../web/pdf/";
+        $nombrearchivo="cuponpago".rand(1,24000).$this->getUser()->getNumeroAfiliado().".pdf";
+        $this->get('knp_snappy.pdf')->generateFromHtml(
+            $this->renderView(
+                'AfiliadoBundle:Default:cupondepago.html.twig',
+                array(
+                    'deuda'=>$estadodeuda,
+                    'afiliado' =>$afiliado
+                )
+            ),
+            $directorio.$nombrearchivo
+        );
 
+        $rutaarchivo = $directorio.$nombrearchivo;
+        $basepath=$this->getRequest()->server->get('DOCUMENT_ROOT');
+        $rutadescarga=$basepath."/pdf/".$nombrearchivo;
+        $archivo = new File($directorio.$nombrearchivo);
+        $response = new Response(file_get_contents($rutadescarga));
+        $disposicion = $response->headers->makeDisposition("attachment",$nombrearchivo);
+        $tamaño = $archivo->getSize();
+        $response->headers->set("Content-type", "application/force-download");
+        $response->headers->set("Content-Disposition", $disposicion);
+        $tamaño = filesize($archivo);
+        $response->headers->set("Content-Length", $tamaño);
+        return $response;
     }
 
 
