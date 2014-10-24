@@ -4,7 +4,7 @@ pago:
 
 backend:
     resource: "@BackendBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /admin/
 
 afiliado:
     resource: "@AfiliadoBundle/Resources/config/routing.yml"

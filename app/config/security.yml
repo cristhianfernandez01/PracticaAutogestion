@@ -1,5 +1,19 @@
 security:
    firewalls:
+      backend:
+        pattern: ^/admin
+        anonymous: ~
+        provider: administradores
+        form_login:
+           login_path: backend_login
+           check_path: backend_login_check
+           default_target_path: /admin/principal
+        remember_me:
+           key: cgcet_35832
+           lifetime: 3600
+        logout:
+           path: backend_logout
+           target: /admin/login
       frontend:
         pattern: ^/*
         anonymous: ~
@@ -15,11 +29,14 @@ security:
           target: /afiliado/login
    access_control:
         - { path: ^/afiliado/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/afiliado/registro, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/afiliado/*, roles: ROLE_USUARIO }
+        - { path: ^/admin/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/*, roles: ROLE_ADMIN }
    providers:
      usuarios:
         entity: { class: Diloog\AfiliadoBundle\Entity\Afiliado, property: alias }
+     administradores:
+        entity: {class: Diloog\BackendBundle\Entity\Administrador, property: alias}
    encoders:
         Diloog\AfiliadoBundle\Entity\Afiliado: plaintext
-
+        Diloog\BackendBundle\Entity\Administrador: plaintext

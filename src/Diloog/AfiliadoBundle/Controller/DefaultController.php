@@ -187,7 +187,7 @@ class DefaultController extends Controller
         //$array_usuario = json_decode($result);
         $token = "APP_USR-7912305901278826-101221-90e20568934ec8578551229a2a5e550c__D_E__-168184967";
         $url = "https://api.mercadolibre.com/users/test_user?access_token=$token";
-        $vars = "{\"site_id\":\"MLA\"}";;
+        $vars = "{\"site_id\":\"MLA\"}";
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_POST, true);

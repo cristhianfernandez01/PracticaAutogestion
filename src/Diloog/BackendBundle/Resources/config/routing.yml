@@ -1,7 +1,16 @@
-backend_homepage:
-    path:     /hello/{name}
+backend_principal:
+    path:     /principal
     defaults: { _controller: BackendBundle:Default:index }
 
+backend_login:
+    path:   /login
+    defaults: {_controller: BackendBundle:Default:login}
+
+backend_login_check:
+    path: /login_check
+
+backend_logout:
+    path: /logout
 
 envio_archivos:
     path:    /envioarchivo

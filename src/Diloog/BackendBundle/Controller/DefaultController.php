@@ -6,12 +6,28 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Gaufrette\Filesystem;
 use Gaufrette\Adapter\Sftp as SftpAdapter;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Security\Core\SecurityContext;
 
 class DefaultController extends Controller
 {
-    public function indexAction($name)
+    public function indexAction()
     {
+        $name = 'Mundo';
         return $this->render('BackendBundle:Default:index.html.twig', array('name' => $name));
+    }
+
+    public function loginAction(){
+        $peticion = $this->getRequest();
+        $sesion = $peticion->getSession();
+        $error = $peticion->attributes->get(
+            SecurityContext::AUTHENTICATION_ERROR,
+            $sesion->get(SecurityContext::AUTHENTICATION_ERROR)
+        );
+        return $this->render('BackendBundle::login.html.twig', array(
+            'last_username' => $sesion->get(SecurityContext::LAST_USERNAME),
+            'error' => $error
+        ));
+
     }
 
 

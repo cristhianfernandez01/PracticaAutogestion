@@ -1,0 +1,103 @@
+{%   extends '::base.html.twig' %}
+{% block estilos %}
+    <link href="{{ asset('bundles/afiliado/css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{asset('bundles/afiliado/css/sb-admin.css')  }}" rel="stylesheet" />
+    <link href="{{ asset('bundles/afiliado/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{ asset("bundles/afiliado/css/jqx.base.css") }}" type="text/css"/>
+
+{% endblock %}
+
+{% block body %}
+  <div id="wrapper">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <img src="{{ asset("logocgcet-small.png") }}" style="float: left" />
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+              <a class="navbar-brand" href="{{ path('afiliado_principal') }}">Sistema de Gestion de Deudas CGCET</a>
+        </div>
+
+   {% block superior %}
+       <ul class="nav navbar-right top-nav">
+           {% set usuario = app.user %}
+           <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {{ usuario.alias }} <b class="caret"></b></a>
+               <ul class="dropdown-menu">
+                   <li>
+                       <a href="#"><i class="fa fa-fw fa-user"></i>Datos personales</a>
+                   </li>
+                   <li>
+                       <a href="#"><i class="fa fa-fw fa-envelope"></i>Cambiar contrase&ntilde;a</a>
+                   </li>
+                   <li class="divider"></li>
+                   <li>
+                       <a href="{{   path('afiliado_logout') }}"><i class="fa fa-fw fa-power-off"></i> Cerrar sesion</a>
+                   </li>
+               </ul>
+           </li>
+       </ul>
+
+   {% endblock %}
+   {% block lateral %}
+       <div class="collapse navbar-collapse navbar-ex1-collapse">
+           <ul class="nav navbar-nav side-nav">
+               <li>
+                   <a href="#"><i class="fa fa-fw fa-dashboard"></i>Listar Afiliados </a>
+               </li>
+               <li>
+                   <a href="#"><i class="fa fa-fw fa-bar-chart-o"></i> Ver Usuarios</a>
+               </li>
+               <li>
+                   <a href="#"><i class="fa fa-fw fa-dashboard"></i>Operaciones realizadas </a>
+               </li>
+
+               <!--  AQUI SE GENERA EL CALENDARIO JQUERY -->
+               <div id="jqxcalendar">
+
+
+               </div>
+           </ul>
+
+
+       </div>
+   {% endblock %}
+    </nav>
+
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    {% block contenido %}
+
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+  </div>
+{% endblock %}
+
+{% block javascripts %}
+    <!-- jQuery Version 1.11.0 -->
+    <script src="{{ asset('bundles/afiliado/js/jquery-1.11.0.js') }}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ asset('bundles/afiliado/js/bootstrap.min.js') }}"></script>
+
+    <script type="text/javascript" src="{{ asset("bundles/afiliado/js/jqxcore.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("bundles/afiliado/js/jqxdatetimeinput.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("bundles/afiliado/js/jqxcalendar.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("bundles/afiliado/js/globalize.js") }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#jqxcalendar").jqxCalendar({ width: '200px', height: '200px' });
+        });
+    </script>
+{% endblock %}
