@@ -1,0 +1,47 @@
+{% extends '@Afiliado/layout.html.twig' %}
+
+{%  block estilos %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" media="screen, projection" href="{{ asset("bundles/afiliado/css/demo.css") }}" />
+
+{% endblock %}
+
+{% block contenido %}
+
+    <h1 class="page-header">Seleccion de tarjeta </h1>
+
+    <h3>Elija la tarjeta que utilizara para realizar la operacion</h3>
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Tipo de Tarjeta</th>
+                <th>N&uacute;mero de Tarjeta</th>
+                <th>Vencimiento</th>
+                <th>Elegir...</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tarjeta in tarjetas %}
+            <tr>
+                <td>{{ tarjeta.descripcionTarjeta }}</td>
+                <td>{{ tarjeta.numeroTarjeta }}</td>
+                <td>{{ tarjeta.vencimiento }}</td>
+                <td>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="{{ path('realizar_pago', { 'idtarjeta': tarjeta.id }) }}"> <i class="fa fa-fw fa-arrow"></i> Elegir</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+            <a href="{{ path('tarjeta_new') }}" class="btn btn-default">
+                 Cancelar
+            </a>
+    {% endblock %}
+
+

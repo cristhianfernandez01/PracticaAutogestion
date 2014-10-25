@@ -17,7 +17,6 @@ class EstadoDeDeudaRepository extends EntityRepository
         $em = $this->getEntityManager();
         $dql =  "SELECT  e FROM PagoBundle:EstadoDeDeuda e
                 WHERE e.afiliado = :afiliado
-                AND e.pagada = false
                 AND e.activa = true";
         $consulta = $em->createQuery($dql);
         $consulta->setParameter('afiliado', $afiliado);

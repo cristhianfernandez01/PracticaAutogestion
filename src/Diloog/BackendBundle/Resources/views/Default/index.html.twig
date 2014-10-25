@@ -1,5 +1,28 @@
 {% extends '@Backend/layout.html.twig' %}
 
 {% block contenido %}
-Hello {{ name }}!
+    <h1 class="page-header">
+        Bienvenido al Area de Administracion
+    </h1>
+    <div class="well">
+        <p>
+        <h4>
+            La informaci&oacute;n referida a las operaciones realizadas en segundo plano se muestran a continucaci&oacute;n
+        </h4>
+        </p>
+    </div>
+
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            Datos personales del afiliado
+        </div>
+        <div class="panel-body">
+            <p>
+                <i class="fa fa-lightbulb-o"></i>
+                Para poder consultar sus datos personales registrados y su estado respecto de nuestro colegio (Activo, Baja, Mantenimiento de
+                Matricula), adem&aacute;s de realizar el cambio de contraseña de su cuenta, por favor dir&iacute;jase a la opci&oacute;n
+                <strong><em>"Mis Datos"</em></strong> en el men&uacute; lateral izquierdo.
+            </p>
+        </div>
+    </div>
 {% endblock %}

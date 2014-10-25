@@ -21,6 +21,9 @@
         <p>
             Realice el pago unico de su deuda
         </p>
+            <a href="{{ path('elegir_tarjeta', { 'referer': 'pago' } )}}" class="btn btn-default">
+                Pago Unico
+            </a>
        </div>
     </div>
 
@@ -30,9 +33,11 @@
         </div>
         <div class="panel-body">
         <p>
-            <i class="fa fa-lightbulb-o"></i>
             Realizar financiacion de la deuda. Puede elegir hasta 4 cuotas.
         </p>
+            <a href="{{ path('elegir_tarjeta', { 'referer': 'financiacion' } )}}" class="btn btn-default">
+                Financiacion
+            </a>
         </div>
     </div>
 

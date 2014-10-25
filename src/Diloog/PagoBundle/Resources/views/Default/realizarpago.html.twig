@@ -1,0 +1,70 @@
+{% extends '@Afiliado/layout.html.twig' %}
+
+
+
+{% block contenido %}
+    <h1>A&ntilde;adir una Tarjeta </h1>
+
+    <div class="alert alert-info alert-dismissable">
+        <p>Complete por favor los datos del siguiente formulario
+    </div>
+
+   <div class="col-lg-6">
+   {{ form_start(form) }}
+     {{ form_errors(form) }}
+
+    <div class="form-group">
+        {{ form_label(form.tipoTarjeta, 'Tipo de tarjeta:') }}
+        {{ form_errors(form.tipoTarjeta) }}
+        {{ form_widget(form.tipoTarjeta, {'attr': {'class': 'form-control'} }) }}
+     </div>
+
+    <div class="form-group">
+        {{ form_label(form.numeroTarjeta, 'Número de tarjeta:') }}
+        {{ form_errors(form.numeroTarjeta) }}
+        {{ form_widget(form.numeroTarjeta, {'attr': {'class': 'form-control'} }) }}
+    </div>
+
+
+    <div class="form-group">
+        {{ form_label(form.vencimiento, 'Vencimiento: (mm/aa)') }}
+        {{ form_errors(form.vencimiento) }}
+        {{ form_widget(form.vencimiento, {'attr': {'class': 'form-control', 'placeholder' : 'mm/aa'} }) }}
+    </div>
+
+       <div class="form-group">
+           {{ form_label(form.codigoSeguridad, 'Codigo de Seguridad:') }}
+           {{ form_errors(form.codigoSeguridad) }}
+           {{ form_widget(form.codigoSeguridad, {'attr': {'class': 'form-control'} }) }}
+       </div>
+
+       <div class="form-group">
+           {{ form_label(form.titularNombre, 'Nombre del Titular:') }}
+           {{ form_errors(form.titularNombre) }}
+           {{ form_widget(form.titularNombre, {'attr': {'class': 'form-control'} }) }}
+       </div>
+
+       <div class="form-group">
+           {{ form_label(form.dni, 'DNI del titular') }}
+           {{ form_errors(form.dni) }}
+           {{ form_widget(form.dni, {'attr': {'class': 'form-control'} }) }}
+       </div>
+
+
+
+       <div class="form-group">
+        {{ form_widget(form.submit, {'attr': {'class': 'btn btn-default'} } ) }}
+
+        <a href="{{ path('afiliado_principal') }}">
+            Cancelar
+        </a>
+    </div>
+     {{ form_rest(form) }}
+    {{ form_end(form) }}
+
+
+   </div>
+{% endblock %}
+
+
+

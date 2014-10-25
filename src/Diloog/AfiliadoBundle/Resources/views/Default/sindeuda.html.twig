@@ -1,0 +1,21 @@
+{% extends '@Afiliado/layout.html.twig' %}
+
+{% block contenido %}
+    <h1 class="page-header" xmlns="http://www.w3.org/1999/html">
+    Mis Deudas
+    </h1>
+     <div class="well">
+        <p>
+            Sus deudas a la fecha {{ "now" | date("d/m/Y") }}
+        </p>
+    </div>
+
+        <div class="well">
+            <p>
+                Actualmente todas sus deudas estan pagas.
+            </p>
+        </div>
+
+
+
+{% endblock %}

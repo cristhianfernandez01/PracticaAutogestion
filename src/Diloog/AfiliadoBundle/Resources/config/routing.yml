@@ -65,3 +65,10 @@ cambio_password:
     path: /cambiopassword
     defaults: {_controller: AfiliadoBundle:Datos:cambioPassword}
 
+elegir_tarjeta:
+    path: /elegirtarjeta/{referer}
+    defaults: {_controller: AfiliadoBundle:Default:elegirTarjeta}
+
+realizar_pago:
+    path: /pago/{idtarjeta}
+    defaults:  {_controller: AfiliadoBundle:Default:realizarPago}

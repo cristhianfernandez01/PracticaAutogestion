@@ -2,8 +2,11 @@
 
 namespace Diloog\AfiliadoBundle\Controller;
 
+use Diloog\PagoBundle\Form\PagoType;
+use Diloog\PagoBundle\Form\Model\PagoModel;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\SecurityContext;
 use Symfony\Component\HttpFoundation\File\File;
 
@@ -23,8 +26,10 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
         $afiliado = $this->getUser();
         $estadodeuda=$em->getRepository('PagoBundle:EstadoDeDeuda')->findUltimaDeudaActiva($afiliado);
+        if ($estadodeuda->isPagada() ){
+            return $this->render('@Afiliado/Default/sindeuda.html.twig');
+        }
         return $this->render('@Afiliado/Default/estadodeuda.html.twig',array('deuda'=>$estadodeuda));
-
     }
 
     public function procesamientoPagoAction($referencia){
@@ -147,6 +152,12 @@ class DefaultController extends Controller
         return $this->render('@Afiliado/Default/elegirpago.html.twig');
     }
 
+    public function elegirTarjetaAction($referer){
+        $em = $this->getDoctrine()->getManager();
+        $tarjetas = $this->getUser()->getTarjetas();
+        return $this->render('PagoBundle:Default:elegirtarjeta.html.twig',array('tarjetas' => $tarjetas, 'referer' => $referer));
+    }
+
     public function loginAction(){
         $peticion = $this->getRequest();
         $sesion = $peticion->getSession();
@@ -160,6 +171,30 @@ class DefaultController extends Controller
         ));
 
     }
+
+
+    public function realizarPagoAction(Request $request, $idtarjeta){
+        $em = $this->getDoctrine()->getManager();
+        $tarjeta = $em->getRepository('AfiliadoBundle:Tarjeta')->find($idtarjeta);
+        $pagomodelo = new PagoModel();
+        $pagomodelo->setNumeroTarjeta($tarjeta->getNumeroTarjeta());
+        $pagomodelo->setTipoTarjeta($tarjeta->getDescripcionTarjeta());
+        $pagomodelo->setVencimiento($tarjeta->getVencimiento());
+        $pagomodelo->setDni($this->getUser()->getDni());
+        $form = $this->createForm(new PagoType(),$pagomodelo);
+        $form->add('submit', 'submit', array('label' => 'Pagar'));
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+
+            return $this->redirect($this->generateUrl('tarjeta'));
+        }
+
+        return $this->render('PagoBundle:Default:realizarpago.html.twig', array(
+            'form'   => $form->createView(),
+        ));
+    }
+
 
     public function obtenerUsuarioPruebaAction(){
         $clienteid='7912305901278826';
