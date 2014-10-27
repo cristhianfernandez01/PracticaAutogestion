@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7275681-d7e3-4f1b-802e-ef3d01bb45c1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Diloog/PagoBundle/Form/Model/PagoModel.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Diloog/PagoBundle/Form/PagoType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Diloog/PagoBundle/Resources/views/Default/elegirtarjeta.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Diloog/PagoBundle/Resources/views/Default/realizarpago.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/sindeuda.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/Service/CheckoutManager.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Diloog/PagoBundle/Resources/views/Default/realizarfinanciacion.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/EstadoDeDeudaRepository.php" afterPath="$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/EstadoDeDeudaRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/PracticaSupervisada.iml" afterPath="$PROJECT_DIR$/.idea/PracticaSupervisada.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/elegirpago.html.twig" afterPath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/elegirpago.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/BackendBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/src/Diloog/BackendBundle/Resources/views/Default/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/PagoBundle/Form/Model/PagoModel.php" afterPath="$PROJECT_DIR$/src/Diloog/PagoBundle/Form/Model/PagoModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/PagoBundle/Resources/views/Default/elegirtarjeta.html.twig" afterPath="$PROJECT_DIR$/src/Diloog/PagoBundle/Resources/views/Default/elegirtarjeta.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/PagoBundle/Resources/views/Default/realizarpago.html.twig" afterPath="$PROJECT_DIR$/src/Diloog/PagoBundle/Resources/views/Default/realizarpago.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/config/routing.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -39,30 +35,55 @@
       <file leaf-file-name="elegirtarjeta.html.twig" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Resources/views/Default/elegirtarjeta.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="17" selection-start="1228" selection-end="1228" vertical-scroll-proportion="-13.730769" vertical-offset="255" max-vertical-offset="901">
-              <folding>
-                <element signature="e#12#38#0" expanded="false" />
-              </folding>
+            <state line="39" column="21" selection-start="1482" selection-end="1482" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="986">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DefaultController.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DefaultController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="184" column="62" selection-start="7584" selection-end="7584" vertical-scroll-proportion="0.4773218" vertical-offset="2907" max-vertical-offset="4522">
+            <state line="213" column="9" selection-start="8791" selection-end="8791" vertical-scroll-proportion="-12.576923" vertical-offset="3192" max-vertical-offset="4811">
               <folding>
-                <element signature="e#52#88#0" expanded="true" />
                 <element signature="e#7717#7726#1" expanded="true" />
+                <element signature="e#8769#8778#1" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TarjetaController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Controller/TarjetaController.php">
+      <file leaf-file-name="realizarfinanciacion.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Resources/views/Default/realizarfinanciacion.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="51" selection-start="1945" selection-end="2004" vertical-scroll-proportion="-9.038462" vertical-offset="938" max-vertical-offset="3910">
+            <state line="5" column="32" selection-start="100" selection-end="100" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="1377">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="realizarpago.html.twig" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Resources/views/Default/realizarpago.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="30" selection-start="98" selection-end="98" vertical-scroll-proportion="0.17857143" vertical-offset="0" max-vertical-offset="1292">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TarjetaType.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Form/TarjetaType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="76" selection-start="519" selection-end="546" vertical-scroll-proportion="-6.5384617" vertical-offset="102" max-vertical-offset="765">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Configuration.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/DependencyInjection/Configuration.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
               <folding />
             </state>
           </provider>
@@ -71,10 +92,8 @@
       <file leaf-file-name="PagoModel.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Form/Model/PagoModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="21" selection-start="108" selection-end="108" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="2601">
-              <folding>
-                <element signature="e#6#85#0" expanded="true" />
-              </folding>
+            <state line="163" column="0" selection-start="2653" selection-end="2653" vertical-scroll-proportion="-30.73077" vertical-offset="1887" max-vertical-offset="2822">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -82,19 +101,8 @@
       <file leaf-file-name="EstadoDeDeuda.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/EstadoDeDeuda.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="21" selection-start="875" selection-end="875" vertical-scroll-proportion="-30.73077" vertical-offset="0" max-vertical-offset="4182">
+            <state line="48" column="21" selection-start="875" selection-end="875" vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="4199">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="realizarpago.html.twig" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Resources/views/Default/realizarpago.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="20" selection-start="1973" selection-end="1973" vertical-scroll-proportion="-37.923077" vertical-offset="0" max-vertical-offset="1292">
-              <folding>
-                <element signature="e#12#38#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -102,7 +110,7 @@
       <file leaf-file-name="routing.yml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/config/routing.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="64" selection-start="1779" selection-end="1779" vertical-scroll-proportion="0.0" vertical-offset="790" max-vertical-offset="1360">
+            <state line="77" column="72" selection-start="2023" selection-end="2023" vertical-scroll-proportion="0.0" vertical-offset="860" max-vertical-offset="1428">
               <folding />
             </state>
           </provider>
@@ -111,36 +119,8 @@
       <file leaf-file-name="elegirpago.html.twig" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/elegirpago.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="73" selection-start="1300" selection-end="1300" vertical-scroll-proportion="-24.192308" vertical-offset="0" max-vertical-offset="884">
-              <folding>
-                <element signature="e#12#38#0" expanded="false" />
-                <marker date="1414263328603" expanded="true" signature="44:1424" placeholder="{% block contenido ...%}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EstadoDeDeudaRepository.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/EstadoDeDeudaRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="36" selection-start="651" selection-end="651" vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="561">
-              <folding>
-                <marker date="1414263988478" expanded="true" signature="390:512" placeholder="SELECT e FRO..PagoBundle..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.html.twig" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Tarjeta/show.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="66" selection-start="1530" selection-end="1549" vertical-scroll-proportion="-11.115385" vertical-offset="527" max-vertical-offset="1496">
-              <folding>
-                <element signature="e#12#38#0" expanded="false" />
-                <element signature="e#1179#1186#0" expanded="false" />
-                <element signature="e#1302#1314#0" expanded="false" />
-                <element signature="e#1513#1527#0" expanded="false" />
-              </folding>
+            <state line="37" column="14" selection-start="1241" selection-end="1241" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="884">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -203,13 +183,15 @@
         <option value="$PROJECT_DIR$/src/Diloog/BackendBundle/Resources/views/Default/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/sindeuda.html.twig" />
         <option value="$PROJECT_DIR$/src/Diloog/PagoBundle/Form/PagoType.php" />
-        <option value="$PROJECT_DIR$/src/Diloog/PagoBundle/Resources/views/Default/realizarpago.html.twig" />
-        <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/elegirpago.html.twig" />
         <option value="$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/EstadoDeDeudaRepository.php" />
+        <option value="$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/Service/CheckoutManager.php" />
+        <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/Diloog/PagoBundle/Resources/views/Default/elegirtarjeta.html.twig" />
-        <option value="$PROJECT_DIR$/src/Diloog/PagoBundle/Form/Model/PagoModel.php" />
         <option value="$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/src/Diloog/PagoBundle/Form/Model/PagoModel.php" />
+        <option value="$PROJECT_DIR$/src/Diloog/PagoBundle/Resources/views/Default/realizarfinanciacion.html.twig" />
+        <option value="$PROJECT_DIR$/src/Diloog/PagoBundle/Resources/views/Default/realizarpago.html.twig" />
       </list>
     </option>
   </component>
@@ -234,7 +216,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -245,29 +227,7 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PracticaSupervisada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PracticaSupervisada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PracticaSupervisada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -281,8 +241,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Proyectos\Symfony2\PracticaSupervisada\src\Diloog\AfiliadoBundle\Resources\views\Tarjeta" />
       <recent name="C:\Proyectos\Symfony2\PracticaSupervisada\src\Diloog\PagoBundle\Resources\views\Default" />
+      <recent name="C:\Proyectos\Symfony2\PracticaSupervisada\src\Diloog\AfiliadoBundle\Resources\views\Tarjeta" />
       <recent name="C:\Proyectos\Symfony2\PracticaSupervisada\src\Diloog\PagoBundle\Form\Model" />
       <recent name="C:\Proyectos\Symfony2\PracticaSupervisada\src\Diloog\AfiliadoBundle\Resources\views\Default" />
       <recent name="C:\Proyectos\Symfony2\PracticaSupervisada\src\Diloog\BackendBundle\Resources\views" />
@@ -362,7 +322,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1288" height="698" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3273906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3096539" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -371,7 +331,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Symfony2" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22617124" sideWeight="0.6963351" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26171243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18497577" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -379,11 +339,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869565" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32984293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -404,9 +364,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25767368" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -427,21 +387,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Tarjeta.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="7" selection-start="1587" selection-end="1587" vertical-scroll-proportion="0.0" vertical-offset="1202" max-vertical-offset="2686" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/herzult/php-ssh/src/Ssh/Sftp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="23" selection-start="2012" selection-end="2012" vertical-scroll-proportion="0.0" vertical-offset="860" max-vertical-offset="5168" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Diloog/BackendBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="210" selection-end="210" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="255" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="48" column="19" selection-start="2200" selection-end="2200" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1530" />
@@ -534,9 +479,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/SubdetalleDeuda.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="24" selection-start="522" selection-end="522" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="2737">
-          <folding />
-        </state>
+        <state line="33" column="24" selection-start="522" selection-end="522" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="2737" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/cupondepago.html.twig">
@@ -551,9 +494,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/estadodeuda.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="12" selection-start="2271" selection-end="2271" vertical-scroll-proportion="0.0" vertical-offset="1202" max-vertical-offset="1768">
-          <folding />
-        </state>
+        <state line="80" column="12" selection-start="2271" selection-end="2271" vertical-scroll-proportion="0.0" vertical-offset="1202" max-vertical-offset="1768" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/BackendBundle/Controller/DefaultController.php">
@@ -566,68 +507,39 @@
         <state line="18" column="0" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="408" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Form/TarjetaType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="28" selection-start="326" selection-end="326" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="799">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/BackendBundle/Entity/Administrador.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="47" selection-end="47" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="2975">
-          <folding />
-        </state>
+        <state line="4" column="0" selection-start="47" selection-end="47" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="2975" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="21" selection-start="65" selection-end="65" vertical-scroll-proportion="0.07343412" vertical-offset="0" max-vertical-offset="1122">
-          <folding />
-        </state>
+        <state line="2" column="21" selection-start="65" selection-end="65" vertical-scroll-proportion="0.07343412" vertical-offset="0" max-vertical-offset="1122" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/BackendBundle/Resources/views/login.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="29" selection-start="1093" selection-end="1093" vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="1054">
-          <folding />
-        </state>
+        <state line="29" column="29" selection-start="1093" selection-end="1093" vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="1054" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/BackendBundle/Resources/views/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="0" selection-start="2712" selection-end="2712" vertical-scroll-proportion="-39.884617" vertical-offset="0" max-vertical-offset="1853">
-          <folding />
-        </state>
+        <state line="61" column="0" selection-start="2712" selection-end="2712" vertical-scroll-proportion="-39.884617" vertical-offset="0" max-vertical-offset="1853" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/sindeuda.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="278" selection-end="278" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="442">
-          <folding>
-            <element signature="e#12#38#0" expanded="false" />
-            <marker date="1414249918994" expanded="true" signature="-1:-1" placeholder="{% block contenido ...%}" />
-            <marker date="1414249918994" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1414249918994" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1414249918994" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1414249918994" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1414249918994" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
+        <state line="11" column="0" selection-start="278" selection-end="278" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="442" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/security.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="41" selection-start="1228" selection-end="1228" vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="816">
-          <folding />
-        </state>
+        <state line="38" column="41" selection-start="1228" selection-end="1228" vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="816" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/BackendBundle/Resources/views/Default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="44" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="561">
-          <folding />
-        </state>
+        <state line="4" column="44" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="561" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Form/PagoType.php">
@@ -641,125 +553,125 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/config/routing/tarjeta.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="62" selection-start="773" selection-end="773" vertical-scroll-proportion="0.810757" vertical-offset="69" max-vertical-offset="595">
-          <folding />
-        </state>
+        <state line="28" column="62" selection-start="773" selection-end="773" vertical-scroll-proportion="0.810757" vertical-offset="69" max-vertical-offset="595" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Tarjeta/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="34" selection-start="1399" selection-end="1399" vertical-scroll-proportion="1.1382289" vertical-offset="0" max-vertical-offset="986">
-          <folding />
-        </state>
+        <state line="31" column="34" selection-start="1399" selection-end="1399" vertical-scroll-proportion="1.1382289" vertical-offset="0" max-vertical-offset="986" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/Pago.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="0" selection-start="697" selection-end="697" vertical-scroll-proportion="-28.115385" vertical-offset="0" max-vertical-offset="2669">
-          <folding />
-        </state>
+        <state line="43" column="0" selection-start="697" selection-end="697" vertical-scroll-proportion="-28.115385" vertical-offset="0" max-vertical-offset="2669" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Afiliado.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="160" column="5" selection-start="3175" selection-end="3175" vertical-scroll-proportion="-41.96154" vertical-offset="1561" max-vertical-offset="7378">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Resources/views/Default/realizarpago.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="20" selection-start="1973" selection-end="1973" vertical-scroll-proportion="-37.923077" vertical-offset="0" max-vertical-offset="1292">
-          <folding>
-            <element signature="e#12#38#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="160" column="5" selection-start="3175" selection-end="3175" vertical-scroll-proportion="-41.96154" vertical-offset="1561" max-vertical-offset="7378" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Tarjeta/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="66" selection-start="1530" selection-end="1549" vertical-scroll-proportion="-11.115385" vertical-offset="527" max-vertical-offset="1496">
-          <folding>
-            <element signature="e#12#38#0" expanded="false" />
-            <element signature="e#1179#1186#0" expanded="false" />
-            <element signature="e#1302#1314#0" expanded="false" />
-            <element signature="e#1513#1527#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/elegirpago.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="73" selection-start="1300" selection-end="1300" vertical-scroll-proportion="-24.192308" vertical-offset="0" max-vertical-offset="884">
-          <folding>
-            <element signature="e#12#38#0" expanded="false" />
-            <marker date="1414263328603" expanded="true" signature="44:1424" placeholder="{% block contenido ...%}" />
-          </folding>
-        </state>
+        <state line="48" column="66" selection-start="1530" selection-end="1549" vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="1496" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/EstadoDeDeudaRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="36" selection-start="651" selection-end="651" vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="561">
-          <folding>
-            <marker date="1414263988478" expanded="true" signature="390:512" placeholder="SELECT e FRO..PagoBundle..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Resources/views/Default/elegirtarjeta.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="17" selection-start="1228" selection-end="1228" vertical-scroll-proportion="-13.730769" vertical-offset="255" max-vertical-offset="901">
-          <folding>
-            <element signature="e#12#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="64" selection-start="1779" selection-end="1779" vertical-scroll-proportion="0.0" vertical-offset="790" max-vertical-offset="1360">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Form/Model/PagoModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="21" selection-start="108" selection-end="108" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="2601">
-          <folding>
-            <element signature="e#6#85#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/EstadoDeDeuda.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="21" selection-start="875" selection-end="875" vertical-scroll-proportion="-30.73077" vertical-offset="0" max-vertical-offset="4182">
+        <state line="22" column="36" selection-start="651" selection-end="651" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="561">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Entity/Tarjeta.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="160" column="49" selection-start="3183" selection-end="3183" vertical-scroll-proportion="-40.23077" vertical-offset="1640" max-vertical-offset="2907">
-          <folding />
-        </state>
+        <state line="160" column="49" selection-start="3183" selection-end="3183" vertical-scroll-proportion="-40.23077" vertical-offset="1640" max-vertical-offset="2907" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Controller/TarjetaController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="51" selection-start="1945" selection-end="2004" vertical-scroll-proportion="-9.038462" vertical-offset="938" max-vertical-offset="3910">
+        <state line="73" column="51" selection-start="1945" selection-end="2004" vertical-scroll-proportion="0.0" vertical-offset="1241" max-vertical-offset="3978">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/Service/CheckoutManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="157" selection-end="157" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="323">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Entity/EstadoDeDeuda.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="21" selection-start="875" selection-end="875" vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="4199">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/views/Default/elegirpago.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="14" selection-start="1241" selection-end="1241" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="884">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="72" selection-start="2023" selection-end="2023" vertical-scroll-proportion="0.0" vertical-offset="860" max-vertical-offset="1428">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Resources/views/Default/elegirtarjeta.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="21" selection-start="1482" selection-end="1482" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="986">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/DependencyInjection/Configuration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Form/TarjetaType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="76" selection-start="519" selection-end="546" vertical-scroll-proportion="-6.5384617" vertical-offset="102" max-vertical-offset="765">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Diloog/AfiliadoBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="184" column="62" selection-start="7584" selection-end="7584" vertical-scroll-proportion="0.4773218" vertical-offset="2907" max-vertical-offset="4522">
+        <state line="213" column="9" selection-start="8791" selection-end="8791" vertical-scroll-proportion="-12.576923" vertical-offset="3192" max-vertical-offset="4811">
           <folding>
-            <element signature="e#52#88#0" expanded="true" />
             <element signature="e#7717#7726#1" expanded="true" />
+            <element signature="e#8769#8778#1" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Form/Model/PagoModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="163" column="0" selection-start="2653" selection-end="2653" vertical-scroll-proportion="-30.73077" vertical-offset="1887" max-vertical-offset="2822">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Resources/views/Default/realizarfinanciacion.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="32" selection-start="100" selection-end="100" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="1377">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diloog/PagoBundle/Resources/views/Default/realizarpago.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="30" selection-start="98" selection-end="98" vertical-scroll-proportion="0.17857143" vertical-offset="0" max-vertical-offset="1292">
+          <folding />
         </state>
       </provider>
     </entry>

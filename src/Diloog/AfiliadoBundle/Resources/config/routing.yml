@@ -72,3 +72,7 @@ elegir_tarjeta:
 realizar_pago:
     path: /pago/{idtarjeta}
     defaults:  {_controller: AfiliadoBundle:Default:realizarPago}
+
+realizar_financiacion:
+    path: /financiacion/{idtarjeta}
+    defaults:  {_controller: AfiliadoBundle:Default:realizarFinanciacion}

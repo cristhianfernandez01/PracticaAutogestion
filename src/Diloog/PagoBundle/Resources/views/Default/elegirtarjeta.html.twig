@@ -30,7 +30,12 @@
                 <td>
                 <ul class="list-group">
                     <li class="list-group-item">
+                        {% if referer=='pago' %}
                         <a href="{{ path('realizar_pago', { 'idtarjeta': tarjeta.id }) }}"> <i class="fa fa-fw fa-arrow"></i> Elegir</a>
+
+                         {% elseif referer=='financiacion' %}
+                         <a href="{{ path('realizar_financiacion', { 'idtarjeta': tarjeta.id }) }}"> <i class="fa fa-fw fa-arrow"></i> Elegir</a>
+                        {% endif %}
                     </li>
                 </ul>
                 </td>

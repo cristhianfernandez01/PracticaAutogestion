@@ -195,6 +195,29 @@ class DefaultController extends Controller
         ));
     }
 
+    public function realizarFinanciacionAction(Request $request, $idtarjeta){
+        $em = $this->getDoctrine()->getManager();
+        $tarjeta = $em->getRepository('AfiliadoBundle:Tarjeta')->find($idtarjeta);
+        $pagomodelo = new PagoModel();
+        $pagomodelo->setNumeroTarjeta($tarjeta->getNumeroTarjeta());
+        $pagomodelo->setTipoTarjeta($tarjeta->getDescripcionTarjeta());
+        $pagomodelo->setVencimiento($tarjeta->getVencimiento());
+        $pagomodelo->setDni($this->getUser()->getDni());
+        $form = $this->createForm(new PagoType(),$pagomodelo);
+        $form->add('cantidadCuotas','choice', array('choices'   => array('2' => '2', '3' => '3', '4' => '4')));
+        $form->add('submit', 'submit', array('label' => 'Pagar'));
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+
+            return $this->redirect($this->generateUrl('tarjeta'));
+        }
+
+        return $this->render('PagoBundle:Default:realizarfinanciacion.html.twig', array(
+            'form'   => $form->createView(),
+        ));
+
+    }
 
     public function obtenerUsuarioPruebaAction(){
         $clienteid='7912305901278826';

@@ -36,6 +36,7 @@ class PagoModel
      */
     protected $codigoSeguridad;
 
+
     /**
      * @Assert\NotBlank()
      */
@@ -46,6 +47,8 @@ class PagoModel
      * @Assert\Type(type="integer")
      */
     protected $dni;
+
+    protected $cantidadCuotas;
 
     /**
      * @param mixed $codigoSeguridad
@@ -143,6 +146,21 @@ class PagoModel
         return $this->vencimiento;
     }
 
+    /**
+     * @param mixed $cantidadCuotas
+     */
+    public function setCantidadCuotas($cantidadCuotas)
+    {
+        $this->cantidadCuotas = $cantidadCuotas;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCantidadCuotas()
+    {
+        return $this->cantidadCuotas;
+    }
 
 
 }

@@ -3,7 +3,7 @@
 
 
 {% block contenido %}
-    <h1>Realizar pago de deuda</h1>
+    <h1>Financiacion de la deuda </h1>
 
     <div class="alert alert-info alert-dismissable">
         <p>Complete por favor los datos del siguiente formulario
@@ -51,6 +51,11 @@
        </div>
 
 
+       <div class="form-group">
+           {{ form_label(form.cantidadCuotas, 'Cantidad de Cuotas') }}
+           {{ form_errors(form.cantidadCuotas) }}
+           {{ form_widget(form.cantidadCuotas, {'attr': {'class': 'form-control'} }) }}
+       </div>
 
        <div class="form-group">
         {{ form_widget(form.submit, {'attr': {'class': 'btn btn-default'} } ) }}
