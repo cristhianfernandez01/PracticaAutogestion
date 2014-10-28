@@ -1,0 +1,8 @@
+{% extends '@Backend/layout.html.twig' %}
+
+{% block contenido %}
+    <form method="get" action="{{ path('listar_afiliados') }}">
+        {{ form_rest(form) }}
+        <input type="submit" name="submit-filter" value="filter" />
+    </form>
+{% endblock %}

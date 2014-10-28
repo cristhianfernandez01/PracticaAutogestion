@@ -27,21 +27,21 @@
             </tr>
         </thead>
         <tbody>
-        {% for entity in entities %}
+        {% for tarjeta in tarjetas %}
             <tr>
-                <td>{{ entity.descripcionTarjeta }}</td>
-                <td>{{ entity.numeroTarjeta }}</td>
-                <td>{{ entity.vencimiento }}</td>
+                <td>{{ tarjeta.descripcionTarjeta }}</td>
+                <td>{{ tarjeta.numeroTarjeta }}</td>
+                <td>{{ tarjeta.vencimiento }}</td>
                 <td>
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <a href="{{ path('tarjeta_show', { 'id': entity.id }) }}"> <i class="fa fa-fw fa-eye"></i> Detalles</a>
+                        <a href="{{ path('tarjeta_show', { 'id': tarjeta.id }) }}"> <i class="fa fa-fw fa-eye"></i> Detalles</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="{{ path('tarjeta_edit', { 'id': entity.id }) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
+                        <a href="{{ path('tarjeta_edit', { 'id': tarjeta.id }) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="{{ path('tarjeta_delete', { 'id': entity.id }) }}" class="ask-custom"><i class="fa fa-fw fa-trash-o"></i> Eliminar</a>
+                        <a href="{{ path('tarjeta_delete', { 'id': tarjeta.id }) }}" class="ask-custom"><i class="fa fa-fw fa-trash-o"></i> Eliminar</a>
                     </li>
                 </ul>
                 </td>
@@ -62,7 +62,6 @@
        <script type="text/javascript">
 
            $(document).ready(function() {
-
 
                $('.ask-plain').click(function(e) {
 

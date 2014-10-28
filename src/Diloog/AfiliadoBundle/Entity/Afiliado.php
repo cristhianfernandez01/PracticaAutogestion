@@ -3,6 +3,7 @@
 namespace Diloog\AfiliadoBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection as ArrayCollection;
+use Doctrine\Common\Collections\Criteria;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\Role\Role;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -65,7 +66,7 @@ class Afiliado implements UserInterface
     /**
      * @var Estado
      *
-     * @ORM\OneToOne(targetEntity="Diloog\AfiliadoBundle\Entity\Estado")
+     * @ORM\ManyToOne(targetEntity="Diloog\AfiliadoBundle\Entity\Estado")
      * @ORM\JoinColumn(name="estado_id", referencedColumnName="id")
      */
 
@@ -385,6 +386,23 @@ class Afiliado implements UserInterface
 
     public function __toString(){
         return $this->getApellido().", ".$this->getNombre();
+    }
+
+    public function tarjetaPropia($idtarjeta){
+        $tarjetas = $this->getTarjetas();
+        $checkIdTarjeta = function ($id) {
+            return function($key, Tarjeta $tarjeta) use ($id) {
+                return $tarjeta->getId() == $id;
+            };
+        };
+        $propia= $tarjetas->exists($checkIdTarjeta($idtarjeta));
+      /*  foreach ($tarjetas as $tarjeta ){
+            if ($tarjeta->getId() == $idtarjeta){
+                $propia=true;
+                break;
+            }
+        }*/
+        return $propia;
     }
 
 

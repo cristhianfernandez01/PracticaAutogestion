@@ -3,13 +3,16 @@
 namespace Diloog\AfiliadoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\ClassMetadata;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\ExecutionContext;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Tarjeta
  * @ORM\Table()
  * @ORM\Entity
+ * @UniqueEntity("numeroTarjeta")
  * @Assert\Callback(methods={"esVencimientoValido"})
  */
 class Tarjeta
@@ -26,7 +29,7 @@ class Tarjeta
     /**
      * @var integer
      * @Assert\Luhn(message = "El numero de tarjeta ingresado no es válido")
-     * @ORM\Column(name="numero_tarjeta", type="string", length=20)
+     * @ORM\Column(name="numero_tarjeta", type="string", length=20, unique=true)
      */
     private $numeroTarjeta;
 
@@ -48,6 +51,7 @@ class Tarjeta
      * @ORM\ManyToOne(targetEntity="Diloog\AfiliadoBundle\Entity\Afiliado",inversedBy="tarjetas")
      * @ORM\JoinColumn(name="afiliado_id", referencedColumnName="id")
      */
+
     private $afiliado;
 
 
@@ -164,4 +168,6 @@ formato correcto ( formato mm/aa)', array(), null);
         }
 
     }
+
+
 }

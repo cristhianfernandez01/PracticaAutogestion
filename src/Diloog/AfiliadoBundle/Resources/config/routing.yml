@@ -70,9 +70,9 @@ elegir_tarjeta:
     defaults: {_controller: AfiliadoBundle:Default:elegirTarjeta}
 
 realizar_pago:
-    path: /pago/{idtarjeta}
+    path: /pago/{idtarjeta}/{token}
     defaults:  {_controller: AfiliadoBundle:Default:realizarPago}
 
 realizar_financiacion:
-    path: /financiacion/{idtarjeta}
+    path: /financiacion/{idtarjeta}/{token}
     defaults:  {_controller: AfiliadoBundle:Default:realizarFinanciacion}

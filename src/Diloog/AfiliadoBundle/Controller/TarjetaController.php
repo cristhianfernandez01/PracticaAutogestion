@@ -21,12 +21,13 @@ class TarjetaController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
+        /*$em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('AfiliadoBundle:Tarjeta')->findAll();
-
+        */
+        $tarjetas = $this->getUser()->getTarjetas();
         return $this->render('AfiliadoBundle:Tarjeta:index.html.twig', array(
-            'entities' => $entities,
+            'tarjetas' => $tarjetas,
         ));
     }
     /**
@@ -71,7 +72,7 @@ class TarjetaController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Agregar'));
 
         return $form;
     }

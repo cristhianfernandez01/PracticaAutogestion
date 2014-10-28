@@ -173,9 +173,14 @@ class DefaultController extends Controller
     }
 
 
-    public function realizarPagoAction(Request $request, $idtarjeta){
+    public function realizarPagoAction(Request $request, $idtarjeta, $token){
         $em = $this->getDoctrine()->getManager();
         $tarjeta = $em->getRepository('AfiliadoBundle:Tarjeta')->find($idtarjeta);
+        $propia = $this->getUser()->tarjetaPropia($idtarjeta);
+        if ($propia === false && $token != md5($tarjeta->getNumeroTarjeta())){
+            return $this->render('AfiliadoBundle:Default:tarjetaimpropia.html.twig');
+        }
+       // ld($propia);
         $pagomodelo = new PagoModel();
         $pagomodelo->setNumeroTarjeta($tarjeta->getNumeroTarjeta());
         $pagomodelo->setTipoTarjeta($tarjeta->getDescripcionTarjeta());
@@ -195,9 +200,13 @@ class DefaultController extends Controller
         ));
     }
 
-    public function realizarFinanciacionAction(Request $request, $idtarjeta){
+    public function realizarFinanciacionAction(Request $request, $idtarjeta, $token){
         $em = $this->getDoctrine()->getManager();
         $tarjeta = $em->getRepository('AfiliadoBundle:Tarjeta')->find($idtarjeta);
+        $propia = $this->getUser()->tarjetaPropia($idtarjeta);
+        if ($propia === false && $token != md5($tarjeta->getNumeroTarjeta())){
+            return $this->render('AfiliadoBundle:Default:tarjetaimpropia.html.twig');
+        }
         $pagomodelo = new PagoModel();
         $pagomodelo->setNumeroTarjeta($tarjeta->getNumeroTarjeta());
         $pagomodelo->setTipoTarjeta($tarjeta->getDescripcionTarjeta());

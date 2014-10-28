@@ -23,9 +23,7 @@ class AppKernel extends Kernel
 			new RaulFraile\Bundle\LadybugBundle\RaulFraileLadybugBundle(),
 			new Knp\Bundle\GaufretteBundle\KnpGaufretteBundle(),
 			new Avalanche\Bundle\ImagineBundle\AvalancheImagineBundle(),
-            new Mopa\Bundle\BarcodeBundle\MopaBarcodeBundle(),
-			new Liuggio\ExcelBundle\LiuggioExcelBundle(),
-			new Lexik\Bundle\FormFilterBundle\LexikFormFilterBundle()
+            new Mopa\Bundle\BarcodeBundle\MopaBarcodeBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
