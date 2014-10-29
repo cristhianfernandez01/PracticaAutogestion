@@ -8,12 +8,14 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\Role\Role;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
+use APY\DataGridBundle\Grid\Mapping as GRID;
 
 /**
  * Afiliado
  *
  * @ORM\Table()
  * @ORM\Entity
+ * @GRID\Source(columns="id, numeroAfiliado, apellido, nombre, dni, estado.nombre, domicilio, localidad ,alias, email", sortable= true)
  */
 class Afiliado implements UserInterface
 {
@@ -23,12 +25,14 @@ class Afiliado implements UserInterface
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @GRID\Column(field="id", title="ID")
      */
     private $id;
 
     /**
      * @var integer
      * @ORM\Column(name="numero_afiliado", type="integer")
+     * @GRID\Column(field="numeroAfiliado", title="Numero de Afiliado")
      */
     private $numeroAfiliado;
 
@@ -36,12 +40,14 @@ class Afiliado implements UserInterface
      * @var string
      * @Assert\NotBlank()
      * @ORM\Column(name="nombre", type="string", length=45)
+     * @GRID\Column(field="nombre", title="Nombre")
      */
     private $nombre;
 
     /**
      * @var string
      * @ORM\Column(name="apellido", type="string", length=45)
+     * @GRID\Column(field="apellido", title="Apellido")
      */
     private $apellido;
 
@@ -49,6 +55,7 @@ class Afiliado implements UserInterface
      * @var integer
      * @Assert\NotBlank()
      * @ORM\Column(name="dni", type="integer")
+     * @GRID\Column(field="dni", title="DNI")
      */
     private $dni;
 
@@ -58,12 +65,13 @@ class Afiliado implements UserInterface
      * @var string
      * @Assert\NotBlank()
      * @ORM\Column(name="domicilio", type="string", length=255)
+     * @GRID\Column(field="domicilio", title="Domicilio")
      */
     private $domicilio;
 
     /**
      * @var Estado
-     *
+     * @GRID\Column(field="estado.nombre", title="Estado", joinType="inner")
      * @ORM\ManyToOne(targetEntity="Diloog\AfiliadoBundle\Entity\Estado")
      * @ORM\JoinColumn(name="estado_id", referencedColumnName="id")
      */
@@ -72,7 +80,7 @@ class Afiliado implements UserInterface
 
     /**
      * @var string
-     *
+     * @GRID\Column(field= "alias", title="Nombre de Usuario (nick)")
      * @ORM\Column(name="alias", type="string", length=25)
      */
     private $alias;
@@ -95,8 +103,17 @@ class Afiliado implements UserInterface
      * @var string
      * @Assert\Email(checkMX=true)
      * @ORM\Column(name="email", type="string", length=255)
+     * @GRID\Column(field= "email", title="Correo electronico")
      */
     private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="localidad", type="string", length=100)
+     * @GRID\Column(field= "localidad", title="Localidad")
+     */
+    private $localidad;
 
 
     /**
@@ -351,6 +368,24 @@ class Afiliado implements UserInterface
     {
         return $this->email;
     }
+
+
+    /**
+     * @param mixed $localidad
+     */
+    public function setLocalidad($localidad)
+    {
+        $this->localidad = $localidad;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLocalidad()
+    {
+        return $this->localidad;
+    }
+
 
     public function addTarjeta(\Diloog\AfiliadoBundle\Entity\Tarjeta $tarjeta)
     {

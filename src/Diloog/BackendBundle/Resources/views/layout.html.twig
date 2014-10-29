@@ -8,6 +8,7 @@
 {% endblock %}
 
 {% block body %}
+   {{ parent() }}
   <div id="wrapper">
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <img src="{{ asset("logocgcet-small.png") }}" style="float: left" />
@@ -50,7 +51,7 @@
                    <a href="{{ path('listar_afiliados') }}"><i class="fa fa-fw fa-dashboard"></i>Listar Afiliados </a>
                </li>
                <li>
-                   <a href="#"><i class="fa fa-fw fa-bar-chart-o"></i> Ver Usuarios</a>
+                   <a href="{{ path('listar_usuarios') }}"><i class="fa fa-fw fa-bar-chart-o"></i> Ver Usuarios</a>
                </li>
                <li>
                    <a href="#"><i class="fa fa-fw fa-dashboard"></i>Operaciones realizadas </a>

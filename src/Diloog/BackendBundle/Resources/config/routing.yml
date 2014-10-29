@@ -19,3 +19,11 @@ envio_archivos:
 listar_afiliados:
     path:   /listaafiliados
     defaults: {_controller: BackendBundle:Default:listarAfiliado}
+
+listar_usuarios:
+   path: /listausuarios
+   defaults: {_controller: BackendBundle:Default:listarUsuario}
+
+cambiar_password_usuarios:
+   path: /cambiopassword/{id}
+   defaults: {_controller: BackendBundle:Default:cambiarPassword}

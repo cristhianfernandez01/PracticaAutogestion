@@ -1,0 +1,19 @@
+{% extends '@Backend/layout.html.twig'%}
+{% block estilos %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css"  href="{{ asset("bundles/backend/css/grid.css") }}" />
+{% endblock %}
+
+{% block contenido %}
+
+
+    <h1 class="page-header">Lista de Usuarios de Afiliados </h1>
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+        <div class="alert alert-success alert-dismissable">
+            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+    {{ grid(grid) }}
+
+{% endblock %}

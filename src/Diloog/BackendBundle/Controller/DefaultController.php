@@ -2,13 +2,16 @@
 
 namespace Diloog\BackendBundle\Controller;
 
+use APY\DataGridBundle\Grid\Action\RowAction;
 use APY\DataGridBundle\Grid\Source\Entity;
 use Diloog\BackendBundle\Form\AfiliadoFilterType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Gaufrette\Filesystem;
 use Gaufrette\Adapter\Sftp as SftpAdapter;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\SecurityContext;
+use Diloog\BackendBundle\Form\Model\ChangePassword;
 
 class DefaultController extends Controller
 {
@@ -63,10 +66,63 @@ class DefaultController extends Controller
 
         // Attach the source to the grid
         $grid->setSource($source);
-
+        $columnIds = array('alias','email');
+        $grid->hideColumns($columnIds);
         // Configuration of the grid
 
         // Manage the grid redirection, exports and the response of the controller
         return $grid->getGridResponse('@Backend/Default/listaafiliados.html.twig');
     }
+
+    public function listarUsuarioAction(){
+        $source = new Entity('AfiliadoBundle:Afiliado');
+
+        $grid = $this->get('grid');
+
+        $grid->setSource($source);
+
+
+        $columns = array( $grid->getColumn('id'), $grid->getColumn('numeroAfiliado') ,$grid->getColumn('apellido'),$grid->getColumn('nombre'), $grid->getColumn('alias') );
+        $columnsid = array('id', 'numeroAfiliado', 'nombre', 'apellido', 'alias','email');
+        $grid->setVisibleColumns($columnsid);
+        $rowAction = new RowAction('Cambiar password', 'cambiar_password_usuarios', true, '_self', array('class' => 'btn btn-default'));
+        $rowAction->setRouteParameters(array('id'));
+        $rowAction->setConfirmMessage('¿Desea modificar el password de este usuario?');
+        $grid->addRowAction($rowAction);
+
+
+        return $grid->getGridResponse('@Backend/Default/listausuarios.html.twig');
+    }
+
+
+    public function cambiarPasswordAction(Request $request,$id){
+        $cambioPassword = new ChangePassword();
+        $form = $this->createFormBuilder($cambioPassword)
+            ->add('password', 'password')
+            ->add('password2', 'password')
+            ->add('aceptar', 'submit')
+            ->getForm();
+        $idafiliado = (int)$id;
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $cambioPassword = $form->getData();
+            $afiliado = $em->getRepository('AfiliadoBundle:Afiliado')->findOneBy(array('id' => $idafiliado));
+          //  ld($afiliado);
+            $afiliado->setPassword($cambioPassword->getPassword());
+            $em->flush();
+            $this->get('session')->getFlashBag()->add(
+                'notice',
+                'Se ha cambiado exitosamente la contraseña.'
+            );
+
+            return $this->redirect($this->generateUrl('listar_usuarios'));
+        }
+
+        return $this->render('BackendBundle:Default:cambiopasswordafiliado.html.twig', array('form' => $form->createView()));
+
+    }
+
+
 }
