@@ -28,7 +28,6 @@ class Afiliado implements UserInterface
 
     /**
      * @var integer
-     * @Assert\NotBlank()
      * @ORM\Column(name="numero_afiliado", type="integer")
      */
     private $numeroAfiliado;
@@ -42,7 +41,6 @@ class Afiliado implements UserInterface
 
     /**
      * @var string
-     * @Assert\NotBlank()
      * @ORM\Column(name="apellido", type="string", length=45)
      */
     private $apellido;

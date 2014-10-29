@@ -1,8 +1,11 @@
 {% extends '@Backend/layout.html.twig' %}
+{% block estilos %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css"  href="{{ asset("bundles/backend/css/grid.css") }}" />
+{% endblock %}
 
 {% block contenido %}
-    <form method="get" action="{{ path('listar_afiliados') }}">
-        {{ form_rest(form) }}
-        <input type="submit" name="submit-filter" value="filter" />
-    </form>
+    <h1 class="page-header">Lista de Afiliados Registrados </h1>
+    {{ grid(grid) }}
+
 {% endblock %}

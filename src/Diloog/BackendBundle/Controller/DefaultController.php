@@ -2,6 +2,7 @@
 
 namespace Diloog\BackendBundle\Controller;
 
+use APY\DataGridBundle\Grid\Source\Entity;
 use Diloog\BackendBundle\Form\AfiliadoFilterType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Gaufrette\Filesystem;
@@ -55,26 +56,17 @@ class DefaultController extends Controller
     }
 
     public function listarAfiliadoAction(){
-        $form = $this->get('form.factory')->create(new AfiliadoFilterType());
+        $source = new Entity('AfiliadoBundle:Afiliado');
 
-        if ($this->get('request')->query->has($form->getName())) {
-            // manually bind values from the request
-            $form->submit($this->get('request')->query->get($form->getName()));
+        // Get a grid instance
+        $grid = $this->get('grid');
 
-            // initialize a query builder
-            $filterBuilder = $this->get('doctrine.orm.entity_manager')
-                ->getRepository('AfiliadoBundle:Afiliado')
-                ->createQueryBuilder('e');
+        // Attach the source to the grid
+        $grid->setSource($source);
 
-            // build the query from the given form object
-            $this->get('lexik_form_filter.query_builder_updater')->addFilterConditions($form, $filterBuilder);
+        // Configuration of the grid
 
-            // now look at the DQL =)
-            var_dump($filterBuilder->getDql());
-        }
-
-        return $this->render('@Backend/Default/listaafiliados.html.twig', array(
-            'form' => $form->createView(),
-        ));
+        // Manage the grid redirection, exports and the response of the controller
+        return $grid->getGridResponse('@Backend/Default/listaafiliados.html.twig');
     }
 }
