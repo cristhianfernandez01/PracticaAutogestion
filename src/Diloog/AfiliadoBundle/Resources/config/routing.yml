@@ -76,3 +76,19 @@ realizar_pago:
 realizar_financiacion:
     path: /financiacion/{idtarjeta}/{token}
     defaults:  {_controller: AfiliadoBundle:Default:realizarFinanciacion}
+
+pago_succes:
+   path:  pago/succes/
+   defaults: {_controller: PagoBundle:Default:pagoSuccess}
+
+pago_fail:
+   path:  pago/fail/
+   defaults: {_controller: PagoBundle:Default:pagoFail}
+
+lista_pagos:
+   path: /pagos
+   defaults: {_controller: AfiliadoBundle:Default:listarPagosRealizados}
+
+comprobante_pago:
+   path: /comprobantepago/{idpago}
+   defaults: {_controller: PagoBundle:Default:comprobantePago}

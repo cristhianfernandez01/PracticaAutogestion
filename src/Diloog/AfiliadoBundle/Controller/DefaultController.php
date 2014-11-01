@@ -2,6 +2,7 @@
 
 namespace Diloog\AfiliadoBundle\Controller;
 
+use Diloog\PagoBundle\Entity\Pago;
 use Diloog\PagoBundle\Form\PagoType;
 use Diloog\PagoBundle\Form\Model\PagoModel;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -173,6 +174,15 @@ class DefaultController extends Controller
     }
 
 
+    public function listarPagosRealizadosAction(){
+        $afiliado = $this->getUser();
+        $em = $this->getDoctrine()->getManager();
+        $pagos = $em->getRepository('PagoBundle:Pago')->findUltimosPagos($afiliado);
+        //ld($pagos);
+        return $this->render('AfiliadoBundle:Datos:listapagos.html.twig', array('pagos' => $pagos));
+    }
+
+
     public function realizarPagoAction(Request $request, $idtarjeta, $token){
         $em = $this->getDoctrine()->getManager();
         $tarjeta = $em->getRepository('AfiliadoBundle:Tarjeta')->find($idtarjeta);
@@ -181,6 +191,8 @@ class DefaultController extends Controller
             return $this->render('AfiliadoBundle:Default:tarjetaimpropia.html.twig');
         }
        // ld($propia);
+        $afiliado = $this->getUser();
+        $estadodeuda=$em->getRepository('PagoBundle:EstadoDeDeuda')->findUltimaDeudaActiva($afiliado);
         $pagomodelo = new PagoModel();
         $pagomodelo->setNumeroTarjeta($tarjeta->getNumeroTarjeta());
         $pagomodelo->setTipoTarjeta($tarjeta->getDescripcionTarjeta());
@@ -191,12 +203,36 @@ class DefaultController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-
-            return $this->redirect($this->generateUrl('tarjeta'));
+            $checkmanager = $this->get('checkout.manager');
+           // $checkmanager->setServer(new CheckoutServer());
+            $checkmanager->definirDatos($tarjeta, $estadodeuda->getNumeroDeuda(), $estadodeuda->getImporteTotal(), 1, $pagomodelo->getCodigoSeguridad());
+            $valido = $checkmanager->validateCheckout();
+            if($valido){
+                $idpago = $checkmanager->getIdPago();
+                $session = $request->getSession();
+                $session->set('payment',$idpago);
+                $pago = new Pago();
+                $pago->setCantidadCuotas(1);
+                $pago->setEstadoDeuda($estadodeuda);
+                $pago->setNumeroSeguimiento($idpago);
+                $pago->setFechaPago(new \DateTime('now'));
+                $estadodeuda->setPagada(true);
+                $em->persist($pago);
+                $em->flush();
+               // ld($pago);
+                //$id = $pago->getId();
+                //$session->set('paymentid',$id);
+               return $this->redirect($this->generateUrl('pago_succes'));
+                //return $this->render('@Pago/Default/vervariables.html.twig');
+            }
+            else {
+                return $this->redirect($this->generateUrl('pago_fail'));
+            }
         }
 
         return $this->render('PagoBundle:Default:realizarpago.html.twig', array(
             'form'   => $form->createView(),
+            'deuda'  => $estadodeuda
         ));
     }
 
@@ -207,23 +243,46 @@ class DefaultController extends Controller
         if ($propia === false && $token != md5($tarjeta->getNumeroTarjeta())){
             return $this->render('AfiliadoBundle:Default:tarjetaimpropia.html.twig');
         }
+        $afiliado = $this->getUser();
+        $estadodeuda=$em->getRepository('PagoBundle:EstadoDeDeuda')->findUltimaDeudaActiva($afiliado);
         $pagomodelo = new PagoModel();
         $pagomodelo->setNumeroTarjeta($tarjeta->getNumeroTarjeta());
         $pagomodelo->setTipoTarjeta($tarjeta->getDescripcionTarjeta());
         $pagomodelo->setVencimiento($tarjeta->getVencimiento());
         $pagomodelo->setDni($this->getUser()->getDni());
         $form = $this->createForm(new PagoType(),$pagomodelo);
-        $form->add('cantidadCuotas','choice', array('choices'   => array('2' => '2', '3' => '3', '4' => '4')));
+        $form->add('cantidadCuotas','choice', array('choices'   => array('1' =>'1','2' => '2', '3' => '3', '4' => '4')));
         $form->add('submit', 'submit', array('label' => 'Pagar'));
         $form->handleRequest($request);
 
         if ($form->isValid()) {
 
-            return $this->redirect($this->generateUrl('tarjeta'));
+            $checkmanager = $this->get('checkout.manager');
+            // $checkmanager->setServer(new CheckoutServer());
+            $checkmanager->definirDatos($tarjeta, $estadodeuda->getNumeroDeuda(), $estadodeuda->getImporteTotal(), 1, $pagomodelo->getCodigoSeguridad());
+            $valido = $checkmanager->validateCheckout();
+            if($valido){
+                $idpago = $checkmanager->getIdPago();
+                $session = $request->getSession();
+                $session->set('payment',$idpago);
+                $pago = new Pago();
+                $pago->setCantidadCuotas($pagomodelo->getCantidadCuotas());
+                $pago->setEstadoDeuda($estadodeuda);
+                $pago->setNumeroSeguimiento($idpago);
+                $pago->setFechaPago(new \DateTime('now'));
+                $estadodeuda->setPagada(true);
+                $em->persist($pago);
+                $em->flush();
+                return $this->redirect($this->generateUrl('pago_succes'));
+            }
+            else {
+                return $this->redirect($this->generateUrl('pago_fail'));
+            }
         }
 
         return $this->render('PagoBundle:Default:realizarfinanciacion.html.twig', array(
             'form'   => $form->createView(),
+            'deuda'  => $estadodeuda
         ));
 
     }

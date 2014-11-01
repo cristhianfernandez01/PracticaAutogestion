@@ -9,3 +9,7 @@ backend:
 afiliado:
     resource: "@AfiliadoBundle/Resources/config/routing.yml"
     prefix:   /
+
+authorizenet_payment_routes:
+   resource: .
+   type: authorizenet

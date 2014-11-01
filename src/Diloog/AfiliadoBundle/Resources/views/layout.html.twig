@@ -29,10 +29,10 @@
                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {{ usuario.nombre }} <b class="caret"></b></a>
                <ul class="dropdown-menu">
                    <li>
-                       <a href="#"><i class="fa fa-fw fa-user"></i>Datos personales</a>
+                       <a href="{{ path('datos_afiliado') }}"><i class="fa fa-fw fa-user"></i>Datos personales</a>
                    </li>
                    <li>
-                       <a href="#"><i class="fa fa-fw fa-envelope"></i>Cambiar contrase&ntilde;a</a>
+                       <a href="{{ path('cambio_password') }}"><i class="fa fa-fw fa-key"></i>Cambiar contrase&ntilde;a</a>
                    </li>
                    <li class="divider"></li>
                    <li>
@@ -47,23 +47,21 @@
        <div class="collapse navbar-collapse navbar-ex1-collapse">
            <ul class="nav navbar-nav side-nav">
                <li>
-                   <a href="{{ path("datos_afiliado") }}"><i class="fa fa-fw fa-dashboard"></i>Mis Datos </a>
+                   <a href="{{ path("afiliado_principal") }}"><i class="fa fa-fw fa-home"></i> Principal</a>
                </li>
                <li>
-                   <a href="{{ path("estado_deuda") }}"><i class="fa fa-fw fa-bar-chart-o"></i> Mis Deudas</a>
+                   <a href="{{ path("datos_afiliado") }}"><i class="fa fa-fw fa-briefcase"></i> Mis Datos </a>
                </li>
                <li>
-                   <a href="{{ path("tarjeta") }}"><i class="fa fa-fw fa-dashboard"></i>Mis Tarjetas </a>
+                   <a href="{{ path("estado_deuda") }}"><i class="fa fa-fw fa-thumb-tack"></i> Mis Deudas</a>
                </li>
                <li>
-                   <a href="{{ path("deuda_imprimir") }}"><i class="fa fa-fw fa-table"></i> Prueba Comprobante</a>
+                   <a href="{{ path("tarjeta") }}"><i class="fa fa-fw fa-credit-card"></i> Mis Tarjetas </a>
                </li>
                <li>
-                   <a href="{{ path("vista_previa") }}"><i class="fa fa-fw fa-edit"></i> Vista previa comprobante</a>
+                   <a href="{{ path("lista_pagos") }}"><i class="fa fa-fw fa-money"></i> Mis pagos</a>
                </li>
-               <li>
-                   <a href="{{ path("prueba_barcode") }}"><i class="fa fa-fw fa-edit"></i> Barcode prueba</a>
-               </li>
+
                <!--  AQUI SE GENERA EL CALENDARIO JQUERY -->
                <div id="jqxcalendar">
 

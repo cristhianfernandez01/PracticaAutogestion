@@ -54,7 +54,7 @@
        <div class="form-group">
            {{ form_label(form.cantidadCuotas, 'Cantidad de Cuotas') }}
            {{ form_errors(form.cantidadCuotas) }}
-           {{ form_widget(form.cantidadCuotas, {'attr': {'class': 'form-control'} }) }}
+           {{ form_widget(form.cantidadCuotas, {'attr': {'class': 'form-control', 'id':'select-cuotas'} }) }}
        </div>
 
        <div class="form-group">
@@ -69,7 +69,55 @@
 
 
    </div>
+
+    <div class="col-lg-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Total Pago</h3>
+            </div>
+            <div class="panel-body">
+                <h3><strong>Total a pagar : ${{ deuda.importeTotal }}</strong></h3>
+                <h3>Monto de cada cuota:</h3>
+                <h3><strong><span>$ </span><span id="montocuotas">{{ deuda.importeTotal }}</span></strong></h3>
+                <p id="total" style="display: none">{{ deuda.importeTotal }}</p>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById("diloog_pagobundle_pago_cantidadCuotas").onchange = cambiarvalor;
+        };
 
+        function f(){
+            var valor;
+            var posicion=document.getElementById("diloog_pagobundle_pago_cantidadCuotas").options.selectedIndex;
+            return valor = document.getElementById("diloog_pagobundle_pago_cantidadCuotas").options[posicion].text;
+        }
+
+        function redondear2decimales(numero)
+        {
+            var original=parseFloat(numero);
+            var result = Math.round(original*100)/100 ;
+            return result;
+        }
+
+
+        function cambiarvalor(){
+            var cuotas;
+            var total;
+            var resultado;
+            var redondeado;
+            cuotas = parseInt(f());
+            total = $("#total").text();
+            resultado = parseInt(total) / cuotas;
+            redondeado = redondear2decimales(resultado);
+            $("#montocuotas").text(redondeado);
+        }
+
+    </script>
+{% endblock %}

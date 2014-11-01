@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Pago
  *
  * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Diloog\PagoBundle\Entity\PagoRepository")
  */
 class Pago
 {
@@ -24,7 +24,7 @@ class Pago
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fecha_pago", type="date")
+     * @ORM\Column(name="fecha_pago", type="datetime")
      */
     private $fechaPago;
 

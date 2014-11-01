@@ -1,0 +1,51 @@
+{% extends '@Afiliado/layout.html.twig' %}
+
+
+{% block contenido %}
+
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+        <div class="alert alert-success alert-dismissable">
+            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    <h1 class="page-header">Lista de Pagos Realizados </h1>
+
+    <div class="well-sm">
+        <p>Se muestra un listado con los ultimos 5 pagos realizados por usted. Se
+         le dara la posibilidad de generar el comprobante de pago para cada uno de ellos.</p>
+    </div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Fecha de pago</th>
+                <th>Numero de Estado de Deuda</th>
+                <th>Numero de Seguimiento</th>
+                <th>Cantidad de cuotas</th>
+                <th>Accciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pago in pagos %}
+            <tr>
+                <td>{{ pago.fechaPago | date('d/m/Y')}}</td>
+                <td>{{ pago.estadoDeuda.numeroDeuda }}</td>
+                <td>{{ pago.numeroSeguimiento }}</td>
+                <td>{{ pago.cantidadCuotas }}</td>
+                <td>
+
+                        <a class="btn btn-default" href="{{ path('comprobante_pago', { 'id': pago.id }) }}"> <i class="fa fa-fw fa-file-pdf-o"></i>Generar comprobante</a>
+
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+            <a href="{{ path('afiliado_principal') }}" class="btn btn-default">
+                Volver al menu principal
+            </a>
+    {% endblock %}
+
+

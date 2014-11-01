@@ -1,5 +1,9 @@
 parameters:
+    checkout.server.class:  Diloog\PagoBundle\Services\CheckoutServer
     checkout.manager.class: Diloog\PagoBundle\Services\CheckoutManager
 services:
+    checkout.server:
+        class:  %checkout.server.class%
+
     checkout.manager:
         class: %checkout.manager.class%

@@ -9,3 +9,4 @@ backend:
 afiliado:
     resource: "@AfiliadoBundle/Resources/config/routing.yml"
     prefix:   /
+

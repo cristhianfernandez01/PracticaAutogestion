@@ -1,0 +1,45 @@
+{% extends '::base.html.twig' %}
+
+{% block estilos %}
+   <link href="{{ app.request.getSchemeAndHttpHost() ~ asset('bundles/afiliado/css/bootstrap.min.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <table class="table table-responsive">
+              <tr>
+                 <td>
+                   <img src="{{ app.request.getSchemeAndHttpHost() ~ asset('Logo-CGCET.jpg') }}" />
+                   <p>Colegio de Graduados en Ciencias Economicas de Tucum&aacute;n </p>
+                   <p>24 de Septiembre 776 - S.M. de Tucum&aacute;n</p>
+                </td>
+                <td>
+                    <h4>Comprobante de Pago</h4>
+                    <p><strong>Estado de deuda Nro.: {{ pago.estadoDeuda.numeroDeuda }}</strong></p>
+                    <p><strong>Nro. de Seguimiento: {{ pago.numeroSeguimiento }}</strong></p>
+                    <p>Fecha de pago: {{ pago.fechaPago|date("d/m/Y") }}</p>
+                    <p><strong>Importe de la deuda: $ {{ pago.estadoDeuda.importeTotal|number_format(2, '.', ',') }}</strong></p>
+                </td>
+                  <td></td>>
+              </tr>
+              <tr>
+                  <td>
+                      <p>Nombre del afiliado: {{ afiliado }}</p>
+                      <p>DNI: {{ afiliado.dni }}</p>
+                  </td>
+                  <td>
+                      <p>Numero de afiliado: {{ afiliado.numeroAfiliado }}</p>
+                      {% set cadenaclave = 'cgcet34345443324' ~ pago.numeroSeguimiento ~ pago.estadoDeuda.numeroDeuda %}
+                      <p>{{ cadenaclave | md5}}</p>
+                  </td>
+
+              </tr>
+
+
+          </table>
+        </div>
+    </div>
+{% endblock %}
+
+

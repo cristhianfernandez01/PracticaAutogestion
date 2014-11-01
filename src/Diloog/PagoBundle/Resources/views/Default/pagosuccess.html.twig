@@ -1,0 +1,42 @@
+{% extends '@Afiliado/layout.html.twig' %}
+
+
+
+{% block contenido %}
+    <h1>Pago Exitoso</h1>
+
+    <div class="alert alert-success alert-dismissable">
+        <p>Su pago pudo efectuarse exitosamente</p>
+    </div>
+
+    <div class="well well-sm">
+        <p>El pago sera acreditado en un periodo minimo de 48 horas. Ahora puede realizar la
+        generacion del comprobante de la operacion de pago. Este cuenta con un dato para validar
+        que sea original y no una falsificaci&oacute;n</p>
+    </div>
+
+    <div class="alert alert-info">
+       <p><strong>Su pago posee el numero de seguimiento {{ seguimiento }}</strong> </p>
+    </div>
+
+    <ul class="list-group list-unstyled list-inline">
+        <li>
+            <a href="{{ path('comprobante_pago', {'idpago': idpago}) }}" class="btn btn-default">
+                <i class="fa fa-fw fa-files-o"></i>
+                Generar comprobante de pago
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('afiliado_principal')}}" class="btn btn-default">
+                <i class="fa fa-fw fa-arrow-left"></i>
+                Volver al menu principal
+            </a>
+        </li>
+
+    </ul>
+
+
+{% endblock %}
+
+
+
