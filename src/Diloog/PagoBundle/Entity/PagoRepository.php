@@ -26,6 +26,7 @@ class PagoRepository extends EntityRepository
         $consulta1->setParameter('afiliado', $afiliado);
 		$consulta1->setMaxResults(5);
         $deudas = $consulta1->getResult();
+      //  ld($deudas);
 
 
         $dql2 =  "SELECT  p FROM PagoBundle:Pago p
@@ -35,13 +36,28 @@ class PagoRepository extends EntityRepository
             $consulta2 = $em->createQuery($dql2);
             $consulta2->setParameter('estadodeuda', $deuda);
             $consulta2->setMaxResults(1);
-            $pago = $consulta2->getSingleResult();
-           // ld($pago);
+            $pago = $consulta2->getOneOrNullResult();
+            //ld($pago);
             $pagos[] = $pago;
-        }
 
-        //ld($pagos);
+        }
+      //  ld($pagos);
         return $pagos;
 
     }
+
+    public function findPagosSinProcesar()
+    {
+        $em = $this->getEntityManager();
+
+        $dql =  "SELECT  p FROM PagoBundle:Pago p
+                WHERE p.procesado = false";
+
+            $consulta = $em->createQuery($dql);
+            $pagos = $consulta->getResult();
+
+        return $pagos;
+
+    }
+
 }

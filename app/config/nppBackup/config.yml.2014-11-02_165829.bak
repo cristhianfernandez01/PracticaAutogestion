@@ -90,4 +90,4 @@ knp_gaufrette:
             sftp:
                 sftp_id: diloog_backend.sftp
                 directory: /pagos/
-                create: true			
+                create: true

@@ -35,7 +35,7 @@
                 <td>{{ pago.cantidadCuotas }}</td>
                 <td>
 
-                        <a class="btn btn-default" href="{{ path('comprobante_pago', { 'id': pago.id }) }}"> <i class="fa fa-fw fa-file-pdf-o"></i>Generar comprobante</a>
+                        <a class="btn btn-default" href="{{ path('comprobante_pago', { 'idpago': pago.id }) }}"> <i class="fa fa-fw fa-file-pdf-o"></i>Generar comprobante</a>
 
                 </td>
             </tr>

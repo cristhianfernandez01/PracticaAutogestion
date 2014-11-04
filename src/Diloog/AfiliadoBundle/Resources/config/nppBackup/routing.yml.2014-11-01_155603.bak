@@ -1,0 +1,95 @@
+AfiliadoBundle_tarjeta:
+    resource: "@AfiliadoBundle/Resources/config/routing/tarjeta.yml"
+    prefix:   /tarjeta
+
+afiliado_principal:
+    path:     /principal
+    defaults: { _controller: AfiliadoBundle:Default:index }
+
+
+pagina_ayuda:
+    path:     /ayuda
+    defaults: {_controller: AfiliadoBundle:Default:ayuda}
+
+prueba_pago:
+    path:    /pagoprueba
+    defaults: {_controller: AfiliadoBundle:Default:pagoprueba}
+
+procesar_pago:
+   path:   /procesopago/{referencia}
+   defaults: {_controller: AfiliadoBundle:Default:procesamientoPago}
+
+estado_deuda:
+    path:   /misdeudas
+    defaults: {_controller: AfiliadoBundle:Default:estadoDeudaMostrar}
+
+deuda_imprimir:
+    path: /deudaimprimir
+    defaults: {_controller: AfiliadoBundle:Default:comprobanteDeuda}
+
+cupon_pago_imprimir:
+    path: /cuponpago
+    defaults: {_controller: AfiliadoBundle:Default:cuponPago}
+
+elegirpago:
+    path: /elegirpago
+    defaults: {_controller: AfiliadoBundle:Default:elegirPago}
+
+prueba_barcode:
+    path: /barcode
+    defaults: {_controller: AfiliadoBundle:Default:pruebaBarcode}
+
+vista_previa:
+    path: /vistaprevia
+    defaults: {_controller: AfiliadoBundle:Default:vistaPrevia}
+
+crear_usuario_prueba:
+    path: /crearusuario
+    defaults: {_controller: AfiliadoBundle:Default:obtenerUsuarioPrueba}
+
+afiliado_login_check:
+    path: /login_check
+
+afiliado_logout:
+    path: /logout
+
+afiliado_login:
+    path: /login
+    defaults: { _controller: AfiliadoBundle:Default:login }
+
+datos_afiliado:
+    path: /datos
+    defaults: {_controller: AfiliadoBundle:Datos:index}
+
+cambio_password:
+    path: /cambiopassword
+    defaults: {_controller: AfiliadoBundle:Datos:cambioPassword}
+
+elegir_tarjeta:
+    path: /elegirtarjeta/{referer}
+    defaults: {_controller: AfiliadoBundle:Default:elegirTarjeta}
+
+realizar_pago:
+    path: /pago/{idtarjeta}/{token}
+    defaults:  {_controller: AfiliadoBundle:Default:realizarPago}
+    schemes: [https]
+	
+realizar_financiacion:
+    path: /financiacion/{idtarjeta}/{token}
+    defaults:  {_controller: AfiliadoBundle:Default:realizarFinanciacion}
+
+pago_succes:
+   path:  pago/succes/
+   defaults: {_controller: PagoBundle:Default:pagoSuccess}
+
+pago_fail:
+   path:  pago/fail/
+   defaults: {_controller: PagoBundle:Default:pagoFail}
+
+lista_pagos:
+   path: /pagos
+   defaults: {_controller: AfiliadoBundle:Default:listarPagosRealizados}
+
+comprobante_pago:
+   path: /comprobantepago/{idpago}
+   defaults: {_controller: PagoBundle:Default:comprobantePago}

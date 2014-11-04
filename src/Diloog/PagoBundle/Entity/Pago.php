@@ -51,6 +51,19 @@ class Pago
      */
     private $estadoDeuda;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="procesado", type="boolean")
+     */
+    private $procesado;
+
+
+    public function __construct()
+    {
+        $this->procesado = false; // Default value for column is_visible
+    }
+
 
     /**
      * Get id
@@ -148,4 +161,22 @@ class Pago
     {
         return $this->estadoDeuda;
     }
+
+
+    /**
+     * @param boolean $procesado
+     */
+    public function setProcesado($procesado)
+    {
+        $this->procesado = $procesado;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isProcesado()
+    {
+        return $this->procesado;
+    }
+
 }

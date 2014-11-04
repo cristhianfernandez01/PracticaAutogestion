@@ -45,8 +45,11 @@
         </tbody>
     </table>
 
-            <a href="{{ path('tarjeta_new') }}" class="btn btn-default">
-                 Cancelar
+            <a href="{{ path('tarjeta_new') }}" class="btn btn-success">
+                 <strong>+ </strong> Agregar tarjeta
+            </a>
+           <a href="{{ path('estado_deuda') }}" class="btn btn-default">
+             <i class="fa fa-times-circle "> </i> Cancelar operacion
             </a>
     {% endblock %}
 
