@@ -12,13 +12,13 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Gaufrette\Filesystem;
 use Gaufrette\Adapter\Sftp as SftpAdapter;
 
-class BackendRecibirAfiliadosCommand extends ContainerAwareCommand
+class BackendRecibirCambioEstadoCommand extends ContainerAwareCommand
 {
     protected function configure()
     {
         $this
-            ->setName('diloog:backend:recibirafiliados')
-            ->setDescription('Recibe datos de nuevos afiliados registrados')
+            ->setName('diloog:backend:recibircambioestado')
+            ->setDescription('Recibe datos de cambios de los afiliados')
         ;
     }
 

@@ -47,6 +47,8 @@ class BackendEnviarPagosCommand extends ContainerAwareCommand
             $activesheet->setCellValueByColumnAndRow(1,$i,$pago->getNumeroSeguimiento());
             $activesheet->setCellValueByColumnAndRow(2,$i,$pago->getFechaPago()->format('dmyHis'));
             $activesheet->setCellValueByColumnAndRow(3,$i,$pago->getCantidadCuotas());
+            $cell = $activesheet->getCellByColumnAndRow(0,$i);
+            $cell->getValue();
             $pago->setProcesado(true);
             $i ++;
         }
