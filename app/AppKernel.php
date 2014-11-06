@@ -27,6 +27,7 @@ class AppKernel extends Kernel
 			new Liuggio\ExcelBundle\LiuggioExcelBundle(),
 			new APY\DataGridBundle\APYDataGridBundle(),
 			new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
+			new Lexik\Bundle\FormFilterBundle\LexikFormFilterBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

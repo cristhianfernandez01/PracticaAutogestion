@@ -27,3 +27,7 @@ listar_usuarios:
 cambiar_password_usuarios:
    path: /cambiopassword/{id}
    defaults: {_controller: BackendBundle:Default:cambiarPassword}
+
+filtrar_operaciones:
+   path: /operaciones
+   defaults: {_controller: BackendBundle:Default:operacionFilter}

@@ -4,6 +4,7 @@ namespace Diloog\BackendBundle\Controller;
 
 use APY\DataGridBundle\Grid\Action\RowAction;
 use APY\DataGridBundle\Grid\Source\Entity;
+use Diloog\BackendBundle\Filter\OperacionFilterType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Gaufrette\Filesystem;
 use Gaufrette\Adapter\Sftp as SftpAdapter;
@@ -121,6 +122,27 @@ class DefaultController extends Controller
 
         return $this->render('BackendBundle:Default:cambiopasswordafiliado.html.twig', array('form' => $form->createView()));
 
+    }
+
+    public function operacionFilterAction()
+    {
+        $form = $this->get('form.factory')->create(new OperacionFilterType());
+
+        if ($this->get('request')->getMethod() == 'POST') {
+            $form->submit($this->get('request'));
+
+            $queryBuilder = $this->get('doctrine.orm.entity_manager')
+                ->getRepository('BackendBundle:Operacion')
+                ->createQueryBuilder('e');
+
+
+            $this->get('lexik_form_filter.query_builder_updater')
+                ->addFilterConditions($form, $queryBuilder);
+        }
+
+        return $this->render('BackendBundle:Default:listaoperaciones.html.twig', array(
+            'form' => $form->createView(),
+        ));
     }
 
 
