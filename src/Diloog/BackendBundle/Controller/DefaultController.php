@@ -4,7 +4,10 @@ namespace Diloog\BackendBundle\Controller;
 
 use APY\DataGridBundle\Grid\Action\RowAction;
 use APY\DataGridBundle\Grid\Source\Entity;
+use Diloog\BackendBundle\Entity\Operacion;
 use Diloog\BackendBundle\Filter\OperacionFilterType;
+use Pagerfanta\Adapter\DoctrineORMAdapter;
+use Pagerfanta\Pagerfanta;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Gaufrette\Filesystem;
 use Gaufrette\Adapter\Sftp as SftpAdapter;
@@ -124,26 +127,64 @@ class DefaultController extends Controller
 
     }
 
-    public function operacionFilterAction()
+    public function operacionFilterAction(Request $request)
     {
-        $form = $this->get('form.factory')->create(new OperacionFilterType());
+        $em = $this->getDoctrine()->getManager();
+        $datos = array();
+        $form = $this->get('form.factory')->create(new OperacionFilterType(), $datos);
 
-        if ($this->get('request')->getMethod() == 'POST') {
-            $form->submit($this->get('request'));
+        if ($this->get('request')->query->has($form->getName())) {
+            // manually bind values from the request
+            $form->submit($this->get('request')->query->get($form->getName()));
 
-            $queryBuilder = $this->get('doctrine.orm.entity_manager')
+            // initialize a query builder
+            $filterBuilder = $this->get('doctrine.orm.entity_manager')
                 ->getRepository('BackendBundle:Operacion')
                 ->createQueryBuilder('e');
 
+            // build the query from the given form object
+            $this->get('lexik_form_filter.query_builder_updater')->addFilterConditions($form, $filterBuilder);
 
-            $this->get('lexik_form_filter.query_builder_updater')
-                ->addFilterConditions($form, $queryBuilder);
+           $datosvalidos = $form->getData();
+            $tipo = $datosvalidos['tipo'];
+            $fecha1 = $datosvalidos['fecha']['left_date'];
+            $fecha2 = $datosvalidos['fecha']['right_date'];
+            $f1 = $fecha1->format('Y-m-d');
+            $f2 = $fecha2->format('Y-m-d');
+
+
+            if($tipo == ''){
+              $dql = 'SELECT e FROM BackendBundle:Operacion e WHERE (e.fecha <= \''.$f2.'\' AND e.fecha >= \''.$f1.'\')';
+                $consulta = $em->createQuery($dql);
+            }
+             else{
+                 $dql = $filterBuilder->getDQL();
+                 $consulta = $em->createQuery($dql);
+                 $consulta->setParameter('e_tipo', $tipo);
+             }
+           // ld($dql);
+            $pager = new Pagerfanta(new DoctrineORMAdapter($consulta));
+             $pager->setMaxPerPage(15);
+            if($request->query->has('page')){
+                $pagina = $request->get('page');
+                $pager->setCurrentPage($pagina);
+            }
+
+            return $this->render('@Backend/Default/listaoperaciones.html.twig', array(
+                'form' => $form->createView(),
+                'operaciones'  => $pager
+            ));
+            // now look at the DQL =)
+          //  var_dump($filterBuilder->getDql());
+
+
         }
 
-        return $this->render('BackendBundle:Default:listaoperaciones.html.twig', array(
-            'form' => $form->createView(),
+        return $this->render('@Backend/Default/filtrooperaciones.html.twig', array(
+            'form' => $form->createView()
         ));
     }
+
 
 
 }

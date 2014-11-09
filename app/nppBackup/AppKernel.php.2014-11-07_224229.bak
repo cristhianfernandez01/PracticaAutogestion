@@ -28,7 +28,6 @@ class AppKernel extends Kernel
 			new APY\DataGridBundle\APYDataGridBundle(),
 			new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
 			new Lexik\Bundle\FormFilterBundle\LexikFormFilterBundle(),
-			new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -97,9 +97,6 @@ knp_gaufrette:
 
 lexik_form_filter:
     force_case_insensitivity: false
-
+	
+	
 #APY DATAGRID BUNDLE
-apy_data_grid:
-    pagerfanta:
-        enable: true    
-        view_class: Pagerfanta\View\TwitterBootstrap3View

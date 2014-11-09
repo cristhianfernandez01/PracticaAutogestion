@@ -102,4 +102,4 @@ lexik_form_filter:
 apy_data_grid:
     pagerfanta:
         enable: true    
-        view_class: Pagerfanta\View\TwitterBootstrap3View
+        view_class: Pagerfanta\View\TwitterBootstrapView

@@ -15,8 +15,8 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 class OperacionFilterType extends AbstractType{
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('tipo', 'filter_choice');
-        $builder->add('fecha', 'filter_datetime_range');
+        $builder->add('tipo', 'filter_choice', array('choices'   => array('Envio pagos' => 'Envio Pagos', 'Cambio Estados' => 'Cambio Estados', 'Actualizacion Deudas' => 'Actualizacion Deudas')));
+        $builder->add('fecha', 'filter_date_range');
     }
 
     public function getName()

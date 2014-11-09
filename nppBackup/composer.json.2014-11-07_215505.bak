@@ -32,8 +32,7 @@
         "liuggio/excelbundle": "~2.0",
         "apy/datagrid-bundle": "dev-master",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
-        "lexik/form-filter-bundle": "~2.0",
-        "white-october/pagerfanta-bundle": "~1.0"	
+        "lexik/form-filter-bundle": "~2.0"		
     },
     "scripts": {
         "post-install-cmd": [

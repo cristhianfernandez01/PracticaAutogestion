@@ -2,6 +2,7 @@
 
 namespace Diloog\BackendBundle\Command;
 
+use Diloog\BackendBundle\Entity\Operacion;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -9,7 +10,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Gaufrette\Filesystem;
 use Gaufrette\Adapter\Sftp as SftpAdapter;
-use Zend\Stdlib\DateTime;
+use Gaufrette\Adapter\Local;
 
 class BackendEnviarPagosCommand extends ContainerAwareCommand
 {
@@ -26,20 +27,33 @@ class BackendEnviarPagosCommand extends ContainerAwareCommand
         $sftp = $this->getContainer()->get('diloog_backend.sftp');
         $adapter = new SftpAdapter($sftp,'/pagos/');
         $filesystem = new Filesystem($adapter);
+        $localadapter = new Local('../files/Pagos/',true);
+        $filesystem2 = new Filesystem($localadapter);
         $entitymanager = $this->getContainer()->get('doctrine')->getManager();
         $pagos = $entitymanager->getRepository('PagoBundle:Pago')->findPagosSinProcesar();
-        if($pagos[0]==null ){
+        if($pagos==null ){
             $output->write('No se encontraron datos para enviar');
+            $descripcion = 'No se han encontrado pagos para su envio';
+            $this->gestionarErrorOperacion($entitymanager, $descripcion);
         }
         else{
         $fechaactual = new \DateTime('now');
         $fecha = trim($fechaactual->format('d-m-YH_i_s'));
         $nombrearchivo = 'Pagos'.$fecha.'.csv';
-        $archivo = fopen('../files/'.$nombrearchivo ,'x+');
+        //$filesystem2->createFile($nombrearchivo);
+        $archivo = fopen('../files/Pagos/'.$nombrearchivo ,'x+');
         $factory= $this->getContainer()->get('phpexcel');
         //\PHPExcel_IOFactory::load('Archivo.csv');
-        $phpexcel = $factory->createPHPExcelObject('../files/'.$nombrearchivo);
-        $phpexcel->setActiveSheetIndex(0);
+        try{
+            $phpexcel = $factory->createPHPExcelObject('../files/Pagos/'.$nombrearchivo);
+            $phpexcel->setActiveSheetIndex(0);
+        }
+        catch(\Exception $e){
+            $descripcion = 'Se produjo un error al generar el archivo para enviar';
+            $this->gestionarErrorOperacion($entitymanager, $descripcion);
+            return;
+        }
+
         $activesheet= $phpexcel->getActiveSheet();
         $i = 1;
         foreach($pagos as $pago){
@@ -61,8 +75,26 @@ class BackendEnviarPagosCommand extends ContainerAwareCommand
             ->setEnclosure('')
             ->setLineEnding("\r\n")
             ->setSheetIndex(0)
-            ->save('../files/'.$nombrearchivo);
-        $filesystem->write($nombrearchivo,file_get_contents('../files/'.$nombrearchivo));
+            ->save('../files/Pagos/'.$nombrearchivo);
+            $filesystem->write($nombrearchivo, $filesystem2->get($nombrearchivo)->getContent());
+           // $filesystem->write($nombrearchivo,file_get_contents('../files/Pagos/'.$nombrearchivo));
+
+            $operacion = new Operacion();
+            $operacion->setFecha(new \DateTime('now'));
+            $operacion->setTipo('Envio Pagos');
+            $operacion->setDescripcion('Se han enviado con exito '.$i.'pagos');
+            $entitymanager->persist($operacion);
+            $entitymanager->flush();
+
         }
+    }
+
+    protected function gestionarErrorOperacion($entitymanager ,$descripcion){
+        $operacion = new Operacion();
+        $operacion->setFecha(new \DateTime('now'));
+        $operacion->setTipo('Envio Pagos');
+        $operacion->setDescripcion($descripcion);
+        $entitymanager->persist($operacion);
+        $entitymanager->flush();
     }
 }

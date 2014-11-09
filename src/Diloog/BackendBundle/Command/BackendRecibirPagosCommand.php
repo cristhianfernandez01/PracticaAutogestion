@@ -4,6 +4,7 @@ namespace Diloog\BackendBundle\Command;
 
 use Diloog\AfiliadoBundle\Entity\Afiliado;
 use Diloog\BackendBundle\Entity\Operacion;
+use Diloog\PagoBundle\Entity\Pago;
 use Gaufrette\Adapter\Local;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
@@ -13,37 +14,37 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Gaufrette\Filesystem;
 use Gaufrette\Adapter\Sftp as SftpAdapter;
 
-class BackendRecibirAfiliadosCommand extends ContainerAwareCommand
+class BackendRecibirPagosCommand extends ContainerAwareCommand
 {
     protected function configure()
     {
         $this
-            ->setName('diloog:backend:recibirafiliados')
-            ->setDescription('Recibe datos de nuevos afiliados registrados')
+            ->setName('diloog:backend:recibirpagos')
+            ->setDescription('Recibe datos de pagos realizados en la entidad')
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $sftp = $this->getContainer()->get('diloog_backend.sftp');
-        $adapter = new SftpAdapter($sftp,'/afiliados/');
+        $adapter = new SftpAdapter($sftp,'/pagos_entidad/');
         $filesystem = new Filesystem($adapter);
         $entitymanager = $this->getContainer()->get('doctrine')->getManager();
 
-        $nombrearchivo = 'Afiliados.csv';
+        $nombrearchivo = 'PagosEntidad.csv';
         if($filesystem->has($nombrearchivo)){
-            $localadapter = new Local('../files/Afiliados/',true);
+            $localadapter = new Local('../files/PagosEntidad/',true);
             $filesystem2 = new Filesystem($localadapter);
-           $archivo =$filesystem->get('Afiliados.csv');
-          $contenido =  $archivo->getContent();
+           $archivo =$filesystem->get('PagosEntidad.csv');
+            $contenido =  $archivo->getContent();
             $fechaactual = new \DateTime('now');
             $fecha = trim($fechaactual->format('d-m-YH_i_s'));
-            $nombrearchivo = 'Afiliados'.$fecha.'.csv';
+            $nombrearchivo = 'PagosEntidad'.$fecha.'.csv';
             $filesystem2->createFile($nombrearchivo);
             $filesystem2->write($nombrearchivo, $contenido);
         }
         else{
-            $descripcion = 'ERROR - Se produjo un error. No se ha encontrado el archivo de Afiliados en el servidor';
+            $descripcion = 'ERROR - Se produjo un error. No se ha encontrado el archivo de Pagos en Entidad en el servidor';
             $this->gestionarErrorOperacion($entitymanager, $descripcion);
             throw new \Exception('No se ha encontrado el archivo en el servidor');
             exit;
@@ -56,7 +57,7 @@ class BackendRecibirAfiliadosCommand extends ContainerAwareCommand
         $objReader->setEnclosure('');
         $objReader->setLineEnding('\r\n');
       try{
-          $objPHPExcel = $objReader->load('../files/Afiliados/'.$nombrearchivo);
+          $objPHPExcel = $objReader->load('../files/PagosEntidad/'.$nombrearchivo);
           $objWorksheet = $objPHPExcel->getActiveSheet();
       }
       catch(\Exception $e){
@@ -66,16 +67,16 @@ class BackendRecibirAfiliadosCommand extends ContainerAwareCommand
           $output->writeln('No se pudo realizar la operacion');
           return;
       }
-        $cantidadafiliados = 0;
+        $cantidadpagos = 0;
         foreach ($objWorksheet->getRowIterator() as $row) {
             $row_index = $row->getRowIndex();
             if($row_index==1){
                 $tipoarchivo = $objWorksheet->getCellByColumnAndRow(0,$row_index)->getValue();
-                $cantidadafiliados = $objWorksheet->getCellByColumnAndRow(1,$row_index)->getValue();
+                $cantidadpagos = $objWorksheet->getCellByColumnAndRow(1,$row_index)->getValue();
                 $fechaarchivo = $objWorksheet->getCellByColumnAndRow(2,$row_index)->getValue();
-                $output->writeln(array($tipoarchivo, $cantidadafiliados, $fechaarchivo));
+                $output->writeln(array($tipoarchivo, $cantidadpagos, $fechaarchivo));
 
-                if($tipoarchivo != 'Nuevos Afiliados'){
+                if($tipoarchivo != 'Pagos Entidad'){
                     $descripcion = 'ERROR - El archivo recibido no es del tipo correcto';
                     $this->gestionarErrorOperacion($entitymanager, $descripcion);
                     throw new \Exception('El archivo recibido no es correcto');
@@ -83,54 +84,44 @@ class BackendRecibirAfiliadosCommand extends ContainerAwareCommand
                 }
             }
             else{
-           $numeroafiliado = $objWorksheet->getCellByColumnAndRow(0,$row_index)->getValue();
-           $nombre = $objWorksheet->getCellByColumnAndRow(1,$row_index)->getValue();
-           $apellido = $objWorksheet->getCellByColumnAndRow(2,$row_index)->getValue();
-           $domicilio = $objWorksheet->getCellByColumnAndRow(3,$row_index)->getValue();
-           $alias = $objWorksheet->getCellByColumnAndRow(4,$row_index)->getValue();
-           $password = $objWorksheet->getCellByColumnAndRow(5,$row_index)->getValue();
-           $salt = $objWorksheet->getCellByColumnAndRow(6,$row_index)->getValue();
-           $email = $objWorksheet->getCellByColumnAndRow(7,$row_index)->getValue();
-           $dni = $objWorksheet->getCellByColumnAndRow(8,$row_index)->getValue();
-           $localidad =  $objWorksheet->getCellByColumnAndRow(9,$row_index)->getValue();
+           $numerodeuda = $objWorksheet->getCellByColumnAndRow(0,$row_index)->getValue();
+           $cantidadcuotas = $objWorksheet->getCellByColumnAndRow(1,$row_index)->getValue();
+           $aniopago = $objWorksheet->getCellByColumnAndRow(2,$row_index)->getValue();
+           $mespago = $objWorksheet->getCellByColumnAndRow(3,$row_index)->getValue();
+           $diapago = $objWorksheet->getCellByColumnAndRow(4,$row_index)->getValue();
+           $horapago = $objWorksheet->getCellByColumnAndRow(5,$row_index)->getValue();
+           $minutopago = $objWorksheet->getCellByColumnAndRow(6,$row_index)->getValue();
+           $this->pagarDeuda($entitymanager, $numerodeuda,$cantidadcuotas, $aniopago, $mespago, $diapago, $horapago, $minutopago);
           //  $output->writeln(array($numeroafiliado, $nombre, $apellido, $domicilio, $alias, $password, $salt, $email, $dni, $localidad));
-            $this->guardarAfiliado($entitymanager, $numeroafiliado, $nombre, $apellido, $domicilio, $alias, $password, $salt, $email, $dni, $localidad);
+
             }
            }
 
         $operacion = new Operacion();
         $operacion->setFecha(new \DateTime('now'));
-        $operacion->setTipo('Cambio Estado');
-        $operacion->setDescripcion('Se han agregado exitosamente los datos de '.$cantidadafiliados.' afiliados');
+        $operacion->setTipo('Recepcion Pagos');
+        $operacion->setDescripcion('Se han registrado exitosamente '.$cantidadpagos.' pagos');
         $entitymanager->persist($operacion);
-
         $entitymanager->flush();
-
-
 
     }
 
-    protected function guardarAfiliado($entitymanager, $numeroafiliado, $nombre, $apellido, $domicilio, $alias, $password, $salt, $email, $dni, $localidad){
-        $estadoactiivo = $entitymanager->getRepository('AfiliadoBundle:Estado')->findOneBy(array('nombre'=>'Activo'));
-        $afiliado = new Afiliado();
-        $afiliado->setNumeroAfiliado($numeroafiliado);
-        $afiliado->setNombre($nombre);
-        $afiliado->setApellido($apellido);
-        $afiliado->setDomicilio($domicilio);
-        $afiliado->setAlias($alias);
-        $afiliado->setPassword($password);
-        $afiliado->setSalt($salt);
-        $afiliado->setEmail($email);
-        $afiliado->setEstado($estadoactiivo);
-        $afiliado->setDni($dni);
-        $afiliado->setLocalidad($localidad);
-        $entitymanager->persist($afiliado);
+    protected function pagarDeuda($entitymanager, $numerodeuda, $cantidadcuotas, $aniopago, $mespago, $diapago, $horapago, $minutopago){
+        $deuda = $entitymanager->getRepository('PagoBundle:EstadoDeDeuda')->findOneBy(array('numeroDeuda'=>$numerodeuda));
+        $deuda->setPagada(true);
+        $pago = new Pago();
+        $pago->setEstadoDeuda($deuda);
+        $pago->setCantidadCuotas($cantidadcuotas);
+        $pago->setProcesado(true);
+        $pago->setNumeroSeguimiento($numerodeuda);
+        $pago->setFechaPago(new \DateTime($aniopago.'-'.$mespago.'-'.$diapago.' '.$horapago.':'.$minutopago));
+        $entitymanager->persist($pago);
     }
 
     protected function gestionarErrorOperacion($entitymanager ,$descripcion){
         $operacion = new Operacion();
         $operacion->setFecha(new \DateTime('now'));
-        $operacion->setTipo('Nuevos Afiliados');
+        $operacion->setTipo('Recepcion Pagos');
         $operacion->setDescripcion($descripcion);
         $entitymanager->persist($operacion);
         $entitymanager->flush();

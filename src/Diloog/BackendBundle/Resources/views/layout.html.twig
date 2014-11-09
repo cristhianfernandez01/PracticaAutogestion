@@ -37,7 +37,7 @@
                    </li>
                    <li class="divider"></li>
                    <li>
-                       <a href="{{   path('afiliado_logout') }}"><i class="fa fa-fw fa-power-off"></i> Cerrar sesion</a>
+                       <a href="{{   path('backend_logout') }}"><i class="fa fa-fw fa-power-off"></i> Cerrar sesion</a>
                    </li>
                </ul>
            </li>
@@ -48,13 +48,16 @@
        <div class="collapse navbar-collapse navbar-ex1-collapse">
            <ul class="nav navbar-nav side-nav">
                <li>
-                   <a href="{{ path('listar_afiliados') }}"><i class="fa fa-fw fa-dashboard"></i>Listar Afiliados </a>
+                   <a href="{{ path('backend_principal') }}"><i class="fa fa-fw fa-dashboard"></i> Principal </a>
                </li>
                <li>
-                   <a href="{{ path('listar_usuarios') }}"><i class="fa fa-fw fa-bar-chart-o"></i> Ver Usuarios</a>
+                   <a href="{{ path('listar_afiliados') }}"><i class="fa fa-fw fa-user"></i> Listar Afiliados </a>
                </li>
                <li>
-                   <a href="{{ path('filtrar_operaciones') }}"><i class="fa fa-fw fa-dashboard"></i>Operaciones realizadas </a>
+                   <a href="{{ path('listar_usuarios') }}"><i class="fa fa-fw fa-group"></i> Ver Usuarios</a>
+               </li>
+               <li>
+                   <a href="{{ path('filtrar_operaciones') }}"><i class="fa fa-fw fa-exchange"></i> Operaciones realizadas </a>
                </li>
 
                <!--  AQUI SE GENERA EL CALENDARIO JQUERY -->
