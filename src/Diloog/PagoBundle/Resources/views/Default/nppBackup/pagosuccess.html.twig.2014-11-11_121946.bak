@@ -23,7 +23,7 @@
         <li>
             <a href="{{ path('comprobante_pago', {'idpago': idpago}) }}" class="btn btn-default">
                 <i class="fa fa-fw fa-files-o"></i>
-                Generar Comprobante de Pago
+                Generar comprobante de pago
             </a>
         </li>
         <li>

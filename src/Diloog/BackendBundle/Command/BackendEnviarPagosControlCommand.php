@@ -12,24 +12,26 @@ use Gaufrette\Filesystem;
 use Gaufrette\Adapter\Sftp as SftpAdapter;
 use Gaufrette\Adapter\Local;
 
-class BackendEnviarPagosCommand extends ContainerAwareCommand
+class BackendEnviarPagosControlCommand extends ContainerAwareCommand
 {
     protected function configure()
     {
         $this
-            ->setName('diloog:backend:enviarpagos')
-            ->setDescription('Envia por sftp los datos de pagos realizados en el sistema')
+            ->setName('diloog:backend:enviarpagoscontrol')
+            ->setDescription('Control del envio por sftp los datos de pagos realizados en el sistema')
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $entitymanager = $this->getContainer()->get('doctrine')->getManager();
+        $control = $entitymanager->getRepository('BackendBundle:ControlOperacion')->findOneBy(array('codigo' => 1));
+        if($control->getRealizada==false){
         $sftp = $this->getContainer()->get('diloog_backend.sftp');
         $adapter = new SftpAdapter($sftp,'/pagos/');
         $filesystem = new Filesystem($adapter);
         $localadapter = new Local('../files/Pagos/',true);
         $filesystem2 = new Filesystem($localadapter);
-        $entitymanager = $this->getContainer()->get('doctrine')->getManager();
         $pagos = $entitymanager->getRepository('PagoBundle:Pago')->findPagosSinProcesar();
         if($pagos==null ){
             $output->write('No se encontraron datos para enviar');
@@ -96,6 +98,7 @@ class BackendEnviarPagosCommand extends ContainerAwareCommand
             $this->controlOperacion($entitymanager,true);
 
         }
+      }
     }
 
     protected function gestionarErrorOperacion($entitymanager ,$descripcion){

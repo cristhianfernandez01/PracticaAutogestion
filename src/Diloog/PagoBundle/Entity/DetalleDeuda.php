@@ -45,7 +45,7 @@ class DetalleDeuda
 
     /**
      *
-     * @ORM\ManyToOne(targetEntity="\Diloog\PagoBundle\Entity\EstadoDeDeuda", inversedBy="detallesdeuda")
+     * @ORM\ManyToOne(targetEntity="\Diloog\PagoBundle\Entity\EstadoDeDeuda", inversedBy="detallesdeuda", cascade={"persist"})
      * @ORM\JoinColumn(name="estado_deuda_id", referencedColumnName="id")
      */
     private $estadoDeuda;

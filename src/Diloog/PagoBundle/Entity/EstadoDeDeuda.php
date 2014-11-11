@@ -70,7 +70,7 @@ class EstadoDeDeuda
 
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="\Diloog\PagoBundle\Entity\DetalleDeuda", mappedBy="estadoDeuda")
+     * @ORM\OneToMany(targetEntity="\Diloog\PagoBundle\Entity\DetalleDeuda", mappedBy="estadoDeuda" )
      */
     private $detallesdeuda;
 
@@ -235,6 +235,10 @@ class EstadoDeDeuda
     public function addDetalleDeuda(\Diloog\PagoBundle\Entity\DetalleDeuda $detalledeuda){
         $this->detallesdeuda[]= $detalledeuda;
 
+    }
+
+    public function __toString(){
+        return $this->getNumeroDeuda().$this->getAfiliado();
     }
 
 

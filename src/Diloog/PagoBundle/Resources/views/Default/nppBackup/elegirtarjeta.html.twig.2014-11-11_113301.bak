@@ -32,10 +32,10 @@
                     <li class="list-group-item">
                         {% set token = tarjeta.numeroTarjeta|md5 %}
                         {% if referer=='pago' %}
-                        <a class="btn btn-default" href="{{ path('realizar_pago', {'idtarjeta':tarjeta.id, 'token': token }) }}"> <i class="fa fa-fw fa-arrow-circle-right"></i> Elegir</a>
+                        <a href="{{ path('realizar_pago', {'idtarjeta':tarjeta.id, 'token': token }) }}"> <i class="fa fa-fw fa-arrow-circle-right"></i> Elegir</a>
 
                          {% elseif referer=='financiacion' %}
-                         <a class="btn btn-default" href="{{ path('realizar_financiacion', {'idtarjeta':tarjeta.id, 'token': token }) }}"> <i class="fa fa-fw fa-arrow-circle-right"></i> Elegir</a>
+                         <a href="{{ path('realizar_financiacion', {'idtarjeta':tarjeta.id, 'token': token }) }}"> <i class="fa fa-fw fa-arrow"></i> Elegir</a>
                         {% endif %}
                     </li>
                 </ul>

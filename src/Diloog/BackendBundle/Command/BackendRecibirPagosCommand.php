@@ -46,6 +46,7 @@ class BackendRecibirPagosCommand extends ContainerAwareCommand
         else{
             $descripcion = 'ERROR - Se produjo un error. No se ha encontrado el archivo de Pagos en Entidad en el servidor';
             $this->gestionarErrorOperacion($entitymanager, $descripcion);
+            $this->controlOperacion($entitymanager,false);
             throw new \Exception('No se ha encontrado el archivo en el servidor');
             exit;
         }
@@ -64,6 +65,7 @@ class BackendRecibirPagosCommand extends ContainerAwareCommand
           // $output->writeln('Excepcion capturada '."\n".$e->getMessage());
           $descripcion = 'ERROR - No se pudo cargar el archivo para su procesamiento';
           $this->gestionarErrorOperacion($entitymanager, $descripcion);
+          $this->controlOperacion($entitymanager,false);
           $output->writeln('No se pudo realizar la operacion');
           return;
       }
@@ -79,6 +81,7 @@ class BackendRecibirPagosCommand extends ContainerAwareCommand
                 if($tipoarchivo != 'Pagos Entidad'){
                     $descripcion = 'ERROR - El archivo recibido no es del tipo correcto';
                     $this->gestionarErrorOperacion($entitymanager, $descripcion);
+                    $this->controlOperacion($entitymanager,false);
                     throw new \Exception('El archivo recibido no es correcto');
                     exit;
                 }
@@ -103,7 +106,7 @@ class BackendRecibirPagosCommand extends ContainerAwareCommand
         $operacion->setDescripcion('Se han registrado exitosamente '.$cantidadpagos.' pagos');
         $entitymanager->persist($operacion);
         $entitymanager->flush();
-
+        $this->controlOperacion($entitymanager,true);
     }
 
     protected function pagarDeuda($entitymanager, $numerodeuda, $cantidadcuotas, $aniopago, $mespago, $diapago, $horapago, $minutopago){
@@ -124,6 +127,12 @@ class BackendRecibirPagosCommand extends ContainerAwareCommand
         $operacion->setTipo('Recepcion Pagos');
         $operacion->setDescripcion($descripcion);
         $entitymanager->persist($operacion);
+        $entitymanager->flush();
+    }
+
+    protected function controlOperacion($entitymanager, $valor){
+        $control = $entitymanager->getRepository('BackendBundle:ControlOperacion')->findOneBy(array('codigo'=>2));
+        $control->setRealizada($valor);
         $entitymanager->flush();
     }
 

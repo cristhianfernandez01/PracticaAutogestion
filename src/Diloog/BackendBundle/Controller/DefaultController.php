@@ -20,8 +20,16 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        $name = 'Mundo';
-        return $this->render('BackendBundle:Default:index.html.twig', array('name' => $name));
+        $entitymanager = $this->getDoctrine()->getManager();
+        $operacionpagoenviado = $entitymanager->getRepository('BackendBundle:Operacion')->findOneBy(array('tipo' => 'Envio Pagos'));
+        $operaciondeuda = $entitymanager->getRepository('BackendBundle:Operacion')->findOneBy(array('tipo' => 'Actualizacion Deudas'));
+        $operacionpagorecibido = $entitymanager->getRepository('BackendBundle:Operacion')->findOneBy(array('tipo' => 'Recepcion Pagos'));
+        $operacioncambioestado = $entitymanager->getRepository('BackendBundle:Operacion')->findOneBy(array('tipo' => 'Cambio Estado'));
+
+        return $this->render('BackendBundle:Default:index.html.twig', array('pagoenviado' => $operacionpagoenviado,
+                                                                             'deuda' => $operaciondeuda,
+                                                                              'pagorecibido'=> $operacionpagorecibido,
+                                                                               'cambioestado' => $operacioncambioestado));
     }
 
     public function loginAction(){

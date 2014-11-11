@@ -2,7 +2,6 @@
 
 namespace Diloog\BackendBundle\Command;
 
-use Diloog\AfiliadoBundle\Entity\Afiliado;
 use Diloog\BackendBundle\Entity\Operacion;
 use Gaufrette\Adapter\Local;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
@@ -13,22 +12,24 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Gaufrette\Filesystem;
 use Gaufrette\Adapter\Sftp as SftpAdapter;
 
-class BackendRecibirCambioEstadoCommand extends ContainerAwareCommand
+class BackendRecibirCambioEstadoControlCommand extends ContainerAwareCommand
 {
     protected function configure()
     {
         $this
-            ->setName('diloog:backend:recibircambioestado')
-            ->setDescription('Recibe datos de cambios de los afiliados')
+            ->setName('diloog:backend:recibircambioestadocontrol')
+            ->setDescription('Controla la recepcion de datos de cambios de los afiliados')
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $entitymanager = $this->getContainer()->get('doctrine')->getManager();
+        $control = $entitymanager->getRepository('BackendBundle:ControlOperacion')->findOneBy(array('codigo' => 4));
+        if($control->getRealizada==false){
         $sftp = $this->getContainer()->get('diloog_backend.sftp');
         $adapter = new SftpAdapter($sftp,'/estados/');
         $filesystem = new Filesystem($adapter);
-        $entitymanager = $this->getContainer()->get('doctrine')->getManager();
         $localadapter = new Local('../files/Estados/',true);
         $filesystem2 = new Filesystem($localadapter);
         $nombrearchivo1 = 'Estado.csv';
@@ -102,6 +103,7 @@ class BackendRecibirCambioEstadoCommand extends ContainerAwareCommand
         $entitymanager->flush();
         $this->controlOperacion($entitymanager,true);
         $output->writeln('Se han modificado exitosamente los estados de '.$cantidadafiliados.' afiliados');
+       }
     }
 
     protected function cambiarEstado($entitymanager, $numeroafiliado, $nuevoestado){
@@ -121,7 +123,7 @@ class BackendRecibirCambioEstadoCommand extends ContainerAwareCommand
     }
 
     protected function controlOperacion($entitymanager, $valor){
-        $control = $entitymanager->getRepository('BackendBundle:ControlOperacion')->findOneBy(array('codigo'=>3));
+        $control = $entitymanager->getRepository('BackendBundle:ControlOperacion')->findOneBy(array('codigo'=>4));
         $control->setRealizada($valor);
         $entitymanager->flush();
     }

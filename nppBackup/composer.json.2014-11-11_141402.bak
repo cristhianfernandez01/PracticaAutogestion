@@ -33,12 +33,8 @@
         "apy/datagrid-bundle": "dev-master",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "lexik/form-filter-bundle": "~2.0",
-        "white-october/pagerfanta-bundle": "~1.0",
-        "phpunit/phpunit": "4.3.*"		
+        "white-october/pagerfanta-bundle": "~1.0"	
     },
-	
-        
-    
     "scripts": {
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",

@@ -13,22 +13,24 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Gaufrette\Filesystem;
 use Gaufrette\Adapter\Sftp as SftpAdapter;
 
-class BackendRecibirAfiliadosCommand extends ContainerAwareCommand
+class BackendRecibirAfiliadosControlCommand extends ContainerAwareCommand
 {
     protected function configure()
     {
         $this
-            ->setName('diloog:backend:recibirafiliados')
-            ->setDescription('Recibe datos de nuevos afiliados registrados')
+            ->setName('diloog:backend:recibirafiliadoscontrol')
+            ->setDescription('Controla la recepcion de datos de nuevos afiliados registrados')
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $entitymanager = $this->getContainer()->get('doctrine')->getManager();
+        $control = $entitymanager->getRepository('BackendBundle:ControlOperacion')->findOneBy(array('codigo' => 5));
+        if($control->getRealizada==false){
         $sftp = $this->getContainer()->get('diloog_backend.sftp');
         $adapter = new SftpAdapter($sftp,'/afiliados/');
         $filesystem = new Filesystem($adapter);
-        $entitymanager = $this->getContainer()->get('doctrine')->getManager();
 
         $nombrearchivo = 'Afiliados.csv';
         if($filesystem->has($nombrearchivo)){
@@ -109,7 +111,7 @@ class BackendRecibirAfiliadosCommand extends ContainerAwareCommand
 
         $entitymanager->flush();
         $this->controlOperacion($entitymanager, true);
-
+      }
 
     }
 

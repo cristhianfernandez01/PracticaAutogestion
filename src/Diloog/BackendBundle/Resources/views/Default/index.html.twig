@@ -7,22 +7,74 @@
     <div class="well">
         <p>
         <h4>
-            La informaci&oacute;n referida a las operaciones realizadas en segundo plano se muestran a continucaci&oacute;n
+            La informaci&oacute;n referida a las operaciones realizadas en segundo plano se muestran a continuaci&oacute;n
         </h4>
         </p>
     </div>
 
-    <div class="panel panel-success">
-        <div class="panel-heading">
-            Datos personales del afiliado
+    <div class="row">
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-credit-card fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">{{ pagoenviado.fecha | date("d/m h:i") }}</div>
+                            <div>Ultimo Envio de Pagos Realizados</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div class="panel-body">
-            <p>
-                <i class="fa fa-lightbulb-o"></i>
-                Para poder consultar sus datos personales registrados y su estado respecto de nuestro colegio (Activo, Baja, Mantenimiento de
-                Matricula), adem&aacute;s de realizar el cambio de contraseña de su cuenta, por favor dir&iacute;jase a la opci&oacute;n
-                <strong><em>"Mis Datos"</em></strong> en el men&uacute; lateral izquierdo.
-            </p>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-green">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-bookmark-o fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">{{ deuda.fecha | date("d/m h:i") }}</div>
+                            <div>Ultima Recepcion de Deudas</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-yellow">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-check-circle fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">{{ cambioestado.fecha | date("d/m h:i") }}</div>
+                            <div>Ultima Recepcion Cambios Estado</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-red">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-money fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">{{ pagorecibido.fecha | date("d/m h:i") }}</div>
+                            <div>Ultima Recepcion de Pagos</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}
