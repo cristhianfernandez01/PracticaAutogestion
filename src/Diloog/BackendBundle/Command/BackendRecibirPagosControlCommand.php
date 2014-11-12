@@ -14,7 +14,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Gaufrette\Filesystem;
 use Gaufrette\Adapter\Sftp as SftpAdapter;
 
-class BackendRecibirPagosCommand extends ContainerAwareCommand
+class BackendRecibirPagosControlCommand extends ContainerAwareCommand
 {
     protected function configure()
     {
