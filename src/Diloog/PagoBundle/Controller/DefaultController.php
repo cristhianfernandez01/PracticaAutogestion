@@ -47,7 +47,7 @@ class DefaultController extends Controller
             ),
             $directorio.$nombrearchivo
         );
-        $rutaarchivo = $directorio.$nombrearchivo;
+
         $basepath=$this->getRequest()->server->get('DOCUMENT_ROOT');
         $rutadescarga=$basepath."/pdf/".$nombrearchivo;
         $archivo = new File($directorio.$nombrearchivo);

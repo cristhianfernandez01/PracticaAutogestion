@@ -38,7 +38,10 @@ class PagoRepository extends EntityRepository
             $consulta2->setMaxResults(1);
             $pago = $consulta2->getOneOrNullResult();
             //ld($pago);
-            $pagos[] = $pago;
+            if($pago != null){
+                $pagos[] = $pago;
+            }
+
 
         }
       //  ld($pagos);

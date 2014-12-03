@@ -180,13 +180,13 @@ class DefaultController extends Controller
         $pagos = $em->getRepository('PagoBundle:Pago')->findUltimosPagos($afiliado);
         //ld($pagos);
         if ($pagos[0]==null){
-
             $pagos = array();
         }
         //ld($pagos);
         //ld($pagos);
        //return $this->render('@Pago/Default/vervariables.html.twig');
        return $this->render('AfiliadoBundle:Datos:listapagos.html.twig', array('pagos' => $pagos));
+       // return $this->render('@Pago/Default/vervariables.html.twig');
     }
 
 
